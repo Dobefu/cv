@@ -1,5 +1,4 @@
 import { cleanup, render, screen } from '@testing-library/react'
-import { nextTick } from 'node:process'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import Header from './header'
 
