@@ -42,7 +42,7 @@ function handleLocaleDetection(request: NextRequest): NextURL | undefined {
 function getCspResponse(request: Request): NextResponse {
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
 
-  const csp = {
+  const csp: Record<string, string[]> = {
     'default-src': ["'self'"],
     'script-src': ["'self'", `'nonce-${nonce}'`, "'strict-dynamic'"],
     'style-src': ["'self'", `'nonce-${nonce}'`],
@@ -52,7 +52,6 @@ function getCspResponse(request: Request): NextResponse {
     'base-uri': ["'self'"],
     'form-action': ["'self'"],
     'frame-ancestors': ["'none'"],
-    'upgrade-insecure-requests': [],
   }
 
   // NextJS inlines styles for the dev indicators in development mode.
@@ -60,6 +59,7 @@ function getCspResponse(request: Request): NextResponse {
   if (process.env.NODE_ENV !== 'production') {
     csp['style-src'].splice(-1)
     csp['style-src'].push("'unsafe-inline'")
+    csp['upgrade-insecure-requests'] = []
   }
 
   const cspString = parseCsp(csp)
@@ -92,7 +92,7 @@ export const config = {
   matcher: [
     {
       source:
-        '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
+        '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.+.svg).*)',
       missing: [
         { type: 'header', key: 'next-router-prefetch' },
         { type: 'header', key: 'purpose', value: 'prefetch' },

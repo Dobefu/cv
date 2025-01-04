@@ -5,6 +5,7 @@ import getConfig from 'next/config'
 import { TemplateString } from 'next/dist/lib/metadata/types/metadata-types'
 import { Geist } from 'next/font/google'
 import './globals.css'
+import Header from './header'
 import Providers from './providers'
 
 type Props = Readonly<{
@@ -42,6 +43,8 @@ export default async function RootLayout({
       >
         <Providers locale={locale} translations={translations}>
           <div className="flex flex-1 flex-col justify-between gap-4">
+            <Header />
+
             <main className="flex-1 px-8" id="main-content">
               {children}
             </main>
