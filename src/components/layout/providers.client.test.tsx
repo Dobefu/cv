@@ -1,7 +1,7 @@
-import LocaleLink from '@/components/utils/locale-link'
+import LocaleLink from '@/components/utils/locale-link.client'
 import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
-import Providers from './providers'
+import Providers from './providers.client'
 
 describe('providers', () => {
   afterEach(() => {

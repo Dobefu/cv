@@ -4,8 +4,8 @@ import getConfig from 'next/config'
 import { Geist } from 'next/font/google'
 import Footer from './footer'
 import './globals.css'
-import Header from './header'
-import Providers from './providers'
+import Header from './header.client'
+import Providers from './providers.client'
 
 type Props = Readonly<{
   children: React.ReactNode

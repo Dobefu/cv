@@ -1,4 +1,4 @@
-import { LocaleContext } from '@/components/layout/providers'
+import { LocaleContext } from '@/components/layout/providers.client'
 import { Locale } from '@/types/locale'
 import { logWarning } from '@/utils/logger'
 import { useContext } from 'react'

@@ -2,7 +2,7 @@
 
 import NextLink, { LinkProps } from 'next/link'
 import React, { useContext } from 'react'
-import { LocaleContext } from '../layout/providers'
+import { LocaleContext } from '../layout/providers.client'
 
 const LocaleLink: React.FC<
   LinkProps &
