@@ -44,7 +44,20 @@ function getCspResponse(request: Request): NextResponse {
 
   const csp: Record<string, string[]> = {
     'default-src': ["'self'"],
-    'script-src': ["'self'", `'nonce-${nonce}'`, "'strict-dynamic'"],
+    'script-src': [
+      "'self'",
+      `'nonce-${nonce}'`,
+      "'strict-dynamic'",
+      'https://api.unisvg.com',
+      'https://api.simplesvg.com',
+      'https://api.iconify.design',
+    ],
+    'connect-src': [
+      "'self'",
+      'https://api.unisvg.com',
+      'https://api.simplesvg.com',
+      'https://api.iconify.design',
+    ],
     'style-src': ["'self'", `'nonce-${nonce}'`],
     'img-src': ["'self'", 'blob:', 'data:'],
     'font-src': ["'self'"],
