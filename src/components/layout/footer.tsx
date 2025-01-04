@@ -25,6 +25,11 @@ export default function Footer({ appName }: Props) {
       icon: 'bi:github',
     },
     {
+      title: 'Bluesky',
+      to: 'https://bsky.app/profile/connor.nl',
+      icon: 'simple-icons:bluesky',
+    },
+    {
       title: 'Gitlab',
       to: 'https://gitlab.com/Dobefu',
       icon: 'bi:gitlab',
