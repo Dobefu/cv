@@ -1,6 +1,8 @@
-export function fetchLocales(): {
+import { Locale } from '@/types/locale'
+
+export default function getLocales(): {
   defaultLocale: string
-  locales: { code: string; name: string }[]
+  locales: Locale[]
 } {
   return {
     defaultLocale: 'en',
