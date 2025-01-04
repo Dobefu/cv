@@ -1,11 +1,11 @@
-import getConfig from 'next/config'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Header() {
-  const { publicRuntimeConfig } = getConfig()
-  const appName = publicRuntimeConfig.appName || ''
+type Props = Readonly<{
+  appName: string
+}>
 
+export default function Header({ appName }: Props) {
   return (
     <div className="sticky top-0 z-50 p-4 print:opacity-0">
       <header className="w-full rounded-2xl bg-[#0e7599cc] shadow-md backdrop-blur-lg transition-all duration-300 motion-reduce:transition-none contrast-more:bg-sky-600 contrast-more:dark:bg-sky-800">

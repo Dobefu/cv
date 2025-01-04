@@ -1,5 +1,6 @@
 import getLocales from '@/utils/get-locales'
 import getTranslations from '@/utils/get-translations'
+import getConfig from 'next/config'
 import { Geist } from 'next/font/google'
 import Footer from './footer'
 import './globals.css'
@@ -24,6 +25,9 @@ export default async function RootLayout({
   const locale = locales.find((loc) => (loc.code = pageLocale))!
   const translations = getTranslations(locale.code)
 
+  const { publicRuntimeConfig } = getConfig()
+  const appName = publicRuntimeConfig.appName || ''
+
   return (
     <html className="h-full" lang={locale.code}>
       <body
@@ -31,7 +35,7 @@ export default async function RootLayout({
       >
         <Providers locale={locale} translations={translations}>
           <div className="flex flex-1 flex-col justify-between">
-            <Header />
+            <Header appName={appName} />
 
             <main
               className="relative mx-auto mb-4 w-full flex-1"
@@ -40,7 +44,7 @@ export default async function RootLayout({
               {children}
             </main>
 
-            <Footer />
+            <Footer appName={appName} />
           </div>
         </Providers>
       </body>

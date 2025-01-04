@@ -1,11 +1,11 @@
 import { Icon } from '@iconify/react'
-import getConfig from 'next/config'
 import Link from 'next/link'
 
-export default function Footer() {
-  const { publicRuntimeConfig } = getConfig()
-  const appName = publicRuntimeConfig.appName || ''
+type Props = Readonly<{
+  appName: string
+}>
 
+export default function Footer({ appName }: Props) {
   const footerLinks = [
     {
       title: 'Sitemap',
