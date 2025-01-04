@@ -2,6 +2,10 @@ import { promises as fs } from 'fs'
 import type { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  if (!process.env.APP_URL) {
+    return []
+  }
+
   const files = await fs.readdir(`${process.cwd()}/src/app`, {
     recursive: true,
   })
