@@ -25,7 +25,6 @@ export default async function RootLayout({
   const pageLocale = (await params).locale
   const { locales } = getLocales()
   const locale = locales.find((loc) => (loc.code = pageLocale))!
-  console.log(locale, pageLocale, locales)
   const translations = await getTranslations(locale.code)
 
   return (
