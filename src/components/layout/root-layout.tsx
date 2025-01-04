@@ -1,8 +1,5 @@
 import getLocales from '@/utils/get-locales'
 import getTranslations from '@/utils/get-translations'
-import type { Metadata } from 'next'
-import getConfig from 'next/config'
-import { TemplateString } from 'next/dist/lib/metadata/types/metadata-types'
 import { Geist } from 'next/font/google'
 import './globals.css'
 import Header from './header'
@@ -17,16 +14,6 @@ const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
 })
-
-const { publicRuntimeConfig } = getConfig()
-const appName = publicRuntimeConfig.appName || ''
-
-export const metadata: Metadata = {
-  title: {
-    default: appName,
-    template: `%s | ${appName}`,
-  } satisfies TemplateString,
-}
 
 export default async function RootLayout({
   children,
