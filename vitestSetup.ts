@@ -1,7 +1,7 @@
 import { loadEnvFile } from 'node:process'
 import { vi } from 'vitest'
 
-loadEnvFile('.env.test')
+loadEnvFile('.env')
 
 vi.mock('next/config', () => ({
   default: () => {

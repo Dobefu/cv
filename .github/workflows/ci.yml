@@ -54,11 +54,11 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Create a .env.test file
+      - name: Create a .env file
         run: |
-          touch .env.test
-          echo "APP_NAME=\"CV - Connor van Spronssen\"" >> .env.test
-          echo "APP_URL=\"http://localhost:3000\"" >> .env.test
+          touch .env
+          echo "APP_NAME=\"CV - Connor van Spronssen\"" >> .env
+          echo "APP_URL=\"http://localhost:3000\"" >> .env
 
       - name: Enable PNPM
         run: corepack enable
@@ -69,8 +69,8 @@ jobs:
       - name: Run tests
         run: pnpm coverage
 
-      - name: Delete the .env.test file after tests are completed
-        run: rm .env.test
+      - name: Delete the .env file after tests are completed
+        run: rm .env
 
       - uses: actions/upload-artifact@v4
         with:
