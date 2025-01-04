@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h2 {
+    @apply container max-w-5xl pb-8 mx-auto text-4xl font-semibold text-sky-700 dark:text-sky-500 contrast-more:dark:text-sky-400;
+  }
+
+  h3 {
+    @apply container max-w-5xl pb-8 mx-auto text-3xl font-semibold text-sky-700 dark:text-sky-500 contrast-more:dark:text-sky-400;
+  }
+
+  hr {
+    @apply my-8 -m-px h-px border-none bg-zinc-300 dark:bg-zinc-600;
+  }
+}
