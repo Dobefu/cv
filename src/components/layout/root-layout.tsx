@@ -42,10 +42,13 @@ export default async function RootLayout({
         className={`${geistSans.variable} flex min-h-full flex-col font-sans antialiased`}
       >
         <Providers locale={locale} translations={translations}>
-          <div className="flex flex-1 flex-col justify-between gap-4">
+          <div className="flex flex-1 flex-col justify-between">
             <Header />
 
-            <main className="flex-1 px-8" id="main-content">
+            <main
+              className="relative mx-auto mb-4 w-full flex-1"
+              id="main-content"
+            >
               {children}
             </main>
           </div>
