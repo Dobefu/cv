@@ -4,7 +4,7 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
   output: 'standalone',
   reactStrictMode: true,
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ['md', 'mdx', 'tsx'],
   poweredByHeader: false,
   publicRuntimeConfig: {
     appName: process.env.APP_NAME ?? '',
