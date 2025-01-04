@@ -7,8 +7,10 @@ import { Geist } from 'next/font/google'
 import './globals.css'
 import Providers from './providers'
 
-// Make the layout dynamic, to ensure that CSP nonces get generated on every page load.
-export const dynamic = 'force-dynamic'
+type Props = Readonly<{
+  children: React.ReactNode
+  locale: string
+}>
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -27,12 +29,8 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params,
-}: Readonly<{
-  children: React.ReactNode
-  params: Promise<{ locale: string }>
-}>) {
-  const pageLocale = (await params).locale
+  locale: pageLocale,
+}: Props) {
   const { locales } = getLocales()
   const locale = locales.find((loc) => (loc.code = pageLocale))!
   const translations = getTranslations(locale.code)
@@ -43,7 +41,11 @@ export default async function RootLayout({
         className={`${geistSans.variable} flex min-h-full flex-col font-sans antialiased`}
       >
         <Providers locale={locale} translations={translations}>
-          {children}
+          <div className="flex flex-1 flex-col justify-between gap-4">
+            <main className="flex-1 px-8" id="main-content">
+              {children}
+            </main>
+          </div>
         </Providers>
       </body>
     </html>
