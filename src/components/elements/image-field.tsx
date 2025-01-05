@@ -8,8 +8,6 @@ type Props = Readonly<{
   img?: {
     src: string
     alt: string
-    height: number
-    width: number
   }
 }>
 
@@ -18,7 +16,7 @@ export default function ImageField({ label, text, subtext, link, img }: Props) {
 
   return (
     <Tag
-      className="my-4 inline-flex w-1/2 items-center gap-4 max-md:min-w-full"
+      className="my-4 inline-flex w-full items-center gap-4 max-md:min-w-full"
       href={link}
       target={link ? '_blank' : undefined}
     >

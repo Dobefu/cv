@@ -14,8 +14,6 @@ describe('ImageField', () => {
         img={{
           src: '/',
           alt: '',
-          height: 10,
-          width: 10,
         }}
         label="Test label"
         link="/"
@@ -50,8 +48,6 @@ describe('ImageField', () => {
         img={{
           src: '/',
           alt: '',
-          height: 10,
-          width: 10,
         }}
         label="Test label"
         subtext="Test subtext"
