@@ -58,7 +58,7 @@ function getCspResponse(request: Request): NextResponse {
       'https://api.simplesvg.com',
       'https://api.iconify.design',
     ],
-    'style-src': ["'self'", `'nonce-${nonce}'`],
+    'style-src': ["'self'", `'unsafe-inline'`],
     'img-src': ["'self'", 'blob:', 'data:'],
     'font-src': ["'self'"],
     'object-src': ["'none'"],
@@ -68,8 +68,6 @@ function getCspResponse(request: Request): NextResponse {
   }
 
   if (process.env.NODE_ENV !== 'production') {
-    csp['style-src'].splice(-1)
-    csp['style-src'].push("'unsafe-inline'")
     csp['script-src'].push("'unsafe-eval'")
     csp['upgrade-insecure-requests'] = []
   }
