@@ -112,7 +112,7 @@ export default function LocaleSwitcher() {
         ref={buttonRef}
       >
         <Image
-          alt={t(`languages.${currentLocale?.code}`)}
+          alt={t(`languages.${currentLocale?.code}.alt`)}
           className="h-12 w-12 rounded-full object-cover drop-shadow-md transition-all max-sm:h-10 max-sm:w-10"
           height={48}
           quality="90"
@@ -139,7 +139,7 @@ export default function LocaleSwitcher() {
               onClick={onLocaleSelected}
             >
               <Image
-                alt={t(`languages.${locale?.code}`)}
+                alt={t(`languages.${locale?.code}.alt`)}
                 className="w-12 drop-shadow-md transition-all max-sm:w-10"
                 height={33}
                 quality="90"
