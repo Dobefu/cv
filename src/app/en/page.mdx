@@ -1,5 +1,6 @@
 import ContentContainer from '@/components/layout/content-container.tsx'
 import Hero from '@/components/layout/hero.tsx'
+import Field from '@/components/elements/field.tsx'
 
 export const metadata = {
   description:
@@ -27,13 +28,7 @@ export const metadata = {
   ## Contact
 
   <div className="grid grid-cols-2 max-md:grid-cols-1">
-    <div className="pb-4 inline-block">
-      <label>Email</label>
-      info@dobefu.com
-    </div>
-    <div className="pb-4 inline-block w-1/2 max-md:min-w-full">
-      <label>Date of Birth</label>
-      18 September 1997
-    </div>
+    <Field label="Email" value="info@dobefu.com" />
+    <Field label="Date of Birth" value="18 September 1997" />
   </div>
 </ContentContainer>

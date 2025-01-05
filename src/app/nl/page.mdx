@@ -1,9 +1,10 @@
 import ContentContainer from '@/components/layout/content-container.tsx'
 import Hero from '@/components/layout/hero.tsx'
+import Field from '@/components/elements/field.tsx'
 
 export const metadata = {
-  description:
-    'Connor van Spronssen: Full-Stack Web Engineer met expertise in front-end, back-end en geavanceerde technologie. Ontdek vaardigheden en prestaties.',
+	description:
+		'Connor van Spronssen: Full-Stack Web Engineer met expertise in front-end, back-end en geavanceerde technologie. Ontdek vaardigheden en prestaties.',
 }
 
 <Hero
@@ -27,13 +28,7 @@ export const metadata = {
   ## Contactgegevens
 
   <div className="grid grid-cols-2 max-md:grid-cols-1">
-    <div className="pb-4 inline-block">
-      <label>E-mail</label>
-      info@dobefu.com
-    </div>
-    <div className="pb-4 inline-block w-1/2 max-md:min-w-full">
-      <label>Geboortedatum</label>
-      18 september 1997
-    </div>
+    <Field label="E-mail" value="info@dobefu.com" />
+    <Field label="Geboortedatum" value="18 september 1997" />
   </div>
 </ContentContainer>
