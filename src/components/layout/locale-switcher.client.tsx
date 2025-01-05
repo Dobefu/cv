@@ -143,6 +143,7 @@ export default function LocaleSwitcher() {
               <Image
                 alt={t(`languages.${locale?.code}.alt`)}
                 className="w-12 drop-shadow-md transition-all max-sm:w-10"
+                data-locale={locale.code}
                 height={33}
                 quality="90"
                 src={`/flags/${locale.code}.gif`}
