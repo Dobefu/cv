@@ -20,16 +20,16 @@ vi.mock('react', async () => {
 describe('LocaleSwitcher', () => {
   beforeEach(() => {
     loadEnvFile('.env')
+    process.env.MOCK_PATHNAME = '/'
   })
 
   afterEach(() => {
     cleanup()
     loadEnvFile('.env')
+    process.env.MOCK_PATHNAME = '/'
   })
 
   it('Renders normally', async () => {
-    process.env.MOCK_PATHNAME = '/'
-
     render(<LocaleSwitcher />)
 
     expect(
@@ -40,8 +40,6 @@ describe('LocaleSwitcher', () => {
   })
 
   it('Renders with the current locale as the only option', async () => {
-    process.env.MOCK_PATHNAME = '/'
-
     render(<LocaleSwitcher />)
 
     expect(
@@ -52,12 +50,16 @@ describe('LocaleSwitcher', () => {
   })
 
   it('Redirects the root path', async () => {
-    process.env.MOCK_PATHNAME = '/'
-
     render(<LocaleSwitcher />)
 
     fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[0])
-    fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[1])
+    fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[2])
+
+    expect(
+      screen
+        .getAllByRole<HTMLElement>('button')[0]
+        .getElementsByTagName('img')[0].alt,
+    ).toBe('⚠ languages.nl ⚠')
   })
 
   it('Redirects with a query parameter', async () => {
@@ -66,6 +68,12 @@ describe('LocaleSwitcher', () => {
     render(<LocaleSwitcher />)
 
     fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[0])
-    fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[1])
+    fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[2])
+
+    expect(
+      screen
+        .getAllByRole<HTMLElement>('button')[0]
+        .getElementsByTagName('img')[0].alt,
+    ).toBe('⚠ languages.nl ⚠')
   })
 })
