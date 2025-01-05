@@ -19,14 +19,14 @@ export default function ProgressBar({ label, percentage }: Props) {
         <div className="h-full print:!block">
           <AnimatePresence initial>
             <motion.div
-              className="h-full origin-left rounded-full bg-orange-500 shadow-md motion-reduce:transition-none dark:bg-orange-500/75"
+              className="h-full rounded-full bg-orange-500 shadow-md dark:bg-orange-500/75"
               initial={{ width: 0 }}
               style={{ width: `${percentage}%` }}
               whileInView={{
                 width: `${percentage}%`,
-                transitionTimingFunction: 'cubic-bezier(0.5,0,0.5,1.75)',
+                transitionTimingFunction: 'cubic-bezier(.5,0,.5,1.75)',
                 transitionProperty: 'width',
-                transitionDuration: '500ms',
+                transitionDuration: '400ms',
               }}
             />
           </AnimatePresence>
