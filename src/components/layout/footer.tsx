@@ -67,7 +67,7 @@ export default function Footer({ appName }: Props) {
           ))}
         </div>
 
-        <div className="space-x-2 md:text-end">
+        <div className="flex justify-center gap-2 md:justify-end">
           {socialLinks.map((socialLink) => (
             <Link
               aria-label={socialLink.title}
