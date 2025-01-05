@@ -4,6 +4,7 @@ import { cn } from '@/utils/cn'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import LocaleSwitcher from './locale-switcher.client'
 
 type Props = Readonly<{
   appName: string
@@ -54,6 +55,8 @@ export default function Header({ appName }: Props) {
               <slot />
             </Link>
           </div>
+
+          <LocaleSwitcher />
         </div>
       </header>
     </div>

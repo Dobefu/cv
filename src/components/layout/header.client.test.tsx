@@ -1,10 +1,15 @@
 import { cleanup, render, screen } from '@testing-library/react'
 import { act } from 'react'
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import Header from './header.client'
 
 describe('Header', () => {
+  beforeEach(() => {
+    process.env.MOCK_PATHNAME = '/'
+  })
+
   afterEach(() => {
+    process.env.MOCK_PATHNAME = '/'
     vi.restoreAllMocks()
     cleanup()
   })

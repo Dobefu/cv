@@ -2,6 +2,7 @@ import { loadEnvFile } from 'node:process'
 import { vi } from 'vitest'
 
 loadEnvFile('.env')
+process.env.MOCK_PATHNAME = '/'
 
 vi.mock('next/config', () => ({
   default: () => {
