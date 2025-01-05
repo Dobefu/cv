@@ -85,12 +85,12 @@ export default function LocaleSwitcher() {
         ref={buttonRef}
       >
         <Image
-          alt={`${t(`locales.${currentLocale?.code}`)} flag`}
+          alt={`${t(`languages.${currentLocale?.code}`)} flag`}
           className="h-12 w-12 rounded-full drop-shadow-md transition-all max-sm:h-10 max-sm:w-10"
           height={48}
           quality="90"
           sizes="sm:40px md:56px"
-          src={`/flags/${currentLocale.code}.gif`}
+          src={`/flags/${currentLocale?.code}.gif`}
           width={48}
         />
         &#9660;

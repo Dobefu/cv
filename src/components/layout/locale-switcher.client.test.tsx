@@ -32,8 +32,11 @@ describe('LocaleSwitcher', () => {
 
     render(<LocaleSwitcher />)
 
-    expect(screen.getByRole<HTMLSelectElement>('combobox').value).toBe('nl')
-    expect(screen.getAllByRole('option').length).toBe(2)
+    expect(
+      screen
+        .getAllByRole<HTMLElement>('button')[0]
+        .getElementsByTagName('img')[0].alt,
+    ).toBe('⚠ languages.nl ⚠ flag')
   })
 
   it('Renders with the current locale as the only option', async () => {
@@ -41,8 +44,11 @@ describe('LocaleSwitcher', () => {
 
     render(<LocaleSwitcher />)
 
-    expect(screen.getByRole<HTMLSelectElement>('combobox').value).toBe('nl')
-    expect(screen.getAllByRole('option').length).toBe(2)
+    expect(
+      screen
+        .getAllByRole<HTMLElement>('button')[0]
+        .getElementsByTagName('img')[0].alt,
+    ).toBe('⚠ languages.nl ⚠ flag')
   })
 
   it('Redirects the root path', async () => {
@@ -50,8 +56,8 @@ describe('LocaleSwitcher', () => {
 
     render(<LocaleSwitcher />)
 
-    fireEvent.change(screen.getByRole<HTMLSelectElement>('combobox'))
-    expect(screen.getAllByRole('option').length).toBe(2)
+    fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[0])
+    fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[1])
   })
 
   it('Redirects with a query parameter', async () => {
@@ -59,7 +65,7 @@ describe('LocaleSwitcher', () => {
 
     render(<LocaleSwitcher />)
 
-    fireEvent.change(screen.getByRole<HTMLSelectElement>('combobox'))
-    expect(screen.getAllByRole('option').length).toBe(2)
+    fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[0])
+    fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[1])
   })
 })
