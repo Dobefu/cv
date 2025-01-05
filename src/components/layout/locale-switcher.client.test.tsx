@@ -49,6 +49,19 @@ describe('LocaleSwitcher', () => {
     ).toBe('⚠ languages.nl ⚠')
   })
 
+  it('Closes when clicking outside', async () => {
+    render(<LocaleSwitcher />)
+
+    fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[0])
+    fireEvent.click(document.documentElement)
+
+    expect(
+      screen
+        .getAllByRole<HTMLElement>('button')[0]
+        .getElementsByTagName('img')[0].alt,
+    ).toBe('⚠ languages.nl ⚠')
+  })
+
   it('Redirects the root path', async () => {
     render(<LocaleSwitcher />)
 
