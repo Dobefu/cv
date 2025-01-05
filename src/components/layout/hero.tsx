@@ -3,13 +3,13 @@ import Image from 'next/image'
 type Props = Readonly<{
   title: string
   subtitle: string
-  img: {
+  img?: {
     src: string
     alt: string
     height: number
     width: number
   }
-  imgBg: {
+  imgBg?: {
     src: string
     alt: string
     height: number
@@ -19,7 +19,7 @@ type Props = Readonly<{
 
 export default function Hero({ title, subtitle, img, imgBg }: Props) {
   return (
-    <div className="relative -mb-8 -mt-28 h-[30vh] min-h-[450px] w-full">
+    <section className="relative -mb-8 -mt-28 h-[30vh] min-h-[450px] w-full">
       {!!imgBg && (
         <Image
           alt={imgBg.alt}
@@ -55,6 +55,6 @@ export default function Hero({ title, subtitle, img, imgBg }: Props) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
