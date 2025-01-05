@@ -36,7 +36,7 @@ describe('LocaleSwitcher', () => {
       screen
         .getAllByRole<HTMLElement>('button')[0]
         .getElementsByTagName('img')[0].alt,
-    ).toBe('⚠ languages.nl ⚠ flag')
+    ).toBe('⚠ languages.nl ⚠')
   })
 
   it('Renders with the current locale as the only option', async () => {
@@ -48,7 +48,7 @@ describe('LocaleSwitcher', () => {
       screen
         .getAllByRole<HTMLElement>('button')[0]
         .getElementsByTagName('img')[0].alt,
-    ).toBe('⚠ languages.nl ⚠ flag')
+    ).toBe('⚠ languages.nl ⚠')
   })
 
   it('Redirects the root path', async () => {
