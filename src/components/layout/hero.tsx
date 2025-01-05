@@ -25,6 +25,7 @@ export default function Hero({ title, subtitle, img, imgBg }: Props) {
           alt={imgBg.alt}
           className="absolute inset-0 h-[30vh] min-h-[450px] w-screen object-cover contrast-more:brightness-75"
           height={imgBg.height}
+          priority
           src={imgBg.src}
           width={imgBg.width}
         />
