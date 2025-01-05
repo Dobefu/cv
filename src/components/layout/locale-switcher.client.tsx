@@ -5,7 +5,14 @@ import getLocales from '@/utils/get-locales'
 import { logError } from '@/utils/logger'
 import Image from 'next/image'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { SyntheticEvent, useCallback, useMemo, useRef, useState } from 'react'
+import {
+  SyntheticEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 
 type Locale = {
   code: string
@@ -51,6 +58,25 @@ export default function LocaleSwitcher() {
     setIsMenuOpen(!isMenuOpen)
   }, [isMenuOpen])
 
+  useEffect(() => {
+    const handleClickOutside = (e: Event) => {
+      if (
+        !isMenuOpen ||
+        dropdownRef.current?.parentElement?.contains(e.target as HTMLElement)
+      ) {
+        return
+      }
+
+      setIsMenuOpen(false)
+    }
+
+    window.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+      window.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [dropdownRef, isMenuOpen])
+
   const onLocaleSelected = useCallback(
     (e: SyntheticEvent<HTMLButtonElement>) => {
       const newLocale = (e.target as HTMLDivElement).dataset.locale
@@ -73,6 +99,7 @@ export default function LocaleSwitcher() {
       }
 
       router.push(`/${newLocale}${path}`)
+      setIsMenuOpen(false)
     },
     [usableLocales, router, searchParams],
   )
@@ -86,7 +113,7 @@ export default function LocaleSwitcher() {
       >
         <Image
           alt={t(`languages.${currentLocale?.code}`)}
-          className="h-12 w-12 rounded-full drop-shadow-md transition-all max-sm:h-10 max-sm:w-10"
+          className="h-12 w-12 rounded-full object-cover drop-shadow-md transition-all max-sm:h-10 max-sm:w-10"
           height={48}
           quality="90"
           sizes="sm:40px md:56px"
