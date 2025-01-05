@@ -29,7 +29,7 @@ export default function LocaleSwitcher() {
   const searchParams = useSearchParams()
 
   const buttonRef = useRef<HTMLButtonElement>(null)
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  const dropdownRef = useRef<HTMLAnchorElement>(null)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const usableLocales = useMemo<Locale[]>(() => {
@@ -79,6 +79,8 @@ export default function LocaleSwitcher() {
 
   const onLocaleSelected = useCallback(
     (e: SyntheticEvent<HTMLButtonElement>) => {
+      e.preventDefault()
+
       const newLocale = (e.target as HTMLDivElement).dataset.locale
       const newLocaleObject = usableLocales.find(
         (usableLocale) => usableLocale.code === newLocale,
@@ -123,11 +125,11 @@ export default function LocaleSwitcher() {
         &#9660;
       </button>
 
-      <div
-        aria-controls=""
+      <a
         aria-expanded={isMenuOpen}
         aria-label={t('locale_switcher.label')}
         className="absolute right-3 top-16 z-50 mt-8 origin-[6rem_0] scale-0 rounded-2xl bg-white/80 shadow-md backdrop-blur-lg transition-all ease-out before:absolute before:-top-4 before:left-24 before:origin-bottom before:scale-0 before:border-8 before:border-transparent before:border-b-white/80 before:backdrop-blur-lg before:transition-all aria-expanded:scale-100 aria-expanded:ease-[cubic-bezier(.2,.8,.6,1.3)] aria-expanded:before:scale-100 max-sm:right-0 max-sm:mt-2 max-sm:before:left-20 dark:bg-neutral-900/90 before:dark:border-b-neutral-900/90"
+        href="#"
         ref={dropdownRef}
       >
         <div className="overflow-hidden rounded-2xl">
@@ -150,7 +152,7 @@ export default function LocaleSwitcher() {
             </button>
           ))}
         </div>
-      </div>
+      </a>
     </div>
   )
 }
