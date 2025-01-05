@@ -112,7 +112,7 @@ export default function LocaleSwitcher() {
               onClick={onLocaleSelected}
             >
               <Image
-                alt={`${t(`languages.${locale?.code}`)} flag`}
+                alt={t(`languages.${locale?.code}`)}
                 className="w-12 drop-shadow-md transition-all max-sm:w-10"
                 height={33}
                 quality="90"
