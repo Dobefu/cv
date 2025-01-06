@@ -27,8 +27,6 @@ describe('Hero', () => {
         imgBg={{
           src: '/src1',
           alt: 'alt1',
-          height: 10,
-          width: 10,
         }}
         subtitle="Test subtitle"
         title="Test title"

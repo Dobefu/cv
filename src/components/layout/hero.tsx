@@ -12,8 +12,6 @@ type Props = Readonly<{
   imgBg?: {
     src: string
     alt: string
-    height: number
-    width: number
   }
 }>
 
@@ -24,10 +22,9 @@ export default function Hero({ title, subtitle, img, imgBg }: Props) {
         <Image
           alt={imgBg.alt}
           className="absolute inset-0 h-[30vh] min-h-[450px] w-screen object-cover contrast-more:brightness-75"
-          height={imgBg.height}
+          fill
           priority
           src={imgBg.src}
-          width={imgBg.width}
         />
       )}
 
