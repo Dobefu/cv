@@ -25,8 +25,7 @@ export default function ImageField({ label, text, subtext, link, img }: Props) {
           alt={img.alt}
           className="drop-shadow-md"
           height={100}
-          loading="lazy"
-          sizes="xs:200px"
+          sizes="100px"
           src={img.src}
           width={100}
         />
