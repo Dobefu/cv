@@ -1,5 +1,6 @@
 'use client'
 
+import useLocale from '@/hooks/use-locale'
 import { cn } from '@/utils/cn'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,6 +13,8 @@ type Props = Readonly<{
 }>
 
 export default function Header({ appName }: Props) {
+  const { t } = useLocale()
+
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -58,7 +61,7 @@ export default function Header({ appName }: Props) {
           </div>
 
           <div>
-            <LocaleLink href="/projects">test</LocaleLink>
+            <LocaleLink href="/projects">{t('projects.title')}</LocaleLink>
           </div>
 
           <LocaleSwitcher />
