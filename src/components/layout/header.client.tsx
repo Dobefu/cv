@@ -4,6 +4,7 @@ import { cn } from '@/utils/cn'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import LocaleLink from '../utils/locale-link.client'
 import LocaleSwitcher from './locale-switcher.client'
 
 type Props = Readonly<{
@@ -36,10 +37,10 @@ export default function Header({ appName }: Props) {
             '-m-4 !w-[calc(100%+2rem)] !rounded-none py-4 !shadow-2xl',
         )}
       >
-        <div className="container relative mx-auto flex max-w-5xl items-center px-4 text-white">
+        <div className="container relative mx-auto flex max-w-5xl items-center gap-4 px-4 text-white">
           <div className="flex-1">
             <Link
-              className="m-0 inline-flex items-center py-2 pr-4 text-2xl text-white max-md:text-xl max-sm:text-base"
+              className="m-0 inline-flex items-center py-2 text-2xl text-white max-md:text-xl max-sm:text-base"
               href="/"
             >
               <Image
@@ -54,6 +55,10 @@ export default function Header({ appName }: Props) {
 
               <slot />
             </Link>
+          </div>
+
+          <div>
+            <LocaleLink href="/projects">test</LocaleLink>
           </div>
 
           <LocaleSwitcher />
