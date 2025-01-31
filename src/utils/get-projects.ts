@@ -3,7 +3,10 @@ import fs from 'node:fs/promises'
 
 export default async function getProjects(locale: string): Promise<Project[]> {
   let path: string
+  console.log(await fs.readdir('/'))
   console.log(await fs.readdir('.'))
+  console.log(await fs.readdir('..'))
+  console.log(await fs.readdir('.next'))
   if (process.env.NODE_ENV === 'development') {
     path = `src/app/${locale}/projects`
   } else {
