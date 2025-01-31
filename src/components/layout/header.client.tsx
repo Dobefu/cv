@@ -2,8 +2,8 @@
 
 import useLocale from '@/hooks/use-locale'
 import { cn } from '@/utils/cn'
+import { Icon } from '@iconify/react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import LocaleLink from '../utils/locale-link.client'
 import LocaleSwitcher from './locale-switcher.client'
@@ -61,7 +61,10 @@ export default function Header({ appName }: Props) {
           </div>
 
           <div>
-            <LocaleLink href="/projects">{t('projects.title')}</LocaleLink>
+            <LocaleLink className="flex items-center gap-1" href="/projects">
+              <Icon className="h-5 w-5" icon="mdi:file-code" ssr />
+              {t('projects.title')}
+            </LocaleLink>
           </div>
 
           <LocaleSwitcher />
