@@ -5,7 +5,8 @@ export default async function getProjects(locale: string): Promise<Project[]> {
   let path: string
   console.log(process.env.NODE_ENV)
   console.log(await fs.readdir('.'))
-  console.log(await fs.readdir('.next/server'))
+  console.log(await fs.readdir('.next/server/app'))
+  console.log(await fs.readdir('.next/server/pages'))
   if (process.env.NODE_ENV === 'development') {
     path = `src/app/${locale}/projects`
   } else {
