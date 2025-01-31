@@ -42,7 +42,7 @@ export default function Header({ appName }: Props) {
       >
         <div className="container relative mx-auto flex max-w-5xl items-center gap-4 px-4 text-white">
           <div className="flex-1">
-            <Link
+            <LocaleLink
               className="m-0 inline-flex items-center py-2 text-2xl text-white max-md:text-xl max-sm:text-base"
               href="/"
             >
@@ -57,7 +57,7 @@ export default function Header({ appName }: Props) {
               <span className="drop-shadow-md">{appName}</span>
 
               <slot />
-            </Link>
+            </LocaleLink>
           </div>
 
           <div>
