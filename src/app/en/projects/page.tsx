@@ -1,4 +1,4 @@
-import ImageField from '@/components/elements/image-field'
+import ProjectPreview from '@/components/elements/project-preview'
 import ContentContainer from '@/components/layout/content-container'
 import getProjects from '@/utils/get-projects'
 
@@ -9,7 +9,7 @@ export const metadata = {
 }
 
 export default function Projects() {
-  const projects = getProjects()
+  const projects = getProjects('en')
 
   return (
     <div className="relative px-4">
@@ -32,16 +32,12 @@ export default function Projects() {
         </div>
 
         {projects?.map((project) => (
-          <ImageField
-            img={{
-              src: `/img/projects/${project.image}`,
-              alt: '',
-            }}
+          <ProjectPreview
+            img={`/img/projects/${project.image}`}
             key={project.title}
             label={project.title}
-            link={`/en/projects/${project.path}`}
-            subtext=""
-            text=""
+            link={`/projects/${project.path}`}
+            subtext={project.subtext}
           />
         ))}
       </ContentContainer>
