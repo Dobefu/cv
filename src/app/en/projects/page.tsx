@@ -12,35 +12,33 @@ export default function Projects() {
   const projects = getProjects('en')
 
   return (
-    <div className="relative px-4">
-      <ContentContainer>
-        <h2>Projects</h2>
+    <ContentContainer>
+      <h2>Projects</h2>
 
-        <div className="flex flex-col gap-2 pb-8 text-gray-700 dark:text-gray-200">
-          <p>
-            As a passionate full-stack web engineer, I have honed my skills
-            across a wide range of programming languages and frameworks. Over
-            the years, I have worked on diverse professional and personal
-            projects that reflect my ability to solve complex problems and
-            deliver high-quality solutions.
-          </p>
+      <div className="flex flex-col gap-2 pb-8 text-gray-700 dark:text-gray-200">
+        <p>
+          As a passionate full-stack web engineer, I have honed my skills across
+          a wide range of programming languages and frameworks. Over the years,
+          I have worked on diverse professional and personal projects that
+          reflect my ability to solve complex problems and deliver high-quality
+          solutions.
+        </p>
 
-          <p>
-            Explore the projects below to get a better sense of how I apply my
-            expertise to real-world challenges.
-          </p>
-        </div>
+        <p>
+          Explore the projects below to get a better sense of how I apply my
+          expertise to real-world challenges.
+        </p>
+      </div>
 
-        {projects?.map((project) => (
-          <ProjectPreview
-            img={`/img/projects/${project.image}`}
-            key={project.title}
-            label={project.title}
-            link={`/projects/${project.path}`}
-            subtext={project.subtext}
-          />
-        ))}
-      </ContentContainer>
-    </div>
+      {projects?.map((project) => (
+        <ProjectPreview
+          img={`/img/projects/${project.image}`}
+          key={project.title}
+          label={project.title}
+          link={`/projects/${project.path}`}
+          subtext={project.subtext}
+        />
+      ))}
+    </ContentContainer>
   )
 }

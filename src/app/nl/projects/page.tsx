@@ -12,36 +12,34 @@ export default function Projects() {
   const projects = getProjects('nl')
 
   return (
-    <div className="relative px-4">
-      <ContentContainer>
-        <h2>Projecten</h2>
+    <ContentContainer>
+      <h2>Projecten</h2>
 
-        <div className="flex flex-col gap-2 pb-8 text-gray-700 dark:text-gray-200">
-          <p>
-            Als een gepassioneerde full-stack web engineer heb ik mijn
-            vaardigheden verbeterd over een breed spectrum aan programmeertalen
-            en frameworks. Over de jaren heen heb ik gewerkt aan diverse
-            professionele en persoonlijke projecten die mijn vermogen
-            weerspiegelen om complexe problemen op te lossen en oplossingen van
-            hoge kwaliteit te leveren.
-          </p>
+      <div className="flex flex-col gap-2 pb-8 text-gray-700 dark:text-gray-200">
+        <p>
+          Als een gepassioneerde full-stack web engineer heb ik mijn
+          vaardigheden verbeterd over een breed spectrum aan programmeertalen en
+          frameworks. Over de jaren heen heb ik gewerkt aan diverse
+          professionele en persoonlijke projecten die mijn vermogen
+          weerspiegelen om complexe problemen op te lossen en oplossingen van
+          hoge kwaliteit te leveren.
+        </p>
 
-          <p>
-            Ontdek de onderstaande projecten om een beter idee te krijgen van
-            hoe ik mijn expertise inzet voor praktische uitdagingen.
-          </p>
-        </div>
+        <p>
+          Ontdek de onderstaande projecten om een beter idee te krijgen van hoe
+          ik mijn expertise inzet voor praktische uitdagingen.
+        </p>
+      </div>
 
-        {projects?.map((project) => (
-          <ProjectPreview
-            img={`/img/projects/${project.image}`}
-            key={project.title}
-            label={project.title}
-            link={`/projects/${project.path}`}
-            subtext={project.subtext}
-          />
-        ))}
-      </ContentContainer>
-    </div>
+      {projects?.map((project) => (
+        <ProjectPreview
+          img={`/img/projects/${project.image}`}
+          key={project.title}
+          label={project.title}
+          link={`/projects/${project.path}`}
+          subtext={project.subtext}
+        />
+      ))}
+    </ContentContainer>
   )
 }

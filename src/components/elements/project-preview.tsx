@@ -11,20 +11,22 @@ type Props = Readonly<{
 export default function ProjectPreview({ label, subtext, link, img }: Props) {
   return (
     <LocaleLink
-      className="my-4 inline-flex w-full items-center gap-8 max-md:min-w-full"
+      className="group my-4 inline-flex w-full items-center gap-4 border-t border-zinc-300 pt-12 max-md:min-w-full max-md:flex-col max-md:text-center md:gap-8 dark:border-zinc-600"
       href={link}
     >
-      <Image
-        alt=""
-        className="rounded-md drop-shadow-md"
-        height={160}
-        sizes="160px"
-        src={img}
-        width={256}
-      />
+      <div className="overflow-hidden rounded-md drop-shadow-md">
+        <Image
+          alt=""
+          className="transition-transform duration-300 group-hover:scale-105"
+          height={160}
+          sizes="160px"
+          src={img}
+          width={256}
+        />
+      </div>
 
       <div className="flex flex-col gap-1">
-        <h3 className="pb-2">{label}</h3>
+        <h3 className="pb-2 md:pb-4">{label}</h3>
 
         <p>{subtext}</p>
       </div>
