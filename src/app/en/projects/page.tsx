@@ -2,8 +2,8 @@ import ContentContainer from '@/components/layout/content-container'
 import getProjects from '@/utils/get-projects'
 import Client from './page.client'
 
-export default async function Projects() {
-  const projects = await getProjects('en')
+export default function Projects() {
+  const projects = getProjects()
 
   return (
     <div className="relative px-4">
