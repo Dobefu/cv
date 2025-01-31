@@ -8,6 +8,7 @@ export default function getProjects(locale: string): Project[] {
         subtext:
           'My personal CV and the website that is currently being viewed',
         image: 'cv.png',
+        tags: ['nextjs', 'typescript', 'tailwindcss'],
         path: 'cv',
       },
     ],
@@ -17,6 +18,7 @@ export default function getProjects(locale: string): Project[] {
         subtext:
           'Mijn persoonlijke CV en de website die momenteel wordt bekeken',
         image: 'cv.png',
+        tags: ['nextjs'],
         path: 'cv',
       },
     ],
