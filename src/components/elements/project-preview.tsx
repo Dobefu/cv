@@ -1,6 +1,3 @@
-import { cn } from '@/utils/cn'
-import getTag from '@/utils/get-tag'
-import { Icon } from '@iconify/react'
 import Image from 'next/image'
 import LocaleLink from '../utils/locale-link.client'
 import IconTag from './tag'
