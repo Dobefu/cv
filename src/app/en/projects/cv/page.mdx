@@ -1,12 +1,24 @@
 import ContentContainer from '@/components/layout/content-container.tsx'
+import Image from 'next/image'
 
 export const metadata = {
   title: "CV",
-  description: "",
+  description: "This very CV website. The goal of this website is to provide an interactive overview of the skills and accomplishments that I have made.",
 }
 
 <ContentContainer>
 
 ## CV
+
+<Image
+  alt=""
+  className="mb-8 rounded-md"
+  height={240}
+  sizes="240px"
+  src="/img/projects/cv.png"
+  width={384}
+/>
+
+This very CV website. The goal of this website is to provide an interactive overview of the skills and accomplishments that I have made.
 
 </ContentContainer>
