@@ -2,7 +2,15 @@ import { Project } from '@/types/project'
 import fs from 'node:fs/promises'
 
 export default async function getProjects(locale: string): Promise<Project[]> {
-  const files = await fs.readdir(`src/app/${locale}/projects`, {
+  let path: string
+  console.log(await fs.readdir('.'))
+  if (process.env.NODE_ENV === 'development') {
+    path = `src/app/${locale}/projects`
+  } else {
+    path = `${locale}/projects`
+  }
+
+  const files = await fs.readdir(path, {
     recursive: true,
   })
 
