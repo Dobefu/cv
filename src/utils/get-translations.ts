@@ -10,6 +10,7 @@ export default function getTranslations(
         'languages.nl': 'Dutch',
         'languages.en.alt': 'English flag',
         'languages.nl.alt': 'Dutch flag',
+        'projects.title': 'Projects',
       },
       nl: {
         'layout.skip_to_main': 'Naar hoofdinhoud gaan',
@@ -18,6 +19,7 @@ export default function getTranslations(
         'languages.nl': 'Nederlands',
         'languages.en.alt': 'Engelse vlag',
         'languages.nl.alt': 'Nederlandse vlag',
+        'projects.title': 'Projecten',
       },
     }[locale] || {}
   )

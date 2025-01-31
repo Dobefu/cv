@@ -1,9 +1,11 @@
 'use client'
 
+import useLocale from '@/hooks/use-locale'
 import { cn } from '@/utils/cn'
+import { Icon } from '@iconify/react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import LocaleLink from '../utils/locale-link.client'
 import LocaleSwitcher from './locale-switcher.client'
 
 type Props = Readonly<{
@@ -11,6 +13,8 @@ type Props = Readonly<{
 }>
 
 export default function Header({ appName }: Props) {
+  const { t } = useLocale()
+
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -36,10 +40,10 @@ export default function Header({ appName }: Props) {
             '-m-4 !w-[calc(100%+2rem)] !rounded-none py-4 !shadow-2xl',
         )}
       >
-        <div className="container relative mx-auto flex max-w-5xl items-center px-4 text-white">
+        <div className="container relative mx-auto flex max-w-5xl items-center gap-4 px-4 text-white">
           <div className="flex-1">
-            <Link
-              className="m-0 inline-flex items-center py-2 pr-4 text-2xl text-white max-md:text-xl max-sm:text-base"
+            <LocaleLink
+              className="m-0 inline-flex items-center py-2 text-2xl text-white max-md:text-xl max-sm:text-base"
               href="/"
             >
               <Image
@@ -53,7 +57,14 @@ export default function Header({ appName }: Props) {
               <span className="drop-shadow-md">{appName}</span>
 
               <slot />
-            </Link>
+            </LocaleLink>
+          </div>
+
+          <div>
+            <LocaleLink className="flex items-center gap-1" href="/projects">
+              <Icon className="h-5 w-5" icon="mdi:file-code" ssr />
+              {t('projects.title')}
+            </LocaleLink>
           </div>
 
           <LocaleSwitcher />
