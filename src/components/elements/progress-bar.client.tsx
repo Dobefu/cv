@@ -1,7 +1,7 @@
 'use client'
 
 import { AnimatePresence, motion } from 'motion/react'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 type Props = Readonly<{
   label: string
@@ -10,6 +10,18 @@ type Props = Readonly<{
 
 export default function ProgressBar({ label, percentage }: Props) {
   const target = useRef<HTMLDivElement>(null)
+  const printMedia = window.matchMedia('print')
+  const [isPrint, setIsPrint] = useState(printMedia.matches)
+
+  useEffect(() => {
+    printMedia.addEventListener('change', () => {
+      setIsPrint(printMedia.matches)
+    })
+
+    return () => {
+      printMedia.removeEventListener('change', () => {})
+    }
+  }, [printMedia])
 
   return (
     <div className="inline-block w-full px-4 max-md:min-w-full" ref={target}>
@@ -20,7 +32,7 @@ export default function ProgressBar({ label, percentage }: Props) {
           <AnimatePresence initial>
             <motion.div
               className="h-full rounded-full bg-orange-500 shadow-md dark:bg-orange-500/75"
-              initial={{ width: 0 }}
+              initial={{ width: isPrint ? `${percentage}%` : 0 }}
               style={{ width: `${percentage}%` }}
               whileInView={{
                 width: `${percentage}%`,
