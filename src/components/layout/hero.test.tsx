@@ -18,6 +18,10 @@ describe('Hero', () => {
   it('Renders with images', () => {
     render(
       <Hero
+        cta={{
+          title: 'CTA Title',
+          href: '/cta-href',
+        }}
         img={{
           src: '/src2',
           alt: 'alt2',
