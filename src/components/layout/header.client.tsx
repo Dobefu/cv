@@ -1,9 +1,6 @@
 'use client'
 
-import useLocale from '@/hooks/use-locale'
 import { cn } from '@/utils/cn'
-import iconFileCode from '@iconify/icons-mdi/file-code'
-import { Icon } from '@iconify/react'
 import Image from 'next/image'
 import { Suspense, useEffect, useState } from 'react'
 import LocaleLink from '../utils/locale-link.client'
@@ -14,8 +11,6 @@ type Props = Readonly<{
 }>
 
 export default function Header({ appName }: Props) {
-  const { t } = useLocale()
-
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -58,13 +53,6 @@ export default function Header({ appName }: Props) {
               <span className="drop-shadow-md">{appName}</span>
 
               <slot />
-            </LocaleLink>
-          </div>
-
-          <div>
-            <LocaleLink className="flex items-center gap-1" href="/projects">
-              <Icon className="h-5 w-5" icon={iconFileCode} ssr />
-              {t('projects.title')}
             </LocaleLink>
           </div>
 

@@ -1,4 +1,7 @@
+import iconChevronRight from '@iconify/icons-mdi/chevron-right'
+import { Icon } from '@iconify/react'
 import Image from 'next/image'
+import LocaleLink from '../utils/locale-link.client'
 
 type Props = Readonly<{
   title: string
@@ -13,9 +16,13 @@ type Props = Readonly<{
     src: string
     alt: string
   }
+  cta?: {
+    title: string
+    href: string
+  }
 }>
 
-export default function Hero({ title, subtitle, img, imgBg }: Props) {
+export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
   return (
     <section className="relative -mb-8 -mt-28 h-[30vh] min-h-[450px] w-full">
       {!!imgBg && (
@@ -38,6 +45,16 @@ export default function Hero({ title, subtitle, img, imgBg }: Props) {
               <h2 className="text-4xl text-white drop-shadow-md max-md:text-3xl max-sm:text-2xl">
                 {subtitle}
               </h2>
+              {cta ? (
+                <LocaleLink
+                  className="me-auto inline-flex items-center gap-2 rounded-lg border border-transparent bg-sky-700 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-sky-800 focus:bg-sky-800 focus:outline-none print:hidden"
+                  href={cta.href}
+                >
+                  <Icon className="h-5 w-5" icon={iconChevronRight} ssr />
+
+                  {cta.title}
+                </LocaleLink>
+              ) : undefined}
             </div>
 
             {!!img && (
