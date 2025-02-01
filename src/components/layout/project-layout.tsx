@@ -10,7 +10,7 @@ export type Props = Readonly<{
   project: Project
 }>
 
-export default async function ProjectLayout({ children, project }: Props) {
+export default function ProjectLayout({ children, project }: Props) {
   return (
     <ContentContainer>
       <h2>{project.title}</h2>
