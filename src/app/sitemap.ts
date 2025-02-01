@@ -10,8 +10,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     recursive: true,
   })
 
-  const mdFiles = files.filter((file) => file.endsWith('.mdx'))
-  const paths = mdFiles.map((file) => file.replace(/(\/page|)\.mdx$/, ''))
+  const mdFiles = files.filter((file) => {
+    // Exclude catch-all routes.
+    if (file.includes('[...')) return false
+
+    return file.endsWith('page.mdx') || file.endsWith('page.tsx')
+  })
+  const paths = mdFiles.map((file) => file.replace(/(\/page|)\.(mdx|tsx)$/, ''))
 
   return paths.map((path) => ({
     url: `${process.env.APP_URL}/${path.replaceAll(/\(.+\)/g, '').replaceAll(/\/\//g, '/')}`,
