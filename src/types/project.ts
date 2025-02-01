@@ -3,5 +3,6 @@ export type Project = {
   subtext: string
   image: string
   tags: string[]
+  repo: string
   path: string
 }
