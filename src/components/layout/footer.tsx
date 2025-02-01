@@ -1,3 +1,4 @@
+import iconBluesky from '@/icons/bluesky'
 import iconDrupal from '@iconify/icons-devicon/drupal'
 import iconGitlab from '@iconify/icons-devicon/gitlab'
 import iconLinkedin from '@iconify/icons-devicon/linkedin'
@@ -31,7 +32,7 @@ export default function Footer({ appName }: Props) {
     {
       title: 'Bluesky',
       to: 'https://bsky.app/profile/connor.nl',
-      icon: 'logos:bluesky',
+      icon: iconBluesky,
     },
     {
       title: 'Gitlab',

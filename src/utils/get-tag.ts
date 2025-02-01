@@ -1,3 +1,4 @@
+import iconContentstack from '@/icons/contentstack'
 import { Tag } from '@/types/tag'
 import iconGo from '@iconify/icons-devicon/go'
 import iconNextjs from '@iconify/icons-devicon/nextjs'
@@ -29,7 +30,7 @@ export default function getTag(tag: string): Tag {
     },
     contentstack: {
       title: 'Contentstack',
-      icon: 'simple-icons:contentstack',
+      icon: iconContentstack,
       classes: 'text-[#7c4dff]',
     },
   }
