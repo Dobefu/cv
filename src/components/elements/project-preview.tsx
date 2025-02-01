@@ -27,7 +27,7 @@ export default function ProjectPreview({
           alt=""
           className="transition-transform duration-300 group-hover:scale-105"
           height={160}
-          sizes="160px"
+          sizes="240px"
           src={img}
           width={256}
         />

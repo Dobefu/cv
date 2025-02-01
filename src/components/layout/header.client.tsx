@@ -2,6 +2,7 @@
 
 import useLocale from '@/hooks/use-locale'
 import { cn } from '@/utils/cn'
+import iconFileCode from '@iconify/icons-mdi/file-code'
 import { Icon } from '@iconify/react'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
@@ -62,7 +63,7 @@ export default function Header({ appName }: Props) {
 
           <div>
             <LocaleLink className="flex items-center gap-1" href="/projects">
-              <Icon className="h-5 w-5" icon="mdi:file-code" ssr />
+              <Icon className="h-5 w-5" icon={iconFileCode} ssr />
               {t('projects.title')}
             </LocaleLink>
           </div>

@@ -1,3 +1,7 @@
+import iconDrupal from '@iconify/icons-devicon/drupal'
+import iconGitlab from '@iconify/icons-devicon/gitlab'
+import iconLinkedin from '@iconify/icons-devicon/linkedin'
+import iconGithub from '@iconify/icons-mdi/github'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
 
@@ -17,12 +21,12 @@ export default function Footer({ appName }: Props) {
     {
       title: 'LinkedIn',
       to: 'https://www.linkedin.com/in/connor-van-spronssen/',
-      icon: 'devicon:linkedin',
+      icon: iconLinkedin,
     },
     {
       title: 'Github',
       to: 'https://github.com/Dobefu',
-      icon: 'bi:github',
+      icon: iconGithub,
     },
     {
       title: 'Bluesky',
@@ -32,12 +36,12 @@ export default function Footer({ appName }: Props) {
     {
       title: 'Gitlab',
       to: 'https://gitlab.com/Dobefu',
-      icon: 'devicon:gitlab',
+      icon: iconGitlab,
     },
     {
       title: 'Drupal',
       to: 'https://drupal.org/u/Dobefu',
-      icon: 'logos:drupal-icon',
+      icon: iconDrupal,
     },
   ]
 

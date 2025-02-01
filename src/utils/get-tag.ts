@@ -1,25 +1,30 @@
 import { Tag } from '@/types/tag'
+import iconGo from '@iconify/icons-devicon/go'
+import iconNextjs from '@iconify/icons-devicon/nextjs'
+import iconTailwindcss from '@iconify/icons-devicon/tailwindcss'
+import iconTypescript from '@iconify/icons-devicon/typescript'
+import iconQuestionMarkRhombus from '@iconify/icons-mdi/question-mark-rhombus'
 
 export default function getTag(tag: string): Tag {
   const tagMapping: Record<string, Tag> = {
     nextjs: {
       title: 'NextJS',
-      icon: 'devicon:nextjs',
+      icon: iconNextjs,
       classes: '',
     },
     typescript: {
       title: 'TypeScript',
-      icon: 'devicon:typescript',
+      icon: iconTypescript,
       classes: '',
     },
     tailwindcss: {
       title: 'TailwindCSS',
-      icon: 'devicon:tailwindcss',
+      icon: iconTailwindcss,
       classes: '',
     },
     go: {
       title: 'Go',
-      icon: 'devicon:go',
+      icon: iconGo,
       classes: '',
     },
     contentstack: {
@@ -32,7 +37,7 @@ export default function getTag(tag: string): Tag {
   if (!(tag in tagMapping)) {
     return {
       title: 'Unknown tag',
-      icon: 'mdi:question-mark-rhombus',
+      icon: iconQuestionMarkRhombus,
       classes: '',
     }
   }

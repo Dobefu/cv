@@ -1,3 +1,4 @@
+import iconQuestionMarkRhombus from '@iconify/icons-mdi/question-mark-rhombus'
 import { describe, expect, it } from 'vitest'
 import getTag from './get-tag'
 
@@ -13,7 +14,7 @@ describe('get-tag', () => {
 
     expect(tag).toStrictEqual({
       title: 'Unknown tag',
-      icon: 'mdi:question-mark-rhombus',
+      icon: iconQuestionMarkRhombus,
       classes: '',
     })
   })
