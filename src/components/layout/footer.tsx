@@ -5,6 +5,7 @@ import iconLinkedin from '@iconify/icons-devicon/linkedin'
 import iconGithub from '@iconify/icons-mdi/github'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
+import LocaleLink from '../utils/locale-link.client'
 
 type Props = Readonly<{
   appName: string
@@ -12,6 +13,10 @@ type Props = Readonly<{
 
 export default function Footer({ appName }: Props) {
   const footerLinks = [
+    {
+      title: 'Projects',
+      to: '/projects',
+    },
     {
       title: 'Sitemap',
       to: '/sitemap.xml',
@@ -59,20 +64,24 @@ export default function Footer({ appName }: Props) {
           </Link>
         </div>
 
-        <div className="text-center">
-          {footerLinks.map((footerLink) => (
-            <Link
-              aria-label={footerLink.title}
-              className="gap-x-2 text-sm text-gray-600 transition-colors hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-              href={footerLink.to}
-              key={footerLink.to}
-            >
-              {footerLink.title}
-            </Link>
-          ))}
+        <div className="flex flex-wrap justify-center gap-8 text-center">
+          {footerLinks.map((footerLink) => {
+            const LinkTag = footerLink.to === '/sitemap.xml' ? Link : LocaleLink
+
+            return (
+              <LinkTag
+                aria-label={footerLink.title}
+                className="gap-x-2 text-sm text-gray-600 transition-colors hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                href={footerLink.to}
+                key={footerLink.to}
+              >
+                {footerLink.title}
+              </LinkTag>
+            )
+          })}
         </div>
 
-        <div className="flex justify-center gap-2 md:justify-end">
+        <div className="flex flex-wrap justify-center gap-2 md:justify-end">
           {socialLinks.map((socialLink) => (
             <Link
               aria-label={socialLink.title}
