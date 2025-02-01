@@ -37,6 +37,7 @@ export default async function ProjectLayout({ children, project }: Props) {
         <Link
           className="flex items-center gap-2 text-sky-800 hover:underline dark:text-sky-300"
           href={project.repo}
+          target="_blank"
         >
           <Icon className="h-5 w-5" icon="mdi:github" ssr />
           {project.repo}
