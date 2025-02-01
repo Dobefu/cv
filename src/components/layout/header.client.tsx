@@ -33,7 +33,7 @@ export default function Header({ appName }: Props) {
         className={cn(
           'w-full rounded-2xl bg-[#0d6488cc] shadow-md backdrop-blur-lg transition-all duration-300 motion-reduce:transition-none contrast-more:bg-sky-600 contrast-more:dark:bg-sky-800',
           scrollY >= 112 &&
-            '-m-4 !w-[calc(100%+2rem)] !rounded-none py-4 !shadow-2xl',
+            '-m-4 w-[calc(100%+2rem)]! rounded-none! py-4 shadow-2xl!',
         )}
       >
         <div className="container relative mx-auto flex max-w-5xl items-center gap-4 px-4 text-white">

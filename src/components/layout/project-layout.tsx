@@ -36,7 +36,7 @@ export default function ProjectLayout({ children, project }: Props) {
         </div>
 
         <Link
-          className="flex items-center gap-2 overflow-ellipsis text-sky-800 hover:underline dark:text-sky-300"
+          className="flex items-center gap-2 text-ellipsis text-sky-800 hover:underline dark:text-sky-300"
           href={project.repo}
           target="_blank"
         >

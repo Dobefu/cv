@@ -35,7 +35,7 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
         />
       )}
 
-      <div className="absolute top-0 h-full w-full bg-gradient-to-t from-transparent to-black/25 p-4 max-sm:p-2">
+      <div className="absolute top-0 h-full w-full bg-linear-to-t from-transparent to-black/25 p-4 max-sm:p-2">
         <div className="container mx-auto h-full max-w-5xl p-8">
           <div className="flex h-full text-white">
             <div className="flex h-full flex-col justify-center gap-2">
@@ -47,7 +47,7 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
               </h2>
               {cta ? (
                 <LocaleLink
-                  className="me-auto inline-flex items-center gap-2 rounded-lg border border-transparent bg-sky-700 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-sky-800 focus:bg-sky-800 focus:outline-none print:hidden"
+                  className="me-auto inline-flex items-center gap-2 rounded-lg border border-transparent bg-sky-700 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-sky-800 focus:bg-sky-800 focus:outline-hidden print:hidden"
                   href={cta.href}
                 >
                   <Icon className="h-5 w-5" icon={iconChevronRight} ssr />

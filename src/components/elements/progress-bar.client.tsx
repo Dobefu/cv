@@ -31,7 +31,7 @@ export default function ProgressBar({ label, percentage }: Props) {
       <label>{label}</label>
 
       <div className="mb-4 mt-2 h-6">
-        <div className="h-full print:!block">
+        <div className="h-full print:block!">
           <AnimatePresence initial>
             <motion.div
               className="h-full rounded-full bg-orange-500 shadow-md dark:bg-orange-500/75"
