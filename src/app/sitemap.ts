@@ -19,6 +19,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const paths = mdFiles.map((file) => file.replace(/(\/page|)\.(mdx|tsx)$/, ''))
 
   return paths.map((path) => ({
-    url: `${process.env.APP_URL}/${path.replaceAll(/\(.+\)/g, '').replaceAll(/\/\//g, '/')}`,
+    url: `${process.env.APP_URL}/${path.replaceAll(/\(.{1,25}?\)/g, '').replaceAll(/\/\//g, '/')}`,
   }))
 }
