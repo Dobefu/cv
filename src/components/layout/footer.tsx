@@ -17,7 +17,7 @@ export default function Footer({ appName }: Props) {
     {
       title: 'LinkedIn',
       to: 'https://www.linkedin.com/in/connor-van-spronssen/',
-      icon: 'bi:linkedin',
+      icon: 'devicon:linkedin',
     },
     {
       title: 'Github',
@@ -27,17 +27,17 @@ export default function Footer({ appName }: Props) {
     {
       title: 'Bluesky',
       to: 'https://bsky.app/profile/connor.nl',
-      icon: 'simple-icons:bluesky',
+      icon: 'logos:bluesky',
     },
     {
       title: 'Gitlab',
       to: 'https://gitlab.com/Dobefu',
-      icon: 'bi:gitlab',
+      icon: 'devicon:gitlab',
     },
     {
       title: 'Drupal',
       to: 'https://drupal.org/u/Dobefu',
-      icon: 'simple-icons:drupal',
+      icon: 'logos:drupal-icon',
     },
   ]
 
