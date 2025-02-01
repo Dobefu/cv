@@ -11,7 +11,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(redirectUrl)
   }
 
-  const response = getCspResponse(request)
+  const response = getCspResponse()
 
   return response
 }
@@ -39,19 +39,10 @@ function handleLocaleDetection(request: NextRequest): NextURL | undefined {
   return request.nextUrl
 }
 
-function getCspResponse(request: Request): NextResponse {
-  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
-
+function getCspResponse(): NextResponse {
   const csp: Record<string, string[]> = {
     'default-src': ["'self'"],
-    'script-src': [
-      "'self'",
-      `'nonce-${nonce}'`,
-      "'strict-dynamic'",
-      'https://api.unisvg.com',
-      'https://api.simplesvg.com',
-      'https://api.iconify.design',
-    ],
+    'script-src': ["'self'", "'unsafe-inline'"],
     'connect-src': [
       "'self'",
       'https://api.unisvg.com',
@@ -74,15 +65,7 @@ function getCspResponse(request: Request): NextResponse {
 
   const cspString = parseCsp(csp)
 
-  const requestHeaders = new Headers(request.headers)
-  requestHeaders.set('x-nonce', nonce)
-
-  const response = NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  })
-
+  const response = NextResponse.next()
   response.headers.set('Content-Security-Policy', cspString)
 
   return response
@@ -103,10 +86,7 @@ export const config = {
     {
       source:
         '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.+.svg|.+.png|.+.jpg|.+.gif).*)',
-      missing: [
-        { type: 'header', key: 'next-router-prefetch' },
-        { type: 'header', key: 'purpose', value: 'prefetch' },
-      ],
+      missing: [{ type: 'header', key: 'purpose', value: 'prefetch' }],
     },
   ],
 }

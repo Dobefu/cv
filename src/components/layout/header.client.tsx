@@ -5,7 +5,7 @@ import { cn } from '@/utils/cn'
 import iconFileCode from '@iconify/icons-mdi/file-code'
 import { Icon } from '@iconify/react'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import LocaleLink from '../utils/locale-link.client'
 import LocaleSwitcher from './locale-switcher.client'
 
@@ -68,7 +68,9 @@ export default function Header({ appName }: Props) {
             </LocaleLink>
           </div>
 
-          <LocaleSwitcher />
+          <Suspense>
+            <LocaleSwitcher />
+          </Suspense>
         </div>
       </header>
     </div>
