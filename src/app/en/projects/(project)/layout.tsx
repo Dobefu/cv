@@ -1,6 +1,6 @@
 import IconTag from '@/components/elements/tag'
 import ContentContainer from '@/components/layout/content-container'
-import getProjects from '@/utils/get-projects'
+import getProjectFromUrl from '@/utils/get-project-from-url'
 import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
 
@@ -10,10 +10,8 @@ export type Props = Readonly<{
 
 export default async function Layout({ children }: Props) {
   const headersList = await headers()
-  const url = headersList.get('x-url')
-  const page = url?.split('/').reverse()[0] ?? ''
-  const projects = getProjects('en')
-  const project = projects.find((p) => p.path === page)
+  const url = headersList.get('x-url') ?? ''
+  const project = getProjectFromUrl(url, 'nl')
   if (!project) notFound()
 
   return (
