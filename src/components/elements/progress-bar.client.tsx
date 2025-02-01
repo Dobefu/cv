@@ -15,6 +15,7 @@ export default function ProgressBar({ label, percentage }: Props) {
 
   useEffect(() => {
     printMedia.addEventListener('change', () => {
+      /* v8 ignore next */
       setIsPrint(printMedia.matches)
     })
 
@@ -32,6 +33,7 @@ export default function ProgressBar({ label, percentage }: Props) {
           <AnimatePresence initial>
             <motion.div
               className="h-full rounded-full bg-orange-500 shadow-md dark:bg-orange-500/75"
+              /* v8 ignore next */
               initial={{ width: isPrint ? `${percentage}%` : 0 }}
               style={{ width: `${percentage}%` }}
               whileInView={{

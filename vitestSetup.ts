@@ -39,3 +39,12 @@ const IntersectionObserverMock = vi.fn(() => ({
 }))
 
 vi.stubGlobal('IntersectionObserver', IntersectionObserverMock)
+vi.stubGlobal(
+  'matchMedia',
+  vi.fn(() => ({
+    addEventListener: vi.fn(),
+    addListener: vi.fn(),
+    matches: false,
+    removeEventListener: vi.fn(),
+  })),
+)

@@ -5,6 +5,7 @@ import ProgressBar from './progress-bar.client'
 describe('ProgressBar', () => {
   afterEach(() => {
     vi.restoreAllMocks()
+    vi.unstubAllGlobals()
     cleanup()
   })
 
