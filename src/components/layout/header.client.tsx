@@ -35,7 +35,7 @@ export default function Header({ appName }: Props) {
     <div className="sticky top-0 z-50 p-4 print:opacity-0">
       <header
         className={cn(
-          'w-full rounded-2xl bg-[#0e7599cc] shadow-md backdrop-blur-lg transition-all duration-300 motion-reduce:transition-none contrast-more:bg-sky-600 contrast-more:dark:bg-sky-800',
+          'w-full rounded-2xl bg-[#0d6488cc] shadow-md backdrop-blur-lg transition-all duration-300 motion-reduce:transition-none contrast-more:bg-sky-600 contrast-more:dark:bg-sky-800',
           scrollY >= 112 &&
             '-m-4 !w-[calc(100%+2rem)] !rounded-none py-4 !shadow-2xl',
         )}
