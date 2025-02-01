@@ -58,7 +58,7 @@ export default function Footer({ appName }: Props) {
           {footerLinks.map((footerLink) => (
             <Link
               aria-label={footerLink.title}
-              className="gap-x-2 text-sm text-gray-500 transition-colors hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+              className="gap-x-2 text-sm text-gray-600 transition-colors hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
               href={footerLink.to}
               key={footerLink.to}
             >
