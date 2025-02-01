@@ -22,6 +22,11 @@ export default function getTag(tag: string): Tag {
       icon: 'devicon:go',
       classes: '',
     },
+    contentstack: {
+      title: 'Contentstack',
+      icon: 'simple-icons:contentstack',
+      classes: 'text-[#7c4dff]',
+    },
   }
 
   if (!(tag in tagMapping)) {
