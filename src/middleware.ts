@@ -13,6 +13,8 @@ export function middleware(request: NextRequest) {
 
   const response = getCspResponse(request)
 
+  response.headers.append('x-url', request.url)
+
   return response
 }
 
