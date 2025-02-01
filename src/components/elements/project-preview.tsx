@@ -38,7 +38,7 @@ export default function ProjectPreview({
 
         <p>{subtext}</p>
 
-        <div className="flex gap-2 max-md:justify-center">
+        <div className="flex flex-wrap gap-2 max-md:justify-center">
           {tags.map((tagId) => (
             <IconTag key={tagId} tagId={tagId} />
           ))}

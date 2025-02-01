@@ -29,18 +29,18 @@ export default function ProjectLayout({ children, project }: Props) {
       {children}
 
       <div className="flex flex-col gap-8 pt-8">
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {project.tags.map((tagId) => (
             <IconTag key={tagId} tagId={tagId} />
           ))}
         </div>
 
         <Link
-          className="flex items-center gap-2 text-sky-800 hover:underline dark:text-sky-300"
+          className="flex items-center gap-2 overflow-ellipsis text-sky-800 hover:underline dark:text-sky-300"
           href={project.repo}
           target="_blank"
         >
-          <Icon className="h-5 w-5" icon={iconGithub} ssr />
+          <Icon className="h-5 w-5 shrink-0" icon={iconGithub} ssr />
           {project.repo}
         </Link>
       </div>
