@@ -10,10 +10,12 @@ type Props = Readonly<{
 
 export default function ProgressBar({ label, percentage }: Props) {
   const target = useRef<HTMLDivElement>(null)
-  const printMedia = window.matchMedia('print')
-  const [isPrint, setIsPrint] = useState(printMedia.matches)
+  const [isPrint, setIsPrint] = useState(true)
 
   useEffect(() => {
+    const printMedia = window.matchMedia('print')
+    setIsPrint(printMedia.matches)
+
     printMedia.addEventListener('change', () => {
       /* v8 ignore next */
       setIsPrint(printMedia.matches)
@@ -22,7 +24,7 @@ export default function ProgressBar({ label, percentage }: Props) {
     return () => {
       printMedia.removeEventListener('change', () => {})
     }
-  }, [printMedia])
+  }, [])
 
   return (
     <div className="inline-block w-full px-4 max-md:min-w-full" ref={target}>
