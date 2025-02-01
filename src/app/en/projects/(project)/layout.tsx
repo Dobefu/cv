@@ -1,5 +1,4 @@
-import ContentContainer from '@/components/layout/content-container'
-import ProjectFooter from '@/components/layout/project-footer'
+import ProjectLayout from '@/components/layout/project-layout'
 import getProjectFromUrl from '@/utils/get-project-from-url'
 import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
@@ -11,14 +10,8 @@ export type Props = Readonly<{
 export default async function Layout({ children }: Props) {
   const headersList = await headers()
   const url = headersList.get('x-url') ?? ''
-  const project = getProjectFromUrl(url, 'nl')
+  const project = getProjectFromUrl(url, 'en')
   if (!project) notFound()
 
-  return (
-    <ContentContainer>
-      {children}
-
-      <ProjectFooter project={project} />
-    </ContentContainer>
-  )
+  return <ProjectLayout project={project}>{children}</ProjectLayout>
 }
