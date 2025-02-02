@@ -2,8 +2,10 @@ import iconContentstack from '@/icons/contentstack'
 import { Tag } from '@/types/tag'
 import iconGo from '@iconify/icons-devicon/go'
 import iconNextjs from '@iconify/icons-devicon/nextjs'
+import iconNuxtjs from '@iconify/icons-devicon/nuxtjs'
 import iconTailwindcss from '@iconify/icons-devicon/tailwindcss'
 import iconTypescript from '@iconify/icons-devicon/typescript'
+import iconVuejs from '@iconify/icons-devicon/vuejs'
 import iconQuestionMarkRhombus from '@iconify/icons-mdi/question-mark-rhombus'
 
 export default function getTag(tag: string): Tag {
@@ -11,6 +13,16 @@ export default function getTag(tag: string): Tag {
     nextjs: {
       title: 'NextJS',
       icon: iconNextjs,
+      classes: '',
+    },
+    nuxtjs: {
+      title: 'NuxtJS',
+      icon: iconNuxtjs,
+      classes: '',
+    },
+    vuejs: {
+      title: 'VueJS',
+      icon: iconVuejs,
       classes: '',
     },
     typescript: {
