@@ -9,6 +9,13 @@ describe('Field', () => {
   })
 
   it('Renders', () => {
+    render(<Field icon="mdi:account" label="Test label" value="Test value" />)
+
+    expect(screen.getByText('Test label')).toBeDefined()
+    expect(screen.getByText('Test value')).toBeDefined()
+  })
+
+  it('Renders without an icon', () => {
     render(<Field label="Test label" value="Test value" />)
 
     expect(screen.getByText('Test label')).toBeDefined()
