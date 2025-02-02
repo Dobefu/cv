@@ -1,5 +1,4 @@
-import { Icon } from '@iconify/react'
-import { IconifyIcon } from '@iconify/react'
+import { Icon, type IconifyIcon } from '@iconify/react'
 
 type Props = Readonly<{
   label: string
