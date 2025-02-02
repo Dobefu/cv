@@ -42,7 +42,11 @@ function handleLocaleDetection(request: NextRequest): NextURL | undefined {
 function getCspResponse(): NextResponse {
   const csp: Record<string, string[]> = {
     'default-src': ["'self'"],
-    'script-src': ["'self'", "'unsafe-inline'"],
+    'script-src': [
+      "'self'",
+      "'unsafe-inline'",
+      'https://va.vercel-scripts.com',
+    ],
     'connect-src': [
       "'self'",
       'https://api.unisvg.com',
