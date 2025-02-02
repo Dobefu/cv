@@ -9,6 +9,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: appName,
     short_name: appName,
     description: '',
+    id: '/',
     start_url: '/',
     display: 'standalone',
     background_color: 'oklch(.92 .004 286.32)',
@@ -54,6 +55,18 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         src: '/logo-512.png',
         sizes: '512x512',
+      },
+    ],
+    screenshots: [
+      {
+        src: '/screenshot-wide.png',
+        sizes: '1920x1080',
+        form_factor: 'wide',
+      },
+      {
+        src: '/screenshot-narrow.png',
+        sizes: '480x960',
+        form_factor: 'narrow',
       },
     ],
   }
