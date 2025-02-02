@@ -1,7 +1,8 @@
+import bundleAnalyzer from '@next/bundle-analyzer'
 import createMDX from '@next/mdx'
 import type { NextConfig } from 'next'
 
-const nextConfig: NextConfig = {
+let nextConfig: NextConfig = {
   output: 'standalone',
   reactStrictMode: true,
   pageExtensions: ['md', 'mdx', 'ts', 'tsx'],
@@ -33,8 +34,16 @@ const nextConfig: NextConfig = {
   },
 }
 
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+})
+
 const withMDX = createMDX({
   extension: /\.mdx?$/,
 })
 
-export default withMDX(nextConfig)
+nextConfig = withBundleAnalyzer(nextConfig)
+nextConfig = withMDX(nextConfig)
+
+const wrappedNextConfig = nextConfig
+export default wrappedNextConfig
