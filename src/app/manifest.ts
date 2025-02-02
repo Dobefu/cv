@@ -3,7 +3,7 @@ import getConfig from 'next/config'
 
 export default function manifest(): MetadataRoute.Manifest {
   const { publicRuntimeConfig } = getConfig()
-  const appName = publicRuntimeConfig.appName || ''
+  const appName = publicRuntimeConfig.appName
   const type = 'image/png'
 
   return {
