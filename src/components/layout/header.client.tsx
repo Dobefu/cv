@@ -36,7 +36,7 @@ export default function Header({ appName }: Props) {
             '-m-4 w-[calc(100%+2rem)]! rounded-none! py-4 shadow-2xl!',
         )}
       >
-        <div className="container relative mx-auto flex max-w-5xl items-center gap-4 px-4 text-white">
+        <div className="relative container mx-auto flex max-w-5xl items-center gap-4 px-4 text-white">
           <div className="flex-1">
             <LocaleLink
               className="m-0 inline-flex items-center py-2 text-2xl text-white max-md:text-xl max-sm:text-base"
@@ -44,7 +44,7 @@ export default function Header({ appName }: Props) {
             >
               <Image
                 alt="Logo"
-                className="mr-2 w-16 p-1 drop-shadow-md transition-all max-sm:-ml-1 max-sm:mr-1 max-sm:w-10 max-sm:p-0"
+                className="mr-2 w-16 p-1 drop-shadow-md transition-all max-sm:mr-1 max-sm:-ml-1 max-sm:w-10 max-sm:p-0"
                 height={56}
                 src="/logo-white.svg"
                 width={56}
