@@ -107,9 +107,9 @@ export default function LocaleSwitcher() {
   )
 
   return (
-    <div>
+    <>
       <button
-        className="flex items-center gap-2 align-middle"
+        className="flex cursor-pointer items-center gap-2 align-middle"
         onClick={toggleMenuIsOpen}
         ref={buttonRef}
       >
@@ -137,7 +137,7 @@ export default function LocaleSwitcher() {
         <div className="overflow-hidden rounded-2xl">
           {locales.map((locale) => (
             <button
-              className="flex w-full items-center gap-4 p-4 align-middle text-lg text-black transition-all hover:bg-gray-300/90 dark:text-white dark:hover:bg-neutral-900/90"
+              className="flex w-full cursor-pointer items-center gap-4 p-4 align-middle text-lg text-black transition-all hover:bg-gray-300/90 dark:text-white dark:hover:bg-neutral-900/90"
               data-locale={locale.code}
               key={locale.code}
               onClick={onLocaleSelected}
@@ -157,6 +157,6 @@ export default function LocaleSwitcher() {
           ))}
         </div>
       </a>
-    </div>
+    </>
   )
 }
