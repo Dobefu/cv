@@ -24,7 +24,7 @@ type Props = Readonly<{
 
 export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
   return (
-    <section className="relative -mb-8 -mt-28 h-[30vh] min-h-[450px] w-full">
+    <section className="relative -mt-28 -mb-8 h-[30vh] min-h-[450px] w-full">
       {!!imgBg && (
         <Image
           alt={imgBg.alt}
@@ -42,12 +42,12 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
               <h1 className="text-5xl font-semibold text-white drop-shadow-md max-md:text-4xl max-sm:text-3xl">
                 {title}
               </h1>
-              <h2 className="text-4xl text-white drop-shadow-md max-md:text-3xl max-sm:text-2xl">
+              <h2 className="text-4xl text-white drop-shadow-md max-md:text-2xl max-sm:text-xl">
                 {subtitle}
               </h2>
               {cta ? (
                 <LocaleLink
-                  className="me-auto inline-flex items-center gap-2 rounded-lg border border-transparent bg-sky-700 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-sky-800 focus:bg-sky-800 focus:outline-hidden print:hidden"
+                  className="me-auto inline-flex items-center gap-2 rounded-lg border border-transparent bg-sky-700 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-sky-800 focus:bg-sky-800 focus:outline-hidden sm:px-4 sm:py-3 print:hidden"
                   href={cta.href}
                 >
                   <Icon className="h-5 w-5" icon={iconChevronRight} ssr />
@@ -60,7 +60,7 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
             {!!img && (
               <Image
                 alt={img.alt}
-                className="relative mx-auto -mb-4 mt-auto w-64 flex-none origin-bottom drop-shadow-md transition-all active:scale-95 max-sm:-mb-2 max-sm:w-32"
+                className="relative mx-auto mt-auto -mb-4 w-64 flex-none origin-bottom drop-shadow-md transition-transform active:scale-95 max-sm:-ms-8 max-sm:-mb-2 max-sm:w-32"
                 height={256}
                 sizes="(max-width: 640px) 128px, (max-width: 768px) 256px, (max-width: 1024px) 512px"
                 src={img.src}
