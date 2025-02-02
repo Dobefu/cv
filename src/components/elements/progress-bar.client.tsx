@@ -27,10 +27,10 @@ export default function ProgressBar({ label, percentage }: Props) {
   }, [])
 
   return (
-    <div className="inline-block w-full px-4 max-md:min-w-full" ref={target}>
+    <div className="inline-block w-full max-md:min-w-full" ref={target}>
       <label>{label}</label>
 
-      <div className="mb-4 mt-2 h-6">
+      <div className="mt-2 mb-4 h-6">
         <div className="h-full print:block!">
           <AnimatePresence initial>
             <motion.div
