@@ -2,11 +2,11 @@
 
 @layer base {
   h2 {
-    @apply pb-8 text-4xl font-semibold text-sky-700 dark:text-sky-500 contrast-more:dark:text-sky-400;
+    @apply pb-8 text-3xl sm:text-4xl font-semibold text-sky-700 dark:text-sky-500 contrast-more:dark:text-sky-400;
   }
 
   h3 {
-    @apply pb-8 text-3xl font-semibold text-sky-700 dark:text-sky-500 contrast-more:dark:text-sky-400;
+    @apply pb-8 text-2xl sm:text-3xl font-semibold text-sky-700 dark:text-sky-500 contrast-more:dark:text-sky-400;
   }
 
   hr {
