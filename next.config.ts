@@ -11,9 +11,12 @@ let nextConfig: NextConfig = {
     appName: process.env.APP_NAME ?? '',
   },
   compiler: {
-    removeConsole: {
-      exclude: ['warn', 'error'],
-    },
+    removeConsole:
+      process.env.NODE_ENV === 'production'
+        ? {
+            exclude: ['warn', 'error'],
+          }
+        : false,
   },
   async headers() {
     return [
