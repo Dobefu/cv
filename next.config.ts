@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
   publicRuntimeConfig: {
     appName: process.env.APP_NAME ?? '',
   },
+  compiler: {
+    removeConsole: {
+      exclude: ['warn', 'error'],
+    },
+  },
   async headers() {
     return [
       {
