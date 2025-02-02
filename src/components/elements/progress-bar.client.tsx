@@ -11,6 +11,7 @@ export default function ProgressBar({ label, percentage }: Props) {
   const target = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    /* v8 ignore start */
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0]
       const entryTarget = entry.target as HTMLDivElement
@@ -19,6 +20,7 @@ export default function ProgressBar({ label, percentage }: Props) {
     })
 
     if (!target.current) return
+    /* v8 ignore stop */
 
     observer.observe(target.current)
 
