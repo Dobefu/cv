@@ -1,5 +1,6 @@
 import getLocales from '@/utils/get-locales'
 import getTranslations from '@/utils/get-translations'
+import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import getConfig from 'next/config'
 import { Geist } from 'next/font/google'
@@ -50,6 +51,7 @@ export default async function RootLayout({
         </Providers>
 
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )
