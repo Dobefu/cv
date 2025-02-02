@@ -1,6 +1,7 @@
 'use client'
 
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, LazyMotion, domAnimation } from 'motion/react'
+import * as m from 'motion/react-m'
 import { useEffect, useRef, useState } from 'react'
 
 type Props = Readonly<{
@@ -32,20 +33,22 @@ export default function ProgressBar({ label, percentage }: Props) {
 
       <div className="mt-2 mb-4 h-6">
         <div className="h-full print:block!">
-          <AnimatePresence initial>
-            <motion.div
-              className="h-full rounded-full bg-orange-500 shadow-md dark:bg-orange-500/75"
-              /* v8 ignore next */
-              initial={{ width: isPrint ? `${percentage}%` : 0 }}
-              style={{ width: `${percentage}%` }}
-              whileInView={{
-                width: `${percentage}%`,
-                transitionTimingFunction: 'cubic-bezier(.5,0,.5,1.75)',
-                transitionProperty: 'width',
-                transitionDuration: '400ms',
-              }}
-            />
-          </AnimatePresence>
+          <LazyMotion features={domAnimation}>
+            <AnimatePresence initial>
+              <m.div
+                className="h-full rounded-full bg-orange-500 shadow-md dark:bg-orange-500/75"
+                /* v8 ignore next */
+                initial={{ width: isPrint ? `${percentage}%` : 0 }}
+                style={{ width: `${percentage}%` }}
+                whileInView={{
+                  width: `${percentage}%`,
+                  transitionTimingFunction: 'cubic-bezier(.5,0,.5,1.75)',
+                  transitionProperty: 'width',
+                  transitionDuration: '400ms',
+                }}
+              />
+            </AnimatePresence>
+          </LazyMotion>
         </div>
       </div>
     </div>
