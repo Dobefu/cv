@@ -23,7 +23,6 @@
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
     "clsx": "^2.1.1",
-    "motion": "^11.18.2",
     "negotiator": "^1.0.0",
     "next": "15.1.3",
     "react": "^19.0.0",
