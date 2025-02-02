@@ -21,6 +21,15 @@ export default function getProjects(locale: string): Project[] {
         repo: 'https://github.com/Dobefu/csb',
         path: 'csb',
       },
+      {
+        title: 'Scrum Poker',
+        subtext:
+          'Quickly and easily start estimating user stories, for free and without ads',
+        image: 'scrum-poker.png',
+        tags: ['nuxtjs', 'vuejs', 'typescript', 'go'],
+        repo: 'https://github.com/Dobefu/scrum-poker',
+        path: 'scrum-poker',
+      },
     ],
     nl: [
       {
@@ -40,6 +49,15 @@ export default function getProjects(locale: string): Project[] {
         tags: ['go', 'contentstack'],
         repo: 'https://github.com/Dobefu/csb',
         path: 'csb',
+      },
+      {
+        title: 'Scrum Poker',
+        subtext:
+          'Begin snel en eenvoudig met het inschatten van user stories, gratis en zonder advertenties',
+        image: 'scrum-poker.png',
+        tags: ['nuxtjs', 'vuejs', 'typescript', 'go'],
+        repo: 'https://github.com/Dobefu/scrum-poker',
+        path: 'scrum-poker',
       },
     ],
   }
