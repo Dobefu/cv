@@ -4,7 +4,7 @@ export default function getTranslations(
   return (
     {
       en: {
-        'layout.skip_to_main': 'Skip to main content',
+        'skip_to_main.title': 'Skip to main content',
         'locale_switcher.label': 'Choose a language',
         'languages.en': 'English',
         'languages.nl': 'Dutch',
@@ -13,7 +13,7 @@ export default function getTranslations(
         'projects.title': 'Projects',
       },
       nl: {
-        'layout.skip_to_main': 'Naar hoofdinhoud gaan',
+        'skip_to_main.title': 'Naar hoofdinhoud gaan',
         'locale_switcher.label': 'Kies een taal',
         'languages.en': 'Engels',
         'languages.nl': 'Nederlands',

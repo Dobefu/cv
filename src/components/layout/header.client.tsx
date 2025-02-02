@@ -28,7 +28,7 @@ export default function Header({ appName }: Props) {
   }, [])
 
   return (
-    <div className="sticky top-0 z-50 p-4 print:opacity-0">
+    <div className="sticky top-0 z-40 p-4 print:opacity-0">
       <header
         className={cn(
           'w-full rounded-2xl bg-[#0d6488cc] shadow-md backdrop-blur-lg transition-all duration-300 motion-reduce:transition-none contrast-more:bg-sky-600 contrast-more:dark:bg-sky-800',
