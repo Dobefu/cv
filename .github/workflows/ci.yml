@@ -31,7 +31,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - name: Enable PNPM
+      - name: Install the latest version of Corepack
+        run: npm i -g corepack@latest
+
+      - name: Enable Corepack
         run: corepack enable
 
       - name: Install dependencies
@@ -60,7 +63,10 @@ jobs:
           echo "APP_NAME=\"CV - Connor van Spronssen\"" >> .env
           echo "APP_URL=\"http://localhost:3000\"" >> .env
 
-      - name: Enable PNPM
+      - name: Install the latest version of Corepack
+        run: npm i -g corepack@latest
+
+      - name: Enable Corepack
         run: corepack enable
 
       - name: Install dependencies
