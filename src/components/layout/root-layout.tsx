@@ -2,6 +2,7 @@ import getLocales from '@/utils/get-locales'
 import getTranslations from '@/utils/get-translations'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Metadata } from 'next'
 import getConfig from 'next/config'
 import { Geist } from 'next/font/google'
 import SkipToMain from '../utils/skip-to-main.client'
@@ -10,7 +11,7 @@ import './globals.css'
 import Header from './header.client'
 import Providers from './providers.client'
 
-type Props = Readonly<{
+export type Props = Readonly<{
   children: React.ReactNode
   locale: string
 }>
@@ -20,10 +21,27 @@ const geistSans = Geist({
   subsets: ['latin'],
 })
 
-export default async function RootLayout({
-  children,
-  locale: pageLocale,
-}: Props) {
+export async function generateMetadata(locale: string): Promise<Metadata> {
+  const url = process.env.APP_URL
+
+  if (!url) {
+    console.warn('APP_URL is not set!')
+    return {}
+  }
+
+  return {
+    metadataBase: new URL(url),
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        en: '/en',
+        nl: '/nl',
+      },
+    },
+  }
+}
+
+export async function RootLayout({ children, locale: pageLocale }: Props) {
   const { locales } = getLocales()
   const locale = locales.find((loc) => (loc.code = pageLocale))!
   const translations = getTranslations(locale.code)
