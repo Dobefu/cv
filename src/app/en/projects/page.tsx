@@ -6,6 +6,12 @@ export const metadata = {
   title: 'Projects',
   description:
     'As a passionate full-stack web engineer, I have honed my skills. Explore my projects to see how I transform ideas into impactful web experiences.',
+  alternates: {
+    languages: {
+      en: '/en/projects',
+      nl: '/nl/projects',
+    },
+  },
 }
 
 export default function Projects() {
