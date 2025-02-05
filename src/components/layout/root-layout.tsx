@@ -32,10 +32,9 @@ export async function generateMetadata(locale: string): Promise<Metadata> {
   return {
     metadataBase: new URL(url),
     alternates: {
-      canonical: `/${locale}`,
+      canonical: `./`,
       languages: {
-        en: '/en',
-        nl: '/nl',
+        [locale]: './',
       },
     },
   }
