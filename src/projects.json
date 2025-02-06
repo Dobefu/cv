@@ -27,7 +27,7 @@
       "subtext": "Quickly and easily start estimating user stories, for free and without ads",
       "image": {
         "src": "scrum-poker.png",
-        "alt": ""
+        "alt": "Screenshot of the Scrum Poker application"
       },
       "tags": ["nuxtjs", "vuejs", "typescript", "go"],
       "repo": "https://github.com/Dobefu/scrum-poker",
@@ -62,7 +62,7 @@
       "subtext": "Begin snel en eenvoudig met het inschatten van user stories, gratis en zonder advertenties",
       "image": {
         "src": "scrum-poker.png",
-        "alt": ""
+        "alt": "Schermafbeelding van de Scrum Poker applicatie"
       },
       "tags": ["nuxtjs", "vuejs", "typescript", "go"],
       "repo": "https://github.com/Dobefu/scrum-poker",
