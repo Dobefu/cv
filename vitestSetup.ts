@@ -1,8 +1,7 @@
-import { loadEnvFile } from 'node:process'
 import { vi } from 'vitest'
 
-loadEnvFile('.env')
 process.env.MOCK_PATHNAME = '/'
+process.env.APP_URL = 'http://localhost.test'
 
 vi.mock('next/config', () => ({
   default: () => {

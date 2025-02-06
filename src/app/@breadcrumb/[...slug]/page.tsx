@@ -1,15 +1,17 @@
-export async function generateMetadata(props: {
+export async function generateMetadata({
+  params,
+}: {
   params: Promise<{ slug: string[] }>
 }) {
-  const params = await props.params
   const url = process.env.APP_URL
+  const slug = (await params).slug
 
   if (!url) {
     console.warn('APP_URL is not set!')
     return {}
   }
 
-  const pathPartsWithoutLocale = params.slug.splice(1)
+  const pathPartsWithoutLocale = slug.slice(1)
 
   if (pathPartsWithoutLocale.length > 0) {
     pathPartsWithoutLocale.unshift('')
@@ -18,7 +20,7 @@ export async function generateMetadata(props: {
   return {
     metadataBase: new URL(url),
     alternates: {
-      canonical: params.slug.join('/'),
+      canonical: slug.join('/'),
       languages: {
         en: `/en${pathPartsWithoutLocale.join('/')}`,
         nl: `/nl${pathPartsWithoutLocale.join('/')}`,
@@ -27,6 +29,6 @@ export async function generateMetadata(props: {
   }
 }
 
-export default async function BreadCrumb() {
-  return
+export default function BreadCrumb() {
+  return null
 }
