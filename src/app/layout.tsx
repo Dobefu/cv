@@ -7,6 +7,7 @@ const appName = publicRuntimeConfig.appName || ''
 
 type Props = Readonly<{
   children: React.ReactNode
+  breadcrumb: string[]
 }>
 
 export const metadata: Metadata = {
