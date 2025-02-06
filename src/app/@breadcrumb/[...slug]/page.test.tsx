@@ -1,10 +1,9 @@
 import { cleanup, render, screen } from '@testing-library/react'
-import { beforeEach } from 'node:test'
 import { afterEach, describe, expect, it } from 'vitest'
 import BreadCrumb, { generateMetadata } from './page'
 
 describe('BreadcrumbMetadata', () => {
-  let oldAppUrl = process.env.APP_URL
+  const oldAppUrl = process.env.APP_URL
 
   afterEach(() => {
     process.env.APP_URL = oldAppUrl
