@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 
 @layer base {
+  h1 {
+    @apply pb-8 text-4xl font-semibold text-sky-700 sm:text-4xl dark:text-sky-500 contrast-more:dark:text-sky-400;
+  }
+
   h2 {
     @apply pb-8 text-3xl font-semibold text-sky-700 sm:text-4xl dark:text-sky-500 contrast-more:dark:text-sky-400;
   }

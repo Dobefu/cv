@@ -19,7 +19,7 @@ export default function Projects() {
 
   return (
     <ContentContainer>
-      <h2>Projects</h2>
+      <h1>Projects</h1>
 
       <div className="flex flex-col gap-2 pb-8 text-gray-700 dark:text-gray-200">
         <p>
