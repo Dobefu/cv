@@ -11,7 +11,7 @@ describe('ProjectPreview', () => {
   it('Renders', () => {
     render(
       <ProjectPreview
-        img="/img.png"
+        img={{ src: '/img.png', alt: '' }}
         label="Test label"
         link="/"
         subtext="Test subtext"

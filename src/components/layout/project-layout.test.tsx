@@ -14,7 +14,7 @@ describe('ProjectLayout', () => {
         project: {
           title: 'Test Project',
           subtext: 'Test subtext',
-          image: 'test-image.png',
+          image: { src: 'test-image.png', alt: '' },
           tags: ['tag1', 'tag2'],
           repo: 'http://localhost',
           path: '/test-path',
