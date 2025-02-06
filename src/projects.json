@@ -16,7 +16,7 @@
       "subtext": "Adds a layer between your application and Contentstack, to provide some much-needed conveniences",
       "image": {
         "src": "csb.png",
-        "alt": ""
+        "alt": "Logo of the Contentstack Bridge project"
       },
       "tags": ["go", "contentstack"],
       "repo": "https://github.com/Dobefu/csb",
@@ -51,7 +51,7 @@
       "subtext": "Voegt een laag toe tussen een applicatie en Contentstack, om een aantal onmisbare gemakken te leveren",
       "image": {
         "src": "csb.png",
-        "alt": ""
+        "alt": "Logo van het Contentstack Bridge project"
       },
       "tags": ["go", "contentstack"],
       "repo": "https://github.com/Dobefu/csb",
