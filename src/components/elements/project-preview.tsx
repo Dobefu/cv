@@ -6,7 +6,10 @@ type Props = Readonly<{
   label: string
   subtext: string
   link: string
-  img: string
+  img: {
+    src: string
+    alt: string
+  }
   tags: string[]
 }>
 
@@ -24,12 +27,12 @@ export default function ProjectPreview({
     >
       <div className="shrink-0 overflow-hidden rounded-md drop-shadow-md">
         <Image
-          alt=""
+          alt={img.alt}
           className="transition-transform duration-300 group-hover:scale-105"
           height={160}
           quality={70}
           sizes="240px"
-          src={img}
+          src={img.src}
           width={256}
         />
       </div>

@@ -17,12 +17,12 @@ export default function ProjectLayout({ children, project }: Props) {
       <h2>{project.title}</h2>
 
       <Image
-        alt=""
+        alt={project.image.alt}
         className="mb-8 rounded-md"
         height={240}
         priority
         sizes="240px"
-        src={`/img/projects/${project.image}`}
+        src={`/img/projects/${project.image.src}`}
         width={384}
       />
 

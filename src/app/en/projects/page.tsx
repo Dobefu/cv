@@ -38,7 +38,10 @@ export default function Projects() {
 
       {projects?.map((project) => (
         <ProjectPreview
-          img={`/img/projects/${project.image}`}
+          img={{
+            alt: project.image.alt,
+            src: `/img/projects/${project.image.src}`,
+          }}
           key={project.title}
           label={project.title}
           link={`/projects/${project.path}`}
