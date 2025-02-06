@@ -88,6 +88,7 @@ export default function Footer({ appName }: Props) {
               className="inline-flex size-8 items-center justify-center gap-x-2 rounded-full border border-transparent text-sm font-semibold text-gray-500 transition-colors hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-1 dark:focus:ring-gray-600 dark:focus:outline-hidden"
               href={socialLink.to}
               key={socialLink.to}
+              rel="nofollow"
               target="_blank"
               title={socialLink.title}
             >
