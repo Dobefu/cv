@@ -14,7 +14,7 @@ export type Props = Readonly<{
 export default function ProjectLayout({ children, project }: Props) {
   return (
     <ContentContainer>
-      <h2>{project.title}</h2>
+      <h1>{project.title}</h1>
 
       <Image
         alt={project.image.alt}
