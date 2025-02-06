@@ -5,7 +5,7 @@
       "subtext": "My personal CV and the website that is currently being viewed",
       "image": {
         "src": "cv.png",
-        "alt": ""
+        "alt": "Screenshot of the CV website"
       },
       "tags": ["nextjs", "typescript", "tailwindcss"],
       "repo": "https://github.com/Dobefu/cv",
@@ -40,7 +40,7 @@
       "subtext": "Mijn persoonlijke CV en de website die momenteel wordt bekeken",
       "image": {
         "src": "cv.png",
-        "alt": ""
+        "alt": "Schermafbeelding van de CV website"
       },
       "tags": ["nextjs", "typescript", "tailwindcss"],
       "repo": "https://github.com/Dobefu/cv",
