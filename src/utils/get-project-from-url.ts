@@ -4,8 +4,26 @@ import getProjects from './get-projects'
 export default function getProjectFromUrl(
   url: string,
   locale: string,
-): Project | undefined {
+): { project?: Project; linkedData?: object } {
   const page = url?.split('/').reverse()[0]
   const projects = getProjects(locale)
-  return projects.find((p) => p.path === page)
+  const project = projects.find((p) => p.path === page)
+
+  return {
+    project,
+    linkedData: project
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: project.title,
+          image: [project.image.src],
+          author: [
+            {
+              '@type': 'Person',
+              name: 'Connor van Spronssen',
+            },
+          ],
+        }
+      : undefined,
+  }
 }

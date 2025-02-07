@@ -10,8 +10,17 @@ export type Props = Readonly<{
 
 export default function Layout({ children }: Props) {
   const url = usePathname()
-  const project = getProjectFromUrl(url, 'nl')
+  const { project, linkedData } = getProjectFromUrl(url, 'nl')
   if (!project) notFound()
 
-  return <ProjectLayout project={project}>{children}</ProjectLayout>
+  return (
+    <ProjectLayout project={project}>
+      <script
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(linkedData) }}
+        type="application/ld+json"
+      />
+
+      {children}
+    </ProjectLayout>
+  )
 }
