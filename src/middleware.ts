@@ -1,6 +1,5 @@
 import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
-import { NextURL } from 'next/dist/server/web/next-url'
 import { type NextRequest, NextResponse } from 'next/server'
 import getLocales from './utils/get-locales'
 
@@ -19,7 +18,7 @@ export function middleware(request: NextRequest) {
   return response
 }
 
-function handleLocaleDetection(request: NextRequest): NextURL | undefined {
+function handleLocaleDetection(request: NextRequest): URL | undefined {
   const { defaultLocale, locales } = getLocales()
 
   if (!localeCodes) {
@@ -27,12 +26,13 @@ function handleLocaleDetection(request: NextRequest): NextURL | undefined {
   }
 
   const { pathname } = request.nextUrl
-  const pathnameHasLocale = locales.some(
-    (locale: { code: string; name: string }) =>
-      pathname.startsWith(`/${locale.code}/`) || pathname === `/${locale.code}`,
-  )
+  const pathnameHasLocale = localeCodes.some((code) => {
+    return pathname.startsWith(`/${code}/`) || pathname === `/${code}`
+  })
 
-  if (pathnameHasLocale) return
+  if (pathnameHasLocale) {
+    return
+  }
 
   const headers: Record<string, string> = { 'accept-language': 'en' }
   request.headers.forEach((value, key) => (headers[key] = value))
@@ -40,8 +40,9 @@ function handleLocaleDetection(request: NextRequest): NextURL | undefined {
   const languages = new Negotiator({ headers }).languages()
   const matchedLocale = match(languages, localeCodes, defaultLocale)
 
-  request.nextUrl.pathname = `/${matchedLocale}${pathname}`
-  return request.nextUrl
+  const url = new URL(request.nextUrl.origin)
+  url.pathname = `/${matchedLocale}${pathname}`
+  return url
 }
 
 function getCspResponse(): NextResponse {
@@ -91,7 +92,7 @@ function parseCsp(csp: Record<string, string[]>): string {
   const output = []
 
   for (const [key, value] of Object.entries(csp)) {
-    output.push(`${key} ${value.join(' ')}`.trimEnd())
+    output.push(`${key} ${value.join(' ')}`)
   }
 
   return output.join('; ') + ';'
