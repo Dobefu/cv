@@ -5,6 +5,7 @@ import { type NextRequest, NextResponse } from 'next/server'
 import getLocales from './utils/get-locales'
 
 let cachedCspString: string | undefined
+let localeCodes: string[] | undefined
 
 export function middleware(request: NextRequest) {
   const redirectUrl = handleLocaleDetection(request)
@@ -21,7 +22,9 @@ export function middleware(request: NextRequest) {
 function handleLocaleDetection(request: NextRequest): NextURL | undefined {
   const { defaultLocale, locales } = getLocales()
 
-  const localeCodes = locales.map((locale) => locale.code)
+  if (!localeCodes) {
+    localeCodes = locales.map((locale) => locale.code)
+  }
 
   const { pathname } = request.nextUrl
   const pathnameHasLocale = locales.some(
