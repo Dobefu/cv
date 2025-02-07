@@ -8,6 +8,7 @@ export default function getProjectFromUrl(
   const page = url?.split('/').reverse()[0]
   const projects = getProjects(locale)
   const project = projects.find((p) => p.path === page)
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL
 
   return {
     project,
@@ -16,11 +17,12 @@ export default function getProjectFromUrl(
           '@context': 'https://schema.org',
           '@type': 'Article',
           headline: project.title,
-          image: [project.image.src],
+          image: [`${appUrl}/img/projects/${project.image.src}`],
           author: [
             {
               '@type': 'Person',
               name: 'Connor van Spronssen',
+              url: appUrl,
             },
           ],
         }

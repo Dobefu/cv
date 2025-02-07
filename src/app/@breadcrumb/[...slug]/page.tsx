@@ -3,11 +3,11 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string[] }>
 }) {
-  const url = process.env.APP_URL
+  const url = process.env.NEXT_PUBLIC_APP_URL
   const slug = (await params).slug
 
   if (!url) {
-    console.warn('APP_URL is not set!')
+    console.warn('NEXT_PUBLIC_APP_URL is not set!')
     return {}
   }
 

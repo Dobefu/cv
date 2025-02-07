@@ -3,10 +3,10 @@ import { afterEach, describe, expect, it } from 'vitest'
 import BreadCrumb, { generateMetadata } from './page'
 
 describe('BreadcrumbMetadata', () => {
-  const oldAppUrl = process.env.APP_URL
+  const oldAppUrl = process.env.NEXT_PUBLIC_APP_URL
 
   afterEach(() => {
-    process.env.APP_URL = oldAppUrl
+    process.env.NEXT_PUBLIC_APP_URL = oldAppUrl
   })
 
   it('Returns metadata', async () => {
@@ -20,7 +20,7 @@ describe('BreadcrumbMetadata', () => {
   })
 
   it('Returns early without an app URL', async () => {
-    delete process.env.APP_URL
+    delete process.env.NEXT_PUBLIC_APP_URL
 
     await generateMetadata({
       params: new Promise((resolve) =>

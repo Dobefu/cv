@@ -18,8 +18,8 @@ describe('sitemap', () => {
     expect(sitemapOutput[0].url).toBeDefined()
   })
 
-  it('returns early when the APP_URL variable is missing', async () => {
-    delete process.env.APP_URL
+  it('returns early when the NEXT_PUBLIC_APP_URL variable is missing', async () => {
+    delete process.env.NEXT_PUBLIC_APP_URL
 
     const sitemapOutput = await sitemap()
 

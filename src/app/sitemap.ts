@@ -3,7 +3,7 @@ import { promises as fs } from 'fs'
 import type { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  if (!process.env.APP_URL) {
+  if (!process.env.NEXT_PUBLIC_APP_URL) {
     return []
   }
 
@@ -34,11 +34,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .forEach(
         (localeCode) =>
           (languages[localeCode] =
-            `${process.env.APP_URL}/${localeCode}/${cleanPath}`),
+            `${process.env.NEXT_PUBLIC_APP_URL}/${localeCode}/${cleanPath}`),
       )
 
     return {
-      url: `${process.env.APP_URL}/${defaultLocale}/${cleanPath}`,
+      url: `${process.env.NEXT_PUBLIC_APP_URL}/${defaultLocale}/${cleanPath}`,
       alternates: { languages },
       priority: 1,
     }
