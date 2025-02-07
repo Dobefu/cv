@@ -4,6 +4,8 @@ import { NextURL } from 'next/dist/server/web/next-url'
 import { type NextRequest, NextResponse } from 'next/server'
 import getLocales from './utils/get-locales'
 
+let cachedCspString: string | undefined
+
 export function middleware(request: NextRequest) {
   const redirectUrl = handleLocaleDetection(request)
 
@@ -40,6 +42,13 @@ function handleLocaleDetection(request: NextRequest): NextURL | undefined {
 }
 
 function getCspResponse(): NextResponse {
+  const response = NextResponse.next()
+
+  if (cachedCspString) {
+    response.headers.set('Content-Security-Policy', cachedCspString)
+    return response
+  }
+
   const csp: Record<string, string[]> = {
     'default-src': ["'self'"],
     'script-src': [
@@ -68,8 +77,8 @@ function getCspResponse(): NextResponse {
   }
 
   const cspString = parseCsp(csp)
+  cachedCspString = cspString
 
-  const response = NextResponse.next()
   response.headers.set('Content-Security-Policy', cspString)
 
   return response
