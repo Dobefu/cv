@@ -7,7 +7,6 @@ const appName = publicRuntimeConfig.appName || ''
 
 type Props = Readonly<{
   children: React.ReactNode
-  breadcrumb: string[]
 }>
 
 export const metadata: Metadata = {
@@ -17,6 +16,6 @@ export const metadata: Metadata = {
   } satisfies TemplateString,
 }
 
-export default async function RootLayout({ children }: Props) {
+export default function RootLayout({ children }: Props) {
   return <>{children}</>
 }

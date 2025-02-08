@@ -1,8 +1,8 @@
-export async function generateMetadata({
-  params,
-}: {
+export type MetadataParams = {
   params: Promise<{ slug: string[] }>
-}) {
+}
+
+export async function generateMetadata({ params }: MetadataParams) {
   const url = process.env.NEXT_PUBLIC_APP_URL
   const slug = (await params).slug
 
