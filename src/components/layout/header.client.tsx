@@ -36,7 +36,7 @@ export default function Header({ appName }: Props) {
             '-m-4 w-[calc(100%+2rem)] rounded-none py-4 shadow-2xl',
         )}
       >
-        <div className="relative container mx-auto flex max-w-5xl items-center gap-4 px-4 text-white">
+        <div className="relative mx-auto flex max-w-5xl items-center gap-4 px-4 text-white">
           <div className="flex-1">
             <LocaleLink
               className="m-0 inline-flex items-center py-2 text-2xl text-white max-md:text-xl max-sm:text-base"
