@@ -1,12 +1,12 @@
-import BreadCrumbBase, {
-  MetadataParams as BreadCrumbMetadataParams,
+import BreadcrumbBase, {
+  Props as BreadcrumbMetadataProps,
   generateMetadata as breadcrumbGenerateMetadata,
 } from '@/components/layout/breadcrumbs'
 
-export async function generateMetadata(params: BreadCrumbMetadataParams) {
+export async function generateMetadata(params: BreadcrumbMetadataProps) {
   return breadcrumbGenerateMetadata(params)
 }
 
-export default function BreadCrumb() {
-  return BreadCrumbBase()
+export default function Breadcrumb(props: BreadcrumbMetadataProps) {
+  return <BreadcrumbBase {...props} />
 }

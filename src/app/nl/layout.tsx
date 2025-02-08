@@ -7,9 +7,7 @@ type Props = Readonly<{
 
 export default function RootLayout({ breadcrumb, children }: Props) {
   return (
-    <BaseRootLayout locale="nl">
-      {breadcrumb}
-
+    <BaseRootLayout breadcrumb={breadcrumb} locale="nl">
       {children}
     </BaseRootLayout>
   )

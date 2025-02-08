@@ -1,8 +1,8 @@
-export type MetadataParams = {
+export type Props = Readonly<{
   params: Promise<{ slug: string[] }>
-}
+}>
 
-export async function generateMetadata({ params }: MetadataParams) {
+export async function generateMetadata({ params }: Props) {
   const url = process.env.NEXT_PUBLIC_APP_URL
   const slug = (await params).slug
 
@@ -29,6 +29,6 @@ export async function generateMetadata({ params }: MetadataParams) {
   }
 }
 
-export default function BreadCrumb() {
+export default async function BreadCrumb({ params }: Props) {
   return null
 }

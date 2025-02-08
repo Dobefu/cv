@@ -11,6 +11,7 @@ import Header from './header.client'
 import Providers from './providers.client'
 
 export type Props = Readonly<{
+  breadcrumb: React.ReactNode
   children: React.ReactNode
   locale: string
 }>
@@ -20,7 +21,11 @@ const geistSans = Geist({
   subsets: ['latin'],
 })
 
-export async function RootLayout({ children, locale: pageLocale }: Props) {
+export async function RootLayout({
+  breadcrumb,
+  children,
+  locale: pageLocale,
+}: Props) {
   const { locales } = getLocales()
   const locale = locales.find((loc) => (loc.code = pageLocale))!
   const translations = getTranslations(locale.code)
@@ -38,6 +43,8 @@ export async function RootLayout({ children, locale: pageLocale }: Props) {
 
           <div className="flex flex-1 flex-col justify-between">
             <Header appName={appName} />
+
+            {breadcrumb}
 
             <main
               className="relative mx-auto mb-4 w-full flex-1"
