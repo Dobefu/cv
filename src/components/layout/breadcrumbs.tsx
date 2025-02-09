@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props) {
   }
 }
 
-export default async function BreadCrumb({ params }: Props) {
+export default async function Breadcrumb({ params }: Props) {
   const slug = (await params).slug.slice(1)
   slug.unshift('home')
   let path = ''

@@ -7,6 +7,6 @@ export async function generateMetadata(params: BreadcrumbMetadataProps) {
   return breadcrumbGenerateMetadata(params)
 }
 
-export default function Breadcrumb(props: BreadcrumbMetadataProps) {
-  return <BreadcrumbBase {...props} />
+export default function Breadcrumb({ params }: BreadcrumbMetadataProps) {
+  return <BreadcrumbBase params={params} />
 }

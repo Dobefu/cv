@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
-import BreadCrumb, { generateMetadata } from './page'
+import Breadcrumb, { generateMetadata } from './page'
 
 describe('BreadcrumbMetadata', () => {
   it('Returns metadata', async () => {
@@ -18,11 +18,9 @@ describe('Breadcrumb', () => {
   })
 
   it('Renders normally', () => {
-    render(
-      BreadCrumb({
-        params: new Promise((resolve) => resolve({ slug: ['projects', 'cv'] })),
-      }),
-    )
+    Breadcrumb({
+      params: new Promise((resolve) => resolve({ slug: ['projects', 'cv'] })),
+    })
 
     expect(screen).toBeDefined()
   })

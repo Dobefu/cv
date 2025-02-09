@@ -1,5 +1,5 @@
 import { cleanup } from '@testing-library/react'
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, describe, expect, it } from 'vitest'
 import Header from './components/layout/header.client'
 import { useMDXComponents } from './mdx-components'
 
