@@ -1,6 +1,5 @@
 'use client'
 
-import useLocale from '@/hooks/use-locale'
 import getLocales from '@/utils/get-locales'
 import getTranslation from '@/utils/get-translation'
 import { logError } from '@/utils/logger'
