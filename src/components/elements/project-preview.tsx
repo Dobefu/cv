@@ -30,7 +30,6 @@ export default function ProjectPreview({
           alt={img.alt}
           className="transition-transform duration-300 group-hover:scale-105"
           height={160}
-          quality={70}
           sizes="240px"
           src={img.src}
           width={256}
