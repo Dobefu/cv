@@ -17,6 +17,10 @@
     @apply -m-px my-8 h-px border-none bg-zinc-300 dark:bg-zinc-600;
   }
 
+  p {
+    @apply pb-4;
+  }
+
   label {
     @apply block font-semibold text-sky-800 dark:text-sky-400 contrast-more:dark:text-sky-300;
   }

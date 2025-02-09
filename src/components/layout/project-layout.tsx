@@ -37,7 +37,7 @@ export default function ProjectLayout({ children, project }: Props) {
 
       {children}
 
-      <div className="flex flex-col gap-8 pt-8">
+      <div className="flex flex-col gap-8 pt-4">
         <div
           className="flex flex-wrap gap-2"
           style={{

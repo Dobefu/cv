@@ -21,7 +21,7 @@ export default function Projects() {
     <ContentContainer>
       <h1>Projecten</h1>
 
-      <div className="flex flex-col gap-2 pb-8 text-gray-700 dark:text-gray-200">
+      <div className="text-gray-700 dark:text-gray-200">
         <p>
           Als een gepassioneerde full-stack web engineer heb ik mijn
           vaardigheden verbeterd over een breed spectrum aan programmeertalen en

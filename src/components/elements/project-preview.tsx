@@ -49,7 +49,7 @@ export default function ProjectPreview({
           {label}
         </h3>
 
-        <p>{subtext}</p>
+        <p className="pb-0">{subtext}</p>
 
         <div
           className="flex flex-wrap gap-2 max-md:justify-center"
