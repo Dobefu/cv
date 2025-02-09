@@ -1,6 +1,5 @@
 'use client'
 
-import { cn } from '@/utils/cn'
 import Image from 'next/image'
 import { Suspense, useEffect, useState } from 'react'
 import LocaleLink from '../utils/locale-link.client'
@@ -30,11 +29,8 @@ export default function Header({ appName }: Props) {
   return (
     <div className="sticky top-0 z-40 p-4 print:opacity-0">
       <header
-        className={cn(
-          'w-full rounded-2xl bg-[#0d6488cc] shadow-md backdrop-blur-lg transition-all duration-300 motion-reduce:transition-none contrast-more:bg-sky-600 contrast-more:dark:bg-sky-800',
-          scrollY >= 112 &&
-            '-m-4 w-[calc(100%+2rem)] rounded-none py-4 shadow-2xl',
-        )}
+        className="w-full rounded-2xl bg-[#0d6488cc] shadow-md backdrop-blur-lg transition-all duration-300 data-[full]:-m-4 data-[full]:w-[calc(100%+2rem)] data-[full]:rounded-none data-[full]:py-4 data-[full]:shadow-2xl motion-reduce:transition-none contrast-more:bg-sky-600 contrast-more:dark:bg-sky-800"
+        data-full={scrollY >= 112 ? '' : undefined}
       >
         <div className="relative mx-auto flex max-w-5xl items-center gap-4 px-4 text-white">
           <div className="flex-1">
