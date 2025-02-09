@@ -11,6 +11,7 @@ let nextConfig: NextConfig = {
     appName: process.env.APP_NAME ?? '',
   },
   compiler: {
+    reactRemoveProperties: true,
     removeConsole:
       process.env.NODE_ENV === 'production'
         ? {
