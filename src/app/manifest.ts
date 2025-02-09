@@ -5,6 +5,8 @@ export default function manifest(): MetadataRoute.Manifest {
   const { publicRuntimeConfig } = getConfig()
   const appName = publicRuntimeConfig.appName
 
+  const purpose = 'maskable'
+
   return {
     name: appName,
     short_name: appName,
@@ -16,45 +18,54 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#0d6488',
     icons: [
       {
-        src: '/logo-maskable.png',
-        purpose: 'maskable',
+        src: '/logo-512.png',
+        purpose,
         sizes: '512x512',
-      },
-      {
-        src: '/logo-72.png',
-        sizes: '72x72',
-      },
-      {
-        src: '/logo-96.png',
-        sizes: '96x96',
-      },
-      {
-        src: '/logo-128.png',
-        sizes: '128x128',
-      },
-      {
-        src: '/logo-144.png',
-        sizes: '144x144',
-      },
-      {
-        src: '/logo-152.png',
-        sizes: '152x152',
-      },
-      {
-        src: '/logo-192.png',
-        sizes: '192x192',
-      },
-      {
-        src: '/logo-256.png',
-        sizes: '256x256',
       },
       {
         src: '/logo-384.png',
+        purpose,
         sizes: '384x384',
       },
       {
-        src: '/logo-512.png',
-        sizes: '512x512',
+        src: '/logo-256.png',
+        purpose,
+        sizes: '256x256',
+      },
+      {
+        src: '/logo-192.png',
+        purpose,
+        sizes: '192x192',
+      },
+      {
+        src: '/logo-152.png',
+        purpose,
+        sizes: '152x152',
+      },
+      {
+        src: '/logo-144.png',
+        purpose,
+        sizes: '144x144',
+      },
+      {
+        src: '/logo-128.png',
+        purpose,
+        sizes: '128x128',
+      },
+      {
+        src: '/logo-96.png',
+        purpose,
+        sizes: '96x96',
+      },
+      {
+        src: '/logo-72.png',
+        purpose,
+        sizes: '72x72',
+      },
+      {
+        src: '/logo-48.png',
+        purpose,
+        sizes: '48x48',
       },
     ],
     screenshots: [
