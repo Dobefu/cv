@@ -8,7 +8,7 @@ import { Geist } from 'next/font/google'
 import SkipToMain from '../utils/skip-to-main.client'
 import Footer from './footer'
 import './globals.css'
-import Header from './header.client'
+import Header from './header'
 import Providers from './providers.client'
 
 export type Props = Readonly<{

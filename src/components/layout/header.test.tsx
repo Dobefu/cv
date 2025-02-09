@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react'
 import { act } from 'react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import Header from './header.client'
+import Header from './header'
 
 describe('Header', () => {
   const consoleWarnMock = vi.spyOn(console, 'warn').mockImplementation(() => {})
