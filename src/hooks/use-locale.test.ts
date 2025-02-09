@@ -26,11 +26,8 @@ describe('useLocale', () => {
   })
 
   it('renders', () => {
-    const { locale, t } = useLocale()
+    const { locale } = useLocale()
 
     expect(locale).toBeDefined()
-    expect(t).toBeDefined()
-    expect(t('test.source')).toBe('Translation')
-    expect(t('test.bogus')).toBe('⚠ test.bogus ⚠')
   })
 })

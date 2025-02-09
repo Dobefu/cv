@@ -2,6 +2,7 @@
 
 import useLocale from '@/hooks/use-locale'
 import getLocales from '@/utils/get-locales'
+import getTranslation from '@/utils/get-translation'
 import { logError } from '@/utils/logger'
 import Image from 'next/image'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
@@ -21,7 +22,7 @@ type Locale = {
 }
 
 export default function LocaleSwitcher() {
-  const { locale: currentLocale, t } = useLocale()
+  const { locale: currentLocale } = useLocale()
   const { locales } = getLocales()
 
   const router = useRouter()
@@ -46,13 +47,13 @@ export default function LocaleSwitcher() {
 
       newLocales.push({
         code: locale.code,
-        name: t(`languages.${locale.code}`),
+        name: getTranslation(locale.code, `languages.${locale.code}`),
         url,
       })
     }
 
     return newLocales
-  }, [t, locales, pathname])
+  }, [locales, pathname])
 
   const toggleMenuIsOpen = useCallback(() => {
     setIsMenuOpen(!isMenuOpen)
@@ -115,7 +116,10 @@ export default function LocaleSwitcher() {
         style={{ viewTransitionName: 'locale-switcher' }}
       >
         <Image
-          alt={t(`languages.${currentLocale?.code}.alt`)}
+          alt={getTranslation(
+            currentLocale.code,
+            `languages.${currentLocale?.code}.alt`,
+          )}
           className="h-12 w-12 rounded-full object-cover drop-shadow-md transition-all max-sm:h-10 max-sm:w-10"
           height={48}
           priority
@@ -129,7 +133,7 @@ export default function LocaleSwitcher() {
 
       <a
         aria-expanded={isMenuOpen}
-        aria-label={t('locale_switcher.label')}
+        aria-label={getTranslation(currentLocale.code, 'locale_switcher.label')}
         className="absolute top-16 right-3 z-40 mt-8 origin-[6rem_0] scale-0 rounded-2xl bg-white/80 shadow-md backdrop-blur-lg transition-all ease-out before:absolute before:-top-4 before:right-10 before:origin-bottom before:scale-0 before:border-8 before:border-transparent before:border-b-white/80 before:backdrop-blur-lg before:transition-all aria-expanded:scale-100 aria-expanded:ease-[cubic-bezier(.2,.8,.6,1.3)] aria-expanded:before:scale-100 max-sm:right-0 max-sm:mt-2 max-sm:before:right-12 dark:bg-neutral-900/90 dark:before:border-b-neutral-900/90"
         href="#"
         ref={dropdownRef}
@@ -145,7 +149,10 @@ export default function LocaleSwitcher() {
               tabIndex={isMenuOpen ? 0 : -1}
             >
               <Image
-                alt={t(`languages.${locale?.code}.alt`)}
+                alt={getTranslation(
+                  currentLocale.code,
+                  `languages.${locale?.code}.alt`,
+                )}
                 className="w-12 drop-shadow-md transition-all max-sm:w-10"
                 data-locale={locale.code}
                 height={33}
@@ -153,7 +160,7 @@ export default function LocaleSwitcher() {
                 src={`/flags/${locale.code}.gif`}
                 width={48}
               />
-              {t(`languages.${locale?.code}`)}
+              {getTranslation(currentLocale.code, `languages.${locale?.code}`)}
             </button>
           ))}
         </div>

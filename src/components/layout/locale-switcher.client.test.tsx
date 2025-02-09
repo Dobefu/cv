@@ -36,7 +36,7 @@ describe('LocaleSwitcher', () => {
       screen
         .getAllByRole<HTMLElement>('button')[0]
         .getElementsByTagName('img')[0].alt,
-    ).toBe('⚠ languages.nl.alt ⚠')
+    ).toBe('Nederlandse vlag')
   })
 
   it('Renders with the current locale as the only option', async () => {
@@ -46,7 +46,7 @@ describe('LocaleSwitcher', () => {
       screen
         .getAllByRole<HTMLElement>('button')[0]
         .getElementsByTagName('img')[0].alt,
-    ).toBe('⚠ languages.nl.alt ⚠')
+    ).toBe('Nederlandse vlag')
   })
 
   it('Closes when clicking outside', async () => {
@@ -59,7 +59,7 @@ describe('LocaleSwitcher', () => {
       screen
         .getAllByRole<HTMLElement>('button')[0]
         .getElementsByTagName('img')[0].alt,
-    ).toBe('⚠ languages.nl.alt ⚠')
+    ).toBe('Nederlandse vlag')
   })
 
   it('Redirects the root path', async () => {
@@ -72,7 +72,7 @@ describe('LocaleSwitcher', () => {
       screen
         .getAllByRole<HTMLElement>('button')[0]
         .getElementsByTagName('img')[0].alt,
-    ).toBe('⚠ languages.nl.alt ⚠')
+    ).toBe('Nederlandse vlag')
   })
 
   it('Redirects with a query parameter', async () => {
@@ -87,6 +87,6 @@ describe('LocaleSwitcher', () => {
       screen
         .getAllByRole<HTMLElement>('button')[0]
         .getElementsByTagName('img')[0].alt,
-    ).toBe('⚠ languages.nl.alt ⚠')
+    ).toBe('Nederlandse vlag')
   })
 })
