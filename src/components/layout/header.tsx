@@ -1,5 +1,6 @@
 import { Locale } from '@/types/locale'
 import Image from 'next/image'
+import { Suspense } from 'react'
 import LocaleLink from '../utils/locale-link.client'
 import HeaderClient from './header.client'
 import LocaleSwitcher from './locale-switcher.client'
@@ -33,7 +34,9 @@ export default function Header({ appName, locale }: Props) {
             </LocaleLink>
           </div>
 
-          <LocaleSwitcher locale={locale} />
+          <Suspense>
+            <LocaleSwitcher locale={locale} />
+          </Suspense>
         </div>
       </HeaderClient>
     </div>
