@@ -1,5 +1,6 @@
 'use client'
 
+import { Locale } from '@/types/locale'
 import getLocales from '@/utils/get-locales'
 import getTranslation from '@/utils/get-translation'
 import { logError } from '@/utils/logger'
@@ -14,7 +15,7 @@ import {
   useState,
 } from 'react'
 
-type Locale = {
+type LocaleWithUrl = {
   code: string
   name: string
   url: string
@@ -35,8 +36,8 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
   const dropdownRef = useRef<HTMLAnchorElement>(null)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const usableLocales = useMemo<Locale[]>(() => {
-    const newLocales: Locale[] = []
+  const usableLocales = useMemo<LocaleWithUrl[]>(() => {
+    const newLocales: LocaleWithUrl[] = []
     const pathParts = pathname.split('/')
     const pathWithoutLocale = pathParts.slice(2).join('/')
 
