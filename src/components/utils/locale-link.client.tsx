@@ -1,6 +1,7 @@
 'use client'
 
-import NextLink, { LinkProps } from 'next/link'
+import { Link as NextLink } from 'next-view-transitions'
+import { LinkProps } from 'next/link'
 import React, { useContext } from 'react'
 import { LocaleContext } from '../layout/providers.client'
 

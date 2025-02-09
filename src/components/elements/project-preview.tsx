@@ -32,16 +32,31 @@ export default function ProjectPreview({
           height={144}
           sizes="240px"
           src={img.src}
+          style={{
+            viewTransitionName: `project-image-${label.toLowerCase().replaceAll(' ', '_')}`,
+          }}
           width={256}
         />
       </div>
 
       <div className="flex flex-col gap-4">
-        <h3 className="pb-0">{label}</h3>
+        <h3
+          className="pb-0"
+          style={{
+            viewTransitionName: `project-title-${label.toLowerCase().replaceAll(' ', '_')}`,
+          }}
+        >
+          {label}
+        </h3>
 
         <p>{subtext}</p>
 
-        <div className="flex flex-wrap gap-2 max-md:justify-center">
+        <div
+          className="flex flex-wrap gap-2 max-md:justify-center"
+          style={{
+            viewTransitionName: `project-tags-${label.toLowerCase().replaceAll(' ', '_')}`,
+          }}
+        >
           {tags.map((tagId) => (
             <IconTag key={tagId} tagId={tagId} />
           ))}

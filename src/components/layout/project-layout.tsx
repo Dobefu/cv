@@ -14,7 +14,13 @@ export type Props = Readonly<{
 export default function ProjectLayout({ children, project }: Props) {
   return (
     <ContentContainer>
-      <h1>{project.title}</h1>
+      <h1
+        style={{
+          viewTransitionName: `project-title-${project.title.toLowerCase().replaceAll(' ', '_')}`,
+        }}
+      >
+        {project.title}
+      </h1>
 
       <Image
         alt={project.image.alt}
@@ -23,13 +29,21 @@ export default function ProjectLayout({ children, project }: Props) {
         priority
         sizes="240px"
         src={`/img/projects/${project.image.src}`}
+        style={{
+          viewTransitionName: `project-image-${project.title.toLowerCase().replaceAll(' ', '_')}`,
+        }}
         width={384}
       />
 
       {children}
 
       <div className="flex flex-col gap-8 pt-8">
-        <div className="flex flex-wrap gap-2">
+        <div
+          className="flex flex-wrap gap-2"
+          style={{
+            viewTransitionName: `project-tags-${project.title.toLowerCase().replaceAll(' ', '_')}`,
+          }}
+        >
           {project.tags.map((tagId) => (
             <IconTag key={tagId} tagId={tagId} />
           ))}

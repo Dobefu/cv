@@ -52,7 +52,10 @@ export default function Footer({ appName }: Props) {
   ]
 
   return (
-    <footer className="w-full bg-zinc-100 px-4 py-10 shadow-[0_-4px_6px_-1px_rgb(0,0,0,.1)] dark:bg-zinc-950 print:hidden">
+    <footer
+      className="w-full bg-zinc-100 px-4 py-10 shadow-[0_-4px_6px_-1px_rgb(0,0,0,.1)] dark:bg-zinc-950 print:hidden"
+      style={{ viewTransitionName: 'footer' }}
+    >
       <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-5 text-center md:grid-cols-3">
         <div className="md:text-start">
           <Link
