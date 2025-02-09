@@ -1,6 +1,5 @@
 import { Locale } from '@/types/locale'
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
-import { loadEnvFile } from 'node:process'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import LocaleSwitcher from './locale-switcher.client'
 
@@ -19,13 +18,11 @@ vi.mock('react', async () => {
 
 describe('LocaleSwitcher', () => {
   beforeEach(() => {
-    loadEnvFile('.env')
     process.env.MOCK_PATHNAME = '/'
   })
 
   afterEach(() => {
     cleanup()
-    loadEnvFile('.env')
     process.env.MOCK_PATHNAME = '/'
   })
 

@@ -1,14 +1,9 @@
-import { loadEnvFile } from 'process'
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 import sitemap from './sitemap'
 
 describe('sitemap', () => {
   beforeEach(() => {
-    loadEnvFile('.env')
-  })
-
-  afterEach(() => {
-    loadEnvFile('.env')
+    process.env.NEXT_PUBLIC_APP_URL = 'http://localhost.test'
   })
 
   it('renders', async () => {
