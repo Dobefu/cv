@@ -63,6 +63,7 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
                 alt={img.alt}
                 className="relative mx-auto mt-auto -mb-4 w-64 flex-none origin-bottom drop-shadow-md transition-transform active:scale-95 max-sm:-ms-8 max-sm:-mb-2 max-sm:w-32"
                 height={256}
+                priority
                 quality={70}
                 sizes="(max-width: 640px) 128px, (max-width: 768px) 256px, (max-width: 1024px) 512px"
                 src={img.src}
