@@ -41,7 +41,7 @@ export async function RootLayout({
           className={`${geistSans.variable} flex min-h-full flex-col bg-zinc-200 font-sans text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white contrast-more:dark:bg-black print:bg-transparent`}
         >
           <Providers locale={locale} translations={translations}>
-            <SkipToMain />
+            <SkipToMain locale={locale.code} />
 
             <div className="flex flex-1 flex-col justify-between">
               <Header appName={appName} />
