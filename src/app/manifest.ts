@@ -42,11 +42,6 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: '192x192',
       },
       {
-        src: '/logo-152.png',
-        purpose,
-        sizes: '152x152',
-      },
-      {
         src: '/logo-144.png',
         purpose,
         sizes: '144x144',
@@ -65,11 +60,6 @@ export default function manifest(): MetadataRoute.Manifest {
         src: '/logo-72.png',
         purpose,
         sizes: '72x72',
-      },
-      {
-        src: '/logo-48.png',
-        purpose,
-        sizes: '48x48',
       },
     ],
     screenshots: [
