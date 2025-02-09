@@ -6,6 +6,11 @@ import Header from './header'
 describe('Header', () => {
   const consoleWarnMock = vi.spyOn(console, 'warn').mockImplementation(() => {})
 
+  const locale = {
+    code: 'nl',
+    name: 'Nederlands',
+  }
+
   beforeEach(() => {
     process.env.MOCK_PATHNAME = '/'
   })
@@ -16,13 +21,13 @@ describe('Header', () => {
   })
 
   it('Renders', () => {
-    render(<Header appName="Testing" />)
+    render(<Header appName="Testing" locale={locale} />)
 
     expect(screen.getByRole('banner')).toBeDefined()
   })
 
   it('Renders differently after a scroll threshold', () => {
-    render(<Header appName="Testing" />)
+    render(<Header appName="Testing" locale={locale} />)
 
     act(() => {
       window.scrollY = 112

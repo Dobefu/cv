@@ -1,3 +1,4 @@
+import { Locale } from '@/types/locale'
 import Image from 'next/image'
 import LocaleLink from '../utils/locale-link.client'
 import HeaderClient from './header.client'
@@ -5,9 +6,10 @@ import LocaleSwitcher from './locale-switcher.client'
 
 type Props = Readonly<{
   appName: string
+  locale: Locale
 }>
 
-export default function Header({ appName }: Props) {
+export default function Header({ appName, locale }: Props) {
   return (
     <div className="sticky top-0 z-40 p-4 print:opacity-0">
       <HeaderClient>
@@ -31,7 +33,7 @@ export default function Header({ appName }: Props) {
             </LocaleLink>
           </div>
 
-          <LocaleSwitcher />
+          <LocaleSwitcher locale={locale} />
         </div>
       </HeaderClient>
     </div>

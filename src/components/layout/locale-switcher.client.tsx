@@ -21,8 +21,11 @@ type Locale = {
   url: string
 }
 
-export default function LocaleSwitcher() {
-  const { locale: currentLocale } = useLocale()
+export type Props = Readonly<{
+  locale: Locale
+}>
+
+export default function LocaleSwitcher({ locale: currentLocale }: Props) {
   const { locales } = getLocales()
 
   const router = useRouter()

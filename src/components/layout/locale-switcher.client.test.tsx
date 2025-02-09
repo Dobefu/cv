@@ -6,19 +6,10 @@ import LocaleSwitcher from './locale-switcher.client'
 describe('LocaleSwitcher', () => {
   const consoleWarnMock = vi.spyOn(console, 'warn').mockImplementation(() => {})
 
-  vi.mock('react', async () => {
-    const actual = await vi.importActual('react')
-
-    return {
-      ...(actual as object),
-      useContext: () => ({
-        locale: {
-          code: 'nl',
-          name: 'Nederlands',
-        } satisfies Locale,
-      }),
-    }
-  })
+  const locale = {
+    code: 'nl',
+    name: 'Nederlands',
+  }
 
   beforeEach(() => {
     process.env.MOCK_PATHNAME = '/'
@@ -30,7 +21,7 @@ describe('LocaleSwitcher', () => {
   })
 
   it('Renders normally', async () => {
-    render(<LocaleSwitcher />)
+    render(<LocaleSwitcher locale={locale} />)
 
     expect(
       screen
@@ -40,7 +31,7 @@ describe('LocaleSwitcher', () => {
   })
 
   it('Renders with the current locale as the only option', async () => {
-    render(<LocaleSwitcher />)
+    render(<LocaleSwitcher locale={locale} />)
 
     expect(
       screen
@@ -50,7 +41,7 @@ describe('LocaleSwitcher', () => {
   })
 
   it('Closes when clicking outside', async () => {
-    render(<LocaleSwitcher />)
+    render(<LocaleSwitcher locale={locale} />)
 
     fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[0])
     fireEvent.click(document.documentElement)
@@ -63,7 +54,7 @@ describe('LocaleSwitcher', () => {
   })
 
   it('Redirects the root path', async () => {
-    render(<LocaleSwitcher />)
+    render(<LocaleSwitcher locale={locale} />)
 
     fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[0])
     fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[2])
@@ -78,7 +69,7 @@ describe('LocaleSwitcher', () => {
   it('Redirects with a query parameter', async () => {
     process.env.MOCK_PATHNAME = '/?test=1'
 
-    render(<LocaleSwitcher />)
+    render(<LocaleSwitcher locale={locale} />)
 
     fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[0])
     fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[2])
