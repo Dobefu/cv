@@ -3,7 +3,7 @@ import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
 import Providers from './providers.client'
 
-describe('providers', () => {
+describe('Providers', () => {
   afterEach(() => {
     cleanup()
   })

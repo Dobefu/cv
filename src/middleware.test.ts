@@ -1,4 +1,3 @@
-import { cleanup } from '@testing-library/react'
 import { NextRequest, NextResponse } from 'next/server'
 import { afterEach, describe, expect, it, vitest } from 'vitest'
 import { middleware } from './middleware'
@@ -7,7 +6,6 @@ describe('middleware', () => {
   const redirectSpy = vitest.spyOn(NextResponse, 'redirect')
 
   afterEach(() => {
-    cleanup()
     redirectSpy.mockReset()
   })
 

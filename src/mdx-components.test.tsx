@@ -5,7 +5,6 @@ import { useMDXComponents } from './mdx-components'
 
 describe('useMDXComponents', () => {
   afterEach(() => {
-    vi.restoreAllMocks()
     cleanup()
   })
 
