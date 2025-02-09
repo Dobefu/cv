@@ -23,6 +23,10 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: '512x512',
       },
       {
+        src: '/logo-512.png',
+        sizes: '512x512',
+      },
+      {
         src: '/logo-384.png',
         purpose,
         sizes: '384x384',
