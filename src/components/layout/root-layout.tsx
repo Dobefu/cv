@@ -43,7 +43,7 @@ export async function RootLayout({
           <Providers locale={locale} translations={translations}>
             <SkipToMain locale={locale.code} />
 
-            <div className="flex flex-1 flex-col justify-between">
+            <div className="flex flex-1 flex-col">
               <Header appName={appName} locale={locale} />
 
               {breadcrumb}
