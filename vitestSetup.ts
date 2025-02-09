@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { vi } from 'vitest'
 
 process.env.MOCK_PATHNAME = '/'
@@ -15,6 +16,7 @@ vi.mock('next/config', () => ({
 
 vi.mock('next/navigation', async () => {
   const actual = await vi.importActual('next/navigation')
+
   return {
     ...(actual as object),
     useRouter: vi.fn(() => ({
@@ -27,6 +29,12 @@ vi.mock('next/navigation', async () => {
     usePathname: () => {
       return process.env.MOCK_PATHNAME
     },
+  }
+})
+
+vi.mock('next-view-transitions', async () => {
+  return {
+    Link,
   }
 })
 
