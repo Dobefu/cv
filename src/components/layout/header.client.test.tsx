@@ -4,13 +4,14 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import Header from './header.client'
 
 describe('Header', () => {
+  const consoleWarnMock = vi.spyOn(console, 'warn').mockImplementation(() => {})
+
   beforeEach(() => {
     process.env.MOCK_PATHNAME = '/'
   })
 
   afterEach(() => {
-    process.env.MOCK_PATHNAME = '/'
-    vi.restoreAllMocks()
+    consoleWarnMock.mockReset()
     cleanup()
   })
 

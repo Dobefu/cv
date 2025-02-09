@@ -3,27 +3,30 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import LocaleSwitcher from './locale-switcher.client'
 
-vi.mock('react', async () => {
-  const actual = await vi.importActual('react')
-  return {
-    ...(actual as object),
-    useContext: () => ({
-      locale: {
-        code: 'nl',
-        name: 'Nederlands',
-      } satisfies Locale,
-    }),
-  }
-})
-
 describe('LocaleSwitcher', () => {
+  const consoleWarnMock = vi.spyOn(console, 'warn').mockImplementation(() => {})
+
+  vi.mock('react', async () => {
+    const actual = await vi.importActual('react')
+
+    return {
+      ...(actual as object),
+      useContext: () => ({
+        locale: {
+          code: 'nl',
+          name: 'Nederlands',
+        } satisfies Locale,
+      }),
+    }
+  })
+
   beforeEach(() => {
     process.env.MOCK_PATHNAME = '/'
   })
 
   afterEach(() => {
+    consoleWarnMock.mockReset()
     cleanup()
-    process.env.MOCK_PATHNAME = '/'
   })
 
   it('Renders normally', async () => {

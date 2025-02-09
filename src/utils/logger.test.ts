@@ -1,7 +1,7 @@
 import { afterAll, describe, expect, it, vi } from 'vitest'
 import { logError, logWarning } from './logger'
 
-describe('logger', () => {
+describe('Logger', () => {
   const consoleWarnMock = vi.spyOn(console, 'warn').mockImplementation(() => {})
   const consoleErrorMock = vi
     .spyOn(console, 'error')
@@ -11,7 +11,7 @@ describe('logger', () => {
     consoleErrorMock.mockReset()
   })
 
-  it('renders warning', () => {
+  it('renders warnings', () => {
     logWarning('Test')
 
     expect(consoleWarnMock).toHaveBeenCalledOnce()

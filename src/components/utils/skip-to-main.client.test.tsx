@@ -3,8 +3,10 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import SkipToMain from './skip-to-main.client'
 
 describe('SkipToMain', () => {
+  const consoleWarnMock = vi.spyOn(console, 'warn').mockImplementation(() => {})
+
   afterEach(() => {
-    vi.restoreAllMocks()
+    consoleWarnMock.mockReset()
     cleanup()
   })
 
