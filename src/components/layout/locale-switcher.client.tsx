@@ -112,6 +112,7 @@ export default function LocaleSwitcher() {
         className="flex cursor-pointer items-center gap-2 align-middle"
         onClick={toggleMenuIsOpen}
         ref={buttonRef}
+        style={{ viewTransitionName: 'locale-switcher' }}
       >
         <Image
           alt={t(`languages.${currentLocale?.code}.alt`)}
