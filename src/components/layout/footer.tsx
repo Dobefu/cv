@@ -58,13 +58,13 @@ export default function Footer({ appName }: Props) {
     >
       <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-5 text-center md:grid-cols-3">
         <div className="md:text-start">
-          <Link
+          <LocaleLink
             aria-label={appName}
             className="flex-none text-xl font-semibold text-zinc-800 dark:text-white dark:focus:ring-1 dark:focus:ring-gray-600 dark:focus:outline-hidden"
             href="/"
           >
             {appName}
-          </Link>
+          </LocaleLink>
         </div>
 
         <div className="flex flex-wrap justify-center gap-8 text-center">
