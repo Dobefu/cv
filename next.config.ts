@@ -36,6 +36,15 @@ let nextConfig: NextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        statusCode: 303,
+      },
+    ]
+  },
 }
 
 const withBundleAnalyzer = bundleAnalyzer({
