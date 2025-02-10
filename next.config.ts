@@ -19,6 +19,9 @@ let nextConfig: NextConfig = {
           }
         : false,
   },
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
   async headers() {
     return [
       {
