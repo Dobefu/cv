@@ -32,12 +32,12 @@ export default function ImageField({ label, text, subtext, link, img }: Props) {
         />
       )}
 
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col justify-center gap-1">
         <p className="pb-0 text-lg font-semibold text-sky-700 dark:text-sky-500">
           {label}
         </p>
         <p className="pb-0">{text}</p>
-        <p className="text-sm">{subtext}</p>
+        <p className="pb-1 text-sm">{subtext}</p>
       </div>
     </Tag>
   )
