@@ -129,6 +129,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
           quality="90"
           sizes="sm:40px md:56px"
           src={`/flags/${currentLocale?.code}.gif`}
+          unoptimized
           width={48}
         />
         &#9660;
@@ -161,6 +162,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
                 height={33}
                 quality="90"
                 src={`/flags/${locale.code}.gif`}
+                unoptimized
                 width={48}
               />
               {getTranslation(currentLocale.code, `languages.${locale?.code}`)}
