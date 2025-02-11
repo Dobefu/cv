@@ -35,7 +35,7 @@ export default function Header({ appName, locale }: Props) {
             </LocaleLink>
           </div>
 
-          <Suspense>
+          <Suspense fallback={<div className="h-10 w-15" />}>
             <LocaleSwitcher locale={locale} />
           </Suspense>
         </div>
