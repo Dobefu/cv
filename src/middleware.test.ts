@@ -20,7 +20,7 @@ describe('middleware', () => {
   it('redirects for invalid locales', () => {
     middleware(new NextRequest(new URL('http://localhost:3000/invalid/')))
     expect(redirectSpy).toHaveBeenCalledWith(
-      new URL('http://localhost:3000/en/invalid/'),
+      new URL('http://localhost:3000/en/invalid'),
     )
   })
 })

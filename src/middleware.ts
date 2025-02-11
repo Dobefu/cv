@@ -41,7 +41,8 @@ function handleLocaleDetection(request: NextRequest): URL | undefined {
   const matchedLocale = match(languages, localeCodes, defaultLocale)
 
   const url = new URL(request.nextUrl.origin)
-  url.pathname = `/${matchedLocale}${pathname}`
+  url.pathname = `/${matchedLocale}${pathname.replace(/\/$/, '')}`
+
   return url
 }
 
