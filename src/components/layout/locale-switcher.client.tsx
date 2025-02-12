@@ -160,6 +160,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
                 className="w-12 rounded-full drop-shadow-md transition-all max-sm:w-10"
                 data-locale={locale.code}
                 height={48}
+                priority
                 quality="90"
                 src={`/flags/${locale.code}.svg`}
                 unoptimized

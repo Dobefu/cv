@@ -1,7 +1,6 @@
 import getLocales from '@/utils/get-locales'
 import getTranslations from '@/utils/get-translations'
 import { Analytics } from '@vercel/analytics/next'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ViewTransitions } from 'next-view-transitions'
 import getConfig from 'next/config'
 import { Geist } from 'next/font/google'
@@ -59,7 +58,6 @@ export async function RootLayout({
             </div>
           </Providers>
 
-          <SpeedInsights />
           <Analytics />
         </body>
       </html>
