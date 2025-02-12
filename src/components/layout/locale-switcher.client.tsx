@@ -128,7 +128,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
           priority
           quality="90"
           sizes="sm:40px md:56px"
-          src={`/flags/${currentLocale?.code}.gif`}
+          src={`/flags/${currentLocale?.code}.svg`}
           unoptimized
           width={48}
         />
@@ -157,11 +157,11 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
                   currentLocale.code,
                   `languages.${locale?.code}.alt`,
                 )}
-                className="w-12 drop-shadow-md transition-all max-sm:w-10"
+                className="w-12 rounded-full drop-shadow-md transition-all max-sm:w-10"
                 data-locale={locale.code}
-                height={33}
+                height={48}
                 quality="90"
-                src={`/flags/${locale.code}.gif`}
+                src={`/flags/${locale.code}.svg`}
                 unoptimized
                 width={48}
               />
