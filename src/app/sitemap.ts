@@ -16,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const mdFiles = files.filter((file) => {
     // Exclude catch-all routes.
-    if (file.includes('[...')) return false
+    if (file.includes('[...') || file.startsWith('@')) return false
 
     return file.endsWith('page.mdx') || file.endsWith('page.tsx')
   })
