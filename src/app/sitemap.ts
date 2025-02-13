@@ -15,7 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   })
 
   const mdFiles = files.filter((file) => {
-    // Exclude catch-all routes.
+    // Exclude catch-all routes and parallel routes.
     if (file.includes('[...') || file.startsWith('@')) return false
 
     return file.endsWith('page.mdx') || file.endsWith('page.tsx')
@@ -24,9 +24,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const paths = mdFiles.map((file) => file.replace(/(\/page|)\.(mdx|tsx)$/, ''))
 
   return paths.map((path) => {
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL
     const cleanPath = path
       .replaceAll(/\(.{1,25}?\)/g, '')
       .replaceAll(/\/\//g, '/')
+      .replace(/^page$/, '')
     const languages: Record<string, string> = {}
 
     localeCodes
@@ -34,11 +36,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .forEach(
         (localeCode) =>
           (languages[localeCode] =
-            `${process.env.NEXT_PUBLIC_APP_URL}/${localeCode}/${cleanPath}`),
+            `${appUrl}/${localeCode}/${cleanPath}`.replace(/\/$/, '')),
       )
 
     return {
-      url: `${process.env.NEXT_PUBLIC_APP_URL}/${defaultLocale}/${cleanPath}`,
+      url: `${appUrl}/${defaultLocale}/${cleanPath}`.replace(/\/$/, ''),
       alternates: { languages },
       priority: 1,
     }
