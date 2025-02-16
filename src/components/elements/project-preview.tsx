@@ -40,14 +40,14 @@ export default function ProjectPreview({
       </div>
 
       <div className="flex flex-col gap-4">
-        <h3
+        <h2
           className="pb-0"
           style={{
             viewTransitionName: `project-title-${label.toLowerCase().replaceAll(' ', '_')}`,
           }}
         >
           {label}
-        </h3>
+        </h2>
 
         <p className="pb-0">{subtext}</p>
 
