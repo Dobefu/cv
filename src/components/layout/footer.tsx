@@ -95,7 +95,7 @@ export default function Footer({ appName }: Props) {
               target="_blank"
               title={socialLink.title}
             >
-              <Icon className="h-5 w-5" icon={socialLink.icon} />
+              <Icon className="size-5" icon={socialLink.icon} />
             </Link>
           ))}
         </div>

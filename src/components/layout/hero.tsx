@@ -51,7 +51,7 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
                   className="me-auto inline-flex items-center gap-2 rounded-lg border border-transparent bg-sky-700 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-sky-800 focus:bg-sky-800 focus:outline-hidden sm:px-4 sm:py-3 print:hidden"
                   href={cta.href}
                 >
-                  <Icon className="h-5 w-5" icon={iconChevronRight} ssr />
+                  <Icon className="size-5" icon={iconChevronRight} ssr />
 
                   {cta.title}
                 </LocaleLink>

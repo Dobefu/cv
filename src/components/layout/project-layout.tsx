@@ -55,7 +55,7 @@ export default function ProjectLayout({ children, project }: Props) {
           rel="nofollow"
           target="_blank"
         >
-          <Icon className="h-5 w-5 shrink-0" icon={iconGithub} ssr />
+          <Icon className="size-5 shrink-0" icon={iconGithub} ssr />
           {project.repo}
         </Link>
       </div>
