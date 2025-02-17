@@ -21,6 +21,7 @@ describe('middleware', () => {
     middleware(new NextRequest(new URL('http://localhost:3000/invalid/')))
     expect(redirectSpy).toHaveBeenCalledWith(
       new URL('http://localhost:3000/en/invalid'),
+      { status: 302 },
     )
   })
 })

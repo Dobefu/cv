@@ -10,7 +10,7 @@ export function middleware(request: NextRequest) {
   const redirectUrl = handleLocaleDetection(request)
 
   if (redirectUrl) {
-    return NextResponse.redirect(redirectUrl)
+    return NextResponse.redirect(redirectUrl, { status: 302 })
   }
 
   const response = getCspResponse()
