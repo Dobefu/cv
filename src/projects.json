@@ -32,6 +32,17 @@
       "tags": ["nuxtjs", "vuejs", "typescript", "go"],
       "repo": "https://github.com/Dobefu/scrum-poker",
       "path": "scrum-poker"
+    },
+    {
+      "title": "Tetris for the Picosystem",
+      "subtext": "A small Tetris clone made for the Picosystem",
+      "image": {
+        "src": "picosystem-tetris.png",
+        "alt": "Screenshot of the Tetris application for the Picosystem"
+      },
+      "tags": ["cpp"],
+      "repo": "https://github.com/Dobefu/picosystem-tetris",
+      "path": "picosystem-tetris"
     }
   ],
   "nl": [
@@ -67,6 +78,17 @@
       "tags": ["nuxtjs", "vuejs", "typescript", "go"],
       "repo": "https://github.com/Dobefu/scrum-poker",
       "path": "scrum-poker"
+    },
+    {
+      "title": "Tetris voor de Picosystem",
+      "subtext": "Een kleine Tetris clone, gemaakt voor de Picosystem",
+      "image": {
+        "src": "picosystem-tetris.png",
+        "alt": "Schermafbeelding van de Tetris applicatie voor de Picosystem"
+      },
+      "tags": ["cpp"],
+      "repo": "https://github.com/Dobefu/picosystem-tetris",
+      "path": "picosystem-tetris"
     }
   ]
 }

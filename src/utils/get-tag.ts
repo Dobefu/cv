@@ -6,6 +6,7 @@ import iconNuxtjs from '@iconify/icons-devicon/nuxtjs'
 import iconTailwindcss from '@iconify/icons-devicon/tailwindcss'
 import iconTypescript from '@iconify/icons-devicon/typescript'
 import iconVuejs from '@iconify/icons-devicon/vuejs'
+import iconCpp from '@iconify/icons-mdi/language-cpp'
 import iconQuestionMarkRhombus from '@iconify/icons-mdi/question-mark-rhombus'
 
 export default function getTag(tag: string): Tag {
@@ -44,6 +45,11 @@ export default function getTag(tag: string): Tag {
       title: 'Contentstack',
       icon: iconContentstack,
       classes: 'text-[#7c4dff]',
+    },
+    cpp: {
+      title: 'C++',
+      icon: iconCpp,
+      classes: '',
     },
   }
 
