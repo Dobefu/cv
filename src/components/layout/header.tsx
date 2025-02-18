@@ -27,6 +27,7 @@ export default function Header({ appName, locale }: Props) {
                 loading="eager"
                 priority
                 src="/logo-white.svg"
+                title={appName}
                 width={56}
               />
 

@@ -38,6 +38,7 @@ export default function ProjectPreview({
           style={{
             viewTransitionName: `project-image-${label.toLowerCase().replaceAll(' ', '_')}`,
           }}
+          title={label}
           width={256}
         />
       </div>
