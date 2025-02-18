@@ -30,11 +30,12 @@ export default function Projects() {
         </p>
       </div>
 
-      {projects?.map((project) => (
+      {projects?.map((project, index) => (
         <ProjectPreview
           img={{
             alt: project.image.alt,
             src: `/img/projects/${project.image.src}`,
+            priority: index === 0,
           }}
           key={project.title}
           label={project.title}
