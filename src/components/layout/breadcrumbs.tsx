@@ -1,4 +1,5 @@
 import getProjectFromUrl from '@/utils/get-project-from-url'
+import { Metadata } from 'next'
 import { Fragment } from 'react'
 import LocaleLink from '../utils/locale-link.client'
 
@@ -30,7 +31,8 @@ export async function generateMetadata({ params }: Props) {
         nl: `/nl${pathPartsWithoutLocale.join('/')}`,
       },
     },
-  }
+    icons: { apple: '/logo-192.png' },
+  } satisfies Metadata
 }
 
 export default async function Breadcrumb({ params }: Props) {
