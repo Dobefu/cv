@@ -13,7 +13,7 @@ export default function Projects() {
 
   return (
     <ContentContainer>
-      <h1>Projects</h1>
+      <h1>Projects I&apos;ve worked on</h1>
 
       <div className="text-gray-700 dark:text-gray-200">
         <p>

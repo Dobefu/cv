@@ -19,7 +19,7 @@ export default function Projects() {
 
   return (
     <ContentContainer>
-      <h1>Projecten</h1>
+      <h1>Projecten waaraan ik gewerkt heb</h1>
 
       <div className="text-gray-700 dark:text-gray-200">
         <p>
