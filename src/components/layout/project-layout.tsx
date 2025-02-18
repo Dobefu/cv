@@ -26,12 +26,14 @@ export default function ProjectLayout({ children, project }: Props) {
         alt={project.image.alt}
         className="mb-8 rounded-md"
         height={240}
+        loading="eager"
         priority
         sizes="240px"
         src={`/img/projects/${project.image.src}`}
         style={{
           viewTransitionName: `project-image-${project.title.toLowerCase().replaceAll(' ', '_')}`,
         }}
+        title={project.title}
         width={384}
       />
 
