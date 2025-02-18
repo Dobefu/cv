@@ -24,6 +24,7 @@ export default function Header({ appName, locale }: Props) {
                 alt="Logo"
                 className="mr-2 w-16 p-1 drop-shadow-md transition-all max-sm:mr-1 max-sm:-ml-1 max-sm:w-10 max-sm:p-0"
                 height={56}
+                loading="eager"
                 priority
                 src="/logo-white.svg"
                 width={56}

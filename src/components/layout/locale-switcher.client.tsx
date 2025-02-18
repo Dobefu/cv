@@ -125,6 +125,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
           )}
           className="h-12 w-12 rounded-full object-cover drop-shadow-md transition-all max-sm:h-10 max-sm:w-10"
           height={48}
+          loading="eager"
           priority
           quality="90"
           sizes="sm:40px md:56px"
@@ -160,6 +161,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
                 className="w-12 rounded-full drop-shadow-md transition-all max-sm:w-10"
                 data-locale={locale.code}
                 height={48}
+                loading="eager"
                 priority
                 quality="90"
                 src={`/flags/${locale.code}.svg`}
