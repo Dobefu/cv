@@ -1,3 +1,4 @@
+import { generateMetadata as breadcrumbGenerateMetadata } from '@/components/layout/breadcrumbs'
 import getLocales from '@/utils/get-locales'
 import getTranslations from '@/utils/get-translations'
 import { Analytics } from '@vercel/analytics/next'
@@ -20,6 +21,16 @@ const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
 })
+
+export async function generateMetadata(locale: string) {
+  return breadcrumbGenerateMetadata({
+    params: new Promise((resolve) =>
+      resolve({
+        slug: [locale],
+      }),
+    ),
+  })
+}
 
 export async function RootLayout({
   breadcrumb,
