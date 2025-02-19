@@ -30,8 +30,4 @@
   p {
     @apply pb-4;
   }
-
-  label {
-    @apply block font-semibold text-sky-800 dark:text-sky-400 contrast-more:dark:text-sky-300;
-  }
 }
