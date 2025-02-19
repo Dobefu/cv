@@ -32,8 +32,6 @@ export default function Header({ appName, locale }: Props) {
               />
 
               <span className="drop-shadow-md">{appName}</span>
-
-              <slot />
             </LocaleLink>
           </div>
 

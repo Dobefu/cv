@@ -30,7 +30,7 @@ export default function ProgressBarClient({ percentage }: Props) {
 
   return (
     <div
-      className="h-full origin-left transition-[cubic-bezier(.5,0,.5,1.75)] duration-[400ms] print:!scale-x-100"
+      className="h-full origin-left transition-[cubic-bezier(.5,0,.5,1.75)] duration-[400ms] rtl:origin-right print:!scale-x-100"
       ref={target}
     >
       <div

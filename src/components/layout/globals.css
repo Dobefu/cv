@@ -1,6 +1,16 @@
 @import 'tailwindcss';
 
 @layer base {
+  @media (prefers-reduced-motion) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0s !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   h1 {
     @apply pb-8 text-4xl font-semibold text-sky-700 sm:text-5xl dark:text-sky-500 contrast-more:dark:text-sky-400;
   }
