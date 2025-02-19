@@ -34,6 +34,7 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
           priority
           quality={70}
           src={imgBg.src}
+          title={`${title} - ${subtitle}`}
         />
       )}
 
@@ -69,6 +70,7 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
                 quality={70}
                 sizes="(max-width: 640px) 128px, (max-width: 768px) 256px, (max-width: 1024px) 512px"
                 src={img.src}
+                title={`${title} - ${subtitle}`}
                 width={256}
               />
             )}
