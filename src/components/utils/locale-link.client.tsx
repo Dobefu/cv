@@ -12,9 +12,17 @@ const LocaleLink: React.FC<
 > = (props) => {
   const { locale } = useContext(LocaleContext)
 
+  const isExternal =
+    props.href.startsWith('http') ||
+    props.href.startsWith('mailto') ||
+    props.href.startsWith('tel')
+
   const newProps = {
     ...props,
-    href: `/${props.localeOverride || locale?.code}${props.href}`,
+    href: isExternal
+      ? props.href
+      : `/${props.localeOverride || locale?.code}${props.href}`,
+    rel: isExternal ? 'nofollow' : undefined,
   }
 
   delete newProps.localeOverride
