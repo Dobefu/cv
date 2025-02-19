@@ -8,6 +8,7 @@ type Props = Readonly<{
   img?: {
     src: string
     alt: string
+    title: string
   }
 }>
 
@@ -28,6 +29,7 @@ export default function ImageField({ label, text, subtext, link, img }: Props) {
           height={100}
           sizes="100px"
           src={img.src}
+          title={img.title}
           width={100}
         />
       )}
