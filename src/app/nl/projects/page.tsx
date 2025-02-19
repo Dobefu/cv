@@ -6,11 +6,10 @@ export const metadata = {
   title: 'Projecten',
   description:
     'Als gepassioneerd full-stack web engineer heb ik mijn vaardigheden verbeterd. Ontdek mijn projecten om te zien hoe ik ideeën omzet in krachtige webervaringen.',
-  alternates: {
-    languages: {
-      en: '/en/projects',
-      nl: '/nl/projects',
-    },
+  openGraph: {
+    title: 'Projecten',
+    description:
+      'Als gepassioneerd full-stack web engineer heb ik mijn vaardigheden verbeterd. Ontdek mijn projecten om te zien hoe ik ideeën omzet in krachtige webervaringen.',
   },
 }
 

@@ -36,6 +36,9 @@ export async function generateMetadata({ params }: Props) {
       },
     },
     icons: { apple: '/logo-192.png' },
+    openGraph: {
+      url: slug.join('/'),
+    },
   } satisfies Metadata
 }
 

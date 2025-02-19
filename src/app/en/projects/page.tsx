@@ -6,6 +6,11 @@ export const metadata = {
   title: 'Projects',
   description:
     'As a passionate full-stack web engineer, I have honed my skills. Explore my projects to see how I transform ideas into impactful web experiences.',
+  openGraph: {
+    title: 'Projects',
+    description:
+      'As a passionate full-stack web engineer, I have honed my skills. Explore my projects to see how I transform ideas into impactful web experiences.',
+  },
 }
 
 export default function Projects() {
