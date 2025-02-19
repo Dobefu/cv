@@ -7,7 +7,6 @@ import getTranslations from '@/utils/get-translations'
 import { Analytics } from '@vercel/analytics/next'
 import { ViewTransitions } from 'next-view-transitions'
 import getConfig from 'next/config'
-import { Geist } from 'next/font/google'
 import SkipToMain from '../utils/skip-to-main'
 import Footer from './footer'
 import './globals.css'
@@ -19,11 +18,6 @@ export type Props = Readonly<{
   children: React.ReactNode
   locale: string
 }>
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
 
 export const viewport = breadcrumbViewport
 
@@ -53,7 +47,7 @@ export async function RootLayout({
     <ViewTransitions>
       <html className="h-full" lang={locale.code}>
         <body
-          className={`${geistSans.variable} flex min-h-full flex-col bg-zinc-200 font-sans text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white contrast-more:dark:bg-black print:bg-transparent`}
+          className={`flex min-h-full flex-col bg-zinc-200 font-sans text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white contrast-more:dark:bg-black print:bg-transparent`}
         >
           <Providers locale={locale} translations={translations}>
             <SkipToMain locale={locale.code} />
