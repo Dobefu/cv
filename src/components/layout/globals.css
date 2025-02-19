@@ -22,8 +22,4 @@
   h3 {
     @apply pb-8 text-2xl font-semibold text-sky-700 sm:text-3xl dark:text-sky-500 contrast-more:dark:text-sky-400;
   }
-
-  hr {
-    @apply -m-px my-8 h-px border-none bg-zinc-300 dark:bg-zinc-600;
-  }
 }
