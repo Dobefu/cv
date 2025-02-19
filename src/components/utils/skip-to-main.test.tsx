@@ -11,8 +11,8 @@ describe('SkipToMain', () => {
   })
 
   it('Renders', () => {
-    render(<SkipToMain />)
+    render(<SkipToMain locale="en" />)
 
-    expect(screen.getByText('⚠ skip_to_main.title ⚠')).toBeDefined()
+    expect(screen.getByText('Skip to main content')).toBeDefined()
   })
 })
