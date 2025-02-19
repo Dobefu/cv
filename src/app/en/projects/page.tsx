@@ -16,7 +16,7 @@ export default function Projects() {
       <h1>Projects I&apos;ve worked on</h1>
 
       <div className="text-gray-700 dark:text-gray-200">
-        <p>
+        <p className="pb-4">
           As a passionate full-stack web engineer, I have honed my skills across
           a wide range of programming languages and frameworks. Over the years,
           I have worked on diverse professional and personal projects that
@@ -24,7 +24,7 @@ export default function Projects() {
           solutions.
         </p>
 
-        <p>
+        <p className="pb-4">
           Explore the projects below to get a better sense of how I apply my
           expertise to real-world challenges.
         </p>

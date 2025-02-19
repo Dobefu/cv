@@ -26,8 +26,4 @@
   hr {
     @apply -m-px my-8 h-px border-none bg-zinc-300 dark:bg-zinc-600;
   }
-
-  p {
-    @apply pb-4;
-  }
 }

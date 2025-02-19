@@ -12,5 +12,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </LocaleLink>
     ),
+    p: ({ children }) => <p className="pb-4">{children}</p>,
   }
 }
