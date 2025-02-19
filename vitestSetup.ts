@@ -14,6 +14,15 @@ vi.mock('next/config', () => ({
   },
 }))
 
+vi.mock('react', async () => {
+  const actual = await vi.importActual('react')
+
+  return {
+    ...actual,
+    useContext: () => ({ locale: { code: 'en' } }),
+  }
+})
+
 vi.mock('next/navigation', async () => {
   const actual = await vi.importActual('next/navigation')
 
