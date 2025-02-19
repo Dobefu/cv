@@ -1,11 +1,15 @@
 import getProjectFromUrl from '@/utils/get-project-from-url'
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 import { Fragment } from 'react'
 import LocaleLink from '../utils/locale-link.client'
 
 export type Props = Readonly<{
   params: Promise<{ slug: string[] }>
 }>
+
+export const viewport: Viewport = {
+  themeColor: '#0d6488',
+}
 
 export async function generateMetadata({ params }: Props) {
   const url = process.env.NEXT_PUBLIC_APP_URL
