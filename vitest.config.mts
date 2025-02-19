@@ -18,6 +18,7 @@ export default defineConfig({
         'postcss.config.mjs',
         'tailwind.config.ts',
         'src/fetch-locales.ts',
+        'src/mdx-components.tsx',
         '**/layout.tsx',
         '**/root-layout.tsx',
         'src/types/**',
