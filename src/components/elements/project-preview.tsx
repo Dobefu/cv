@@ -9,7 +9,6 @@ type Props = Readonly<{
   img: {
     src: string
     alt: string
-    priority?: boolean
   }
   tags: string[]
 }>
@@ -31,8 +30,6 @@ export default function ProjectPreview({
           alt={img.alt}
           className="transition-transform duration-300 group-hover:scale-105"
           height={144}
-          loading={img.priority ? 'eager' : 'lazy'}
-          priority={img.priority}
           sizes="240px"
           src={img.src}
           style={{
