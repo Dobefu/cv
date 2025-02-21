@@ -60,8 +60,8 @@ jobs:
       - name: Create a .env file
         run: |
           touch .env
-          echo "APP_NAME=\"CV - Connor van Spronssen\"" >> .env
-          echo "APP_URL=\"http://localhost:3000\"" >> .env
+          echo "APP_NAME=\"${{ vars.APP_NAME }}\"" >> .env
+          echo "NEXT_PUBLIC_APP_URL=\"${{ vars.NEXT_PUBLIC_APP_URL }}\"" >> .env
 
       - name: Install the latest version of Corepack
         run: npm i -g corepack@latest
