@@ -19,7 +19,6 @@ export default function ImageField({ label, text, subtext, link, img }: Props) {
     <Tag
       className="inline-flex w-full gap-4 py-4 max-sm:me-auto max-sm:flex-col"
       href={link}
-      rel={link ? 'nofollow' : undefined}
       target={link ? '_blank' : undefined}
     >
       {!!img && (

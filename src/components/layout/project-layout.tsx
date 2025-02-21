@@ -54,7 +54,6 @@ export default function ProjectLayout({ children, project }: Props) {
         <Link
           className="flex items-center gap-2 text-ellipsis text-sky-800 hover:underline dark:text-sky-300"
           href={project.repo}
-          rel="nofollow"
           target="_blank"
         >
           <Icon className="size-5 shrink-0" icon={iconGithub} ssr />

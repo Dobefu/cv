@@ -22,7 +22,6 @@ const LocaleLink: React.FC<
     href: isExternal
       ? props.href
       : `/${props.localeOverride ?? locale?.code}${props.href}`,
-    rel: isExternal ? 'nofollow' : undefined,
   }
 
   delete newProps.localeOverride
