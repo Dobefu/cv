@@ -23,11 +23,9 @@ export const viewport = breadcrumbViewport
 
 export async function generateMetadata(locale: string) {
   return breadcrumbGenerateMetadata({
-    params: new Promise((resolve) =>
-      resolve({
-        slug: [locale],
-      }),
-    ),
+    params: Promise.resolve({
+      slug: [locale],
+    }),
   })
 }
 
