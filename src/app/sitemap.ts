@@ -41,25 +41,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             `${appUrl}/${localeCode}/${cleanPath}`.replace(/\/$/, '')),
       )
 
-    let lastModified
-
-    await fs
-      .stat(`${process.cwd()}/src/app/${defaultLocale}/page.mdx`)
-      .then((stat) => (lastModified = stat.mtime))
-      .catch(() => {})
-    await fs
-      .stat(`${process.cwd()}/src/app/${defaultLocale}/${path}/page.mdx`)
-      .then((stat) => (lastModified = stat.mtime))
-      .catch(() => {})
-    await fs
-      .stat(`${process.cwd()}/src/app/${defaultLocale}/${path}/page.tsx`)
-      .then((stat) => (lastModified = stat.mtime))
-      .catch(() => {})
-
     sitemap.push({
       url: `${appUrl}/${defaultLocale}/${cleanPath}`.replace(/\/$/, ''),
       alternates: { languages },
-      lastModified,
       priority: 1,
     })
   }
