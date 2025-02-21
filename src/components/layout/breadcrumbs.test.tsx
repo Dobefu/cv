@@ -35,11 +35,26 @@ describe('BreadcrumbMetadata', () => {
 })
 
 describe('Breadcrumb', () => {
+  const oldAppUrl = process.env.NEXT_PUBLIC_APP_URL
+
   afterEach(() => {
+    process.env.NEXT_PUBLIC_APP_URL = oldAppUrl
     cleanup()
   })
 
   it('Renders normally', async () => {
+    render(
+      await BreadCrumb({
+        params: new Promise((resolve) => resolve({ slug: ['projects', 'cv'] })),
+      }),
+    )
+
+    expect(screen).toBeDefined()
+  })
+
+  it('Returns early without an app URL', async () => {
+    delete process.env.NEXT_PUBLIC_APP_URL
+
     render(
       await BreadCrumb({
         params: new Promise((resolve) => resolve({ slug: ['projects', 'cv'] })),

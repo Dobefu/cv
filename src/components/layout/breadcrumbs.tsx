@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: Props) {
 
   if (!url) {
     console.warn('NEXT_PUBLIC_APP_URL is not set!')
+    return
   }
 
   const pathPartsWithoutLocale = slug.slice(1)
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: Props) {
   }
 
   return {
-    metadataBase: new URL(url ?? ''),
+    metadataBase: new URL(url),
     alternates: {
       canonical: slug.join('/'),
       languages: {
@@ -46,12 +47,13 @@ export default async function Breadcrumb({ params }: Props) {
 
   if (!url) {
     console.warn('NEXT_PUBLIC_APP_URL is not set!')
+    return
   }
 
   return (
     <>
       <meta content="article" name="og:type" />
-      <meta content={`${url ?? ''}/${slug.join('/')}`} name="og:url" />
+      <meta content={`${url}/${slug.join('/')}`} name="og:url" />
 
       <div className="px-4" style={{ viewTransitionName: 'breadcrumbs' }}>
         <div className="mx-auto flex w-full max-w-5xl flex-wrap gap-4 pt-4 pb-8">
