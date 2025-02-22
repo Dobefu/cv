@@ -17,7 +17,7 @@ export default function Header({ appName, locale }: Props) {
         <div className="relative mx-auto flex max-w-5xl items-center gap-4 px-4 text-white">
           <div className="flex-1">
             <LocaleLink
-              className="m-0 inline-flex items-center py-2 text-2xl text-white max-md:text-xl max-sm:text-base"
+              className="inline-flex items-center py-2 text-2xl text-white max-md:text-xl max-sm:text-base"
               href="/"
             >
               <Image
