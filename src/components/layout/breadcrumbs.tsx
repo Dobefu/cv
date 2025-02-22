@@ -41,7 +41,10 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function Breadcrumb({ params }: Props) {
   const url = process.env.NEXT_PUBLIC_APP_URL
-  const slug = (await params).slug.slice(1)
+  const fullSlug = (await params).slug
+  const slug = fullSlug.slice(1)
+  const locale = fullSlug[0]
+
   slug.unshift('home')
   let path = ''
 
@@ -61,7 +64,7 @@ export default async function Breadcrumb({ params }: Props) {
             if (slugPart !== 'home') path += `/${slugPart}`
 
             let title = slugPart.charAt(0).toUpperCase() + slugPart.slice(1)
-            const { project } = getProjectFromUrl(path, 'en')
+            const { project } = getProjectFromUrl(path, locale)
 
             if (project) {
               title = project.title
