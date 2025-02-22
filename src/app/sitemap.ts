@@ -52,6 +52,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${appUrl}/${defaultLocale}/${cleanPath}`.replace(/\/$/, ''),
       lastModified: project ? new Date(project?.updated) : undefined,
       alternates: { languages },
+      changeFrequency: project ? 'monthly' : 'weekly',
       priority: project ? 0.5 : 1,
       images: await getPathImages(path, projects, appUrl),
     })
