@@ -62,7 +62,10 @@ async function getPathImages(
   const images: string[] = []
 
   if (path === 'page') {
-    return [`${imageBase}avatar-transparent.png`, `${imageBase}home-hero.png`]
+    return [
+      `${imageBase}avatar-transparent.png`,
+      `${imageBase}home-hero-bg.png`,
+    ]
   }
 
   const projects = getProjects(locale)
