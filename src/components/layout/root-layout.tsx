@@ -40,33 +40,42 @@ export async function RootLayout({
 
   const { publicRuntimeConfig } = getConfig()
   const appName = publicRuntimeConfig.appName || ''
+  const url = process.env.NEXT_PUBLIC_APP_URL
 
   return (
-    <ViewTransitions>
-      <html className="h-full" lang={locale.code}>
-        <body className="flex min-h-full flex-col bg-zinc-200 font-sans text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white contrast-more:dark:bg-black print:bg-transparent">
-          <Providers locale={locale} translations={translations}>
-            <SkipToMain locale={locale.code} />
+    <>
+      <link
+        href={`${url}/${locale.code}/rss.xml`}
+        rel="alternate"
+        type="application/rss+xml"
+      />
 
-            <div className="flex flex-1 flex-col">
-              <Header appName={appName} locale={locale} />
+      <ViewTransitions>
+        <html className="h-full" lang={locale.code}>
+          <body className="flex min-h-full flex-col bg-zinc-200 font-sans text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white contrast-more:dark:bg-black print:bg-transparent">
+            <Providers locale={locale} translations={translations}>
+              <SkipToMain locale={locale.code} />
 
-              {breadcrumb}
+              <div className="flex flex-1 flex-col">
+                <Header appName={appName} locale={locale} />
 
-              <main
-                className="relative mx-auto mb-4 w-full flex-1"
-                id="main-content"
-              >
-                {children}
-              </main>
+                {breadcrumb}
 
-              <Footer appName={appName} />
-            </div>
-          </Providers>
+                <main
+                  className="relative mx-auto mb-4 w-full flex-1"
+                  id="main-content"
+                >
+                  {children}
+                </main>
 
-          <Analytics />
-        </body>
-      </html>
-    </ViewTransitions>
+                <Footer appName={appName} />
+              </div>
+            </Providers>
+
+            <Analytics />
+          </body>
+        </html>
+      </ViewTransitions>
+    </>
   )
 }
