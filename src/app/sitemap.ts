@@ -1,4 +1,5 @@
 import getLocales from '@/utils/get-locales'
+import getProjects from '@/utils/get-projects'
 import { promises as fs } from 'fs'
 import type { MetadataRoute } from 'next'
 
@@ -45,8 +46,42 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${appUrl}/${defaultLocale}/${cleanPath}`.replace(/\/$/, ''),
       alternates: { languages },
       priority: 1,
+      images: await getPathImages(path, defaultLocale, appUrl),
     })
   }
 
   return sitemap
+}
+
+async function getPathImages(
+  path: string,
+  locale: string,
+  appUrl: string,
+): Promise<string[]> {
+  const imageBase = `${appUrl}/img/`
+  const images: string[] = []
+
+  if (path === 'page') {
+    return [`${imageBase}avatar-transparent.png`, `${imageBase}home-hero.png`]
+  }
+
+  const projects = getProjects(locale)
+
+  if (path === 'projects') {
+    return projects.map(
+      (project) => `${imageBase}projects/${project.image.src}`,
+    )
+  }
+
+  if (path.includes('(project)')) {
+    const project = projects.find(
+      (project) => project.path === path.split('/').toReversed()[0],
+    )
+
+    if (project) {
+      return [`${imageBase}projects/${project.image.src}`]
+    }
+  }
+
+  return images
 }
