@@ -33,13 +33,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .replace(/^page$/, '')
     const languages: Record<string, string> = {}
 
-    localeCodes
-      .filter((localeCode) => localeCode !== defaultLocale)
-      .forEach(
-        (localeCode) =>
-          (languages[localeCode] =
-            `${appUrl}/${localeCode}/${cleanPath}`.replace(/\/$/, '')),
-      )
+    localeCodes.forEach(
+      (localeCode) =>
+        (languages[localeCode] = `${appUrl}/${localeCode}/${cleanPath}`.replace(
+          /\/$/,
+          '',
+        )),
+    )
 
     sitemap.push({
       url: `${appUrl}/${defaultLocale}/${cleanPath}`.replace(/\/$/, ''),
