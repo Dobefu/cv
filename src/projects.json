@@ -1,7 +1,7 @@
 {
   "en": [
     {
-      "title": "CV",
+      "title": "My personal CV website",
       "subtext": "My personal CV and the website that is currently being viewed",
       "image": {
         "src": "cv.png",
@@ -55,7 +55,7 @@
   ],
   "nl": [
     {
-      "title": "CV",
+      "title": "Mijn persoonlijke CV website",
       "subtext": "Mijn persoonlijke CV en de website die momenteel wordt bekeken",
       "image": {
         "src": "cv.png",
