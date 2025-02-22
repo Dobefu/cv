@@ -8,4 +8,6 @@ export type Project = {
   tags: string[]
   repo: string
   path: string
+  created: string
+  updated: string
 }

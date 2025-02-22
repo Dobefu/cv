@@ -1,3 +1,4 @@
+import { Project } from '@/types/project'
 import getLocales from '@/utils/get-locales'
 import getProjects from '@/utils/get-projects'
 import { promises as fs } from 'fs'
@@ -10,6 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const { defaultLocale, locales } = getLocales()
   const localeCodes = locales.map((locale) => locale.code)
+  const projects = getProjects(defaultLocale)
 
   const files = await fs.readdir(`${process.cwd()}/src/app/${defaultLocale}`, {
     recursive: true,
@@ -42,11 +44,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         )),
     )
 
+    const project = projects.find(
+      (project) => project.path === path.split('/').toReversed()[0],
+    )
+
     sitemap.push({
       url: `${appUrl}/${defaultLocale}/${cleanPath}`.replace(/\/$/, ''),
+      lastModified: project ? new Date(project?.updated) : undefined,
       alternates: { languages },
-      priority: 1,
-      images: await getPathImages(path, defaultLocale, appUrl),
+      priority: project ? 0.5 : 1,
+      images: await getPathImages(path, projects, appUrl),
     })
   }
 
@@ -55,7 +62,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 async function getPathImages(
   path: string,
-  locale: string,
+  projects: Project[],
   appUrl: string,
 ): Promise<string[]> {
   const imageBase = `${appUrl}/img/`
@@ -67,8 +74,6 @@ async function getPathImages(
       `${imageBase}home-hero-bg.jpg`,
     ]
   }
-
-  const projects = getProjects(locale)
 
   if (path === 'projects') {
     return projects.map(
