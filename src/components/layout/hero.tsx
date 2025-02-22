@@ -38,7 +38,7 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
         />
       )}
 
-      <div className="absolute top-0 h-full w-full bg-linear-to-t from-transparent to-black/25 p-4 max-sm:p-2">
+      <div className="absolute top-0 h-full w-full bg-black/20 p-4 max-sm:p-2">
         <div className="mx-auto h-full max-w-5xl p-8">
           <div className="flex h-full text-white">
             <div className="mt-8 flex h-full flex-col justify-center gap-2">
