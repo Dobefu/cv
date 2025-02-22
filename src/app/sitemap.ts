@@ -64,7 +64,7 @@ async function getPathImages(
   if (path === 'page') {
     return [
       `${imageBase}avatar-transparent.png`,
-      `${imageBase}home-hero-bg.png`,
+      `${imageBase}home-hero-bg.jpg`,
     ]
   }
 
