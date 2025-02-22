@@ -62,18 +62,18 @@ export default function Footer({ appName }: Props) {
       className="w-full bg-zinc-100 px-4 py-10 shadow-md dark:bg-zinc-950 print:hidden"
       style={{ viewTransitionName: 'footer' }}
     >
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-5 text-center max-md:flex-col">
-        <div className="md:text-start">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 text-center max-md:flex-col">
+        <div>
           <LocaleLink
             aria-label={appName}
-            className="flex-none text-xl font-medium text-zinc-800 dark:text-white"
+            className="text-xl font-medium text-zinc-800 dark:text-white"
             href="/"
           >
             {appName}
           </LocaleLink>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 text-center">
+        <div className="flex justify-center gap-8 text-center">
           {footerLinks.map((footerLink) => {
             const LinkTag = footerLink.to === '/sitemap.xml' ? Link : LocaleLink
 
@@ -90,7 +90,7 @@ export default function Footer({ appName }: Props) {
           })}
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 md:justify-end">
+        <div className="flex justify-center gap-2">
           {socialLinks.map((socialLink) => (
             <LocaleLink
               aria-label={socialLink.title}

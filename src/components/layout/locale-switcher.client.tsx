@@ -148,7 +148,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
         ref={dropdownRef}
         tabIndex={-1}
       >
-        <div className="overflow-hidden rounded-2xl">
+        <div className="rounded-2xl">
           {locales.map((locale) => (
             <button
               className="flex w-full cursor-pointer items-center gap-4 p-4 align-middle text-lg text-black transition-all hover:bg-gray-300/90 dark:text-white dark:hover:bg-neutral-900/90"

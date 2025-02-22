@@ -4,7 +4,7 @@ import { Project } from '@/types/project'
 import iconGithub from '@iconify/icons-mdi/github'
 import { Icon } from '@iconify/react'
 import Image from 'next/image'
-import Link from 'next/link'
+import LocaleLink from '../utils/locale-link.client'
 
 export type Props = Readonly<{
   children: React.ReactNode
@@ -51,14 +51,14 @@ export default function ProjectLayout({ children, project }: Props) {
           ))}
         </div>
 
-        <Link
-          className="flex items-center gap-2 text-ellipsis text-sky-800 hover:underline dark:text-sky-300"
+        <LocaleLink
+          className="flex items-center gap-2 break-all text-sky-800 hover:underline dark:text-sky-300"
           href={project.repo}
           target="_blank"
         >
           <Icon className="size-5 shrink-0" icon={iconGithub} ssr />
           {project.repo}
-        </Link>
+        </LocaleLink>
       </div>
     </ContentContainer>
   )
