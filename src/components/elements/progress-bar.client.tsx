@@ -15,7 +15,7 @@ export default function ProgressBarClient({ percentage }: Props) {
       const entry = entries[0]
       const entryTarget = entry.target as HTMLDivElement
 
-      entryTarget.style.scale = `${entry.isIntersecting ? 1 : 0} 1`
+      entryTarget.style.width = `${entry.isIntersecting ? percentage : 0}%`
     })
 
     if (!target.current) return
@@ -30,13 +30,9 @@ export default function ProgressBarClient({ percentage }: Props) {
 
   return (
     <div
-      className="h-full origin-left transition-[cubic-bezier(.5,0,.5,1.75)] duration-300 rtl:origin-right print:!scale-x-100"
+      className="h-full rounded-full bg-orange-500 shadow-md transition-[cubic-bezier(.5,0,.5,1.75)] duration-300 dark:bg-orange-500/75"
       ref={target}
-    >
-      <div
-        className="h-full rounded-full bg-orange-500 shadow-md dark:bg-orange-500/75"
-        style={{ width: `${percentage}%` }}
-      />
-    </div>
+      style={{ width: `${percentage}%` }}
+    />
   )
 }
