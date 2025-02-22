@@ -3,6 +3,7 @@ import iconDrupal from '@iconify/icons-devicon/drupal'
 import iconGitlab from '@iconify/icons-devicon/gitlab'
 import iconLinkedin from '@iconify/icons-devicon/linkedin'
 import iconGithub from '@iconify/icons-mdi/github'
+import iconRss from '@iconify/icons-mdi/rss'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import LocaleLink from '../utils/locale-link.client'
@@ -49,6 +50,11 @@ export default function Footer({ appName }: Props) {
       to: 'https://drupal.org/u/Dobefu',
       icon: iconDrupal,
     },
+    {
+      title: 'RSS',
+      to: '/rss.xml',
+      icon: iconRss,
+    },
   ]
 
   return (
@@ -86,7 +92,7 @@ export default function Footer({ appName }: Props) {
 
         <div className="flex flex-wrap justify-center gap-2 md:justify-end">
           {socialLinks.map((socialLink) => (
-            <Link
+            <LocaleLink
               aria-label={socialLink.title}
               className="inline-flex size-8 items-center justify-center gap-x-2 rounded-full border border-transparent text-sm font-semibold text-gray-500 transition-colors hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-1 dark:focus:ring-gray-600 dark:focus:outline-hidden"
               href={socialLink.to}
@@ -95,7 +101,7 @@ export default function Footer({ appName }: Props) {
               title={socialLink.title}
             >
               <Icon className="size-5" icon={socialLink.icon} />
-            </Link>
+            </LocaleLink>
           ))}
         </div>
       </div>
