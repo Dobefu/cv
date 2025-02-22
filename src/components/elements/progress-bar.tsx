@@ -8,7 +8,7 @@ type Props = Readonly<{
 
 export default function ProgressBar({ label, percentage }: Props) {
   return (
-    <div className="w-full max-md:min-w-full">
+    <div className="max-md:min-w-full">
       <Label>{label}</Label>
 
       <div className="h-12 pt-2 pb-4">

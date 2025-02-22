@@ -94,7 +94,7 @@ export default function Footer({ appName }: Props) {
           {socialLinks.map((socialLink) => (
             <LocaleLink
               aria-label={socialLink.title}
-              className="inline-flex size-8 items-center justify-center gap-2 rounded-full text-gray-500 transition-colors hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-700"
+              className="flex size-8 items-center justify-center gap-2 rounded-full text-gray-500 transition-colors hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-700"
               href={socialLink.to}
               key={socialLink.to}
               target="_blank"
