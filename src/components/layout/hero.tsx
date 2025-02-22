@@ -42,7 +42,7 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
         <div className="mx-auto h-full max-w-5xl p-8">
           <div className="flex h-full text-white">
             <div className="mt-8 flex h-full flex-col justify-center gap-2">
-              <h1 className="text-5xl font-semibold text-white drop-shadow-md max-md:text-4xl max-sm:text-3xl">
+              <h1 className="text-5xl font-medium text-white drop-shadow-md max-md:text-4xl max-sm:text-3xl">
                 {title}
               </h1>
               <h2 className="text-4xl text-white drop-shadow-md max-md:text-2xl max-sm:text-xl">
