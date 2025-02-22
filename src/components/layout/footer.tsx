@@ -66,7 +66,7 @@ export default function Footer({ appName }: Props) {
         <div className="md:text-start">
           <LocaleLink
             aria-label={appName}
-            className="flex-none text-xl font-medium text-zinc-800 dark:text-white dark:focus:ring-1 dark:focus:ring-gray-600 dark:focus:outline-hidden"
+            className="flex-none text-xl font-medium text-zinc-800 dark:text-white"
             href="/"
           >
             {appName}
@@ -80,7 +80,7 @@ export default function Footer({ appName }: Props) {
             return (
               <LinkTag
                 aria-label={footerLink.title}
-                className="gap-x-2 text-sm text-gray-600 transition-colors hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:ring-1 dark:focus:ring-gray-600 dark:focus:outline-hidden"
+                className="gap-2 text-sm text-gray-600 transition-colors hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
                 href={footerLink.to}
                 key={footerLink.to}
               >
@@ -94,7 +94,7 @@ export default function Footer({ appName }: Props) {
           {socialLinks.map((socialLink) => (
             <LocaleLink
               aria-label={socialLink.title}
-              className="inline-flex size-8 items-center justify-center gap-x-2 rounded-full border border-transparent text-sm font-medium text-gray-500 transition-colors hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-1 dark:focus:ring-gray-600 dark:focus:outline-hidden"
+              className="inline-flex size-8 items-center justify-center gap-2 rounded-full text-gray-500 transition-colors hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-700"
               href={socialLink.to}
               key={socialLink.to}
               target="_blank"
