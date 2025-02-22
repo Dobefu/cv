@@ -14,7 +14,7 @@ describe('BreadcrumbMetadata', () => {
   it('Returns metadata', () => {
     generateMetadata({
       params: new Promise((resolve) =>
-        resolve({ slug: ['some', 'url', 'path'] }),
+        resolve({ slug: ['en', 'some', 'url', 'path'] }),
       ),
     })
 
@@ -26,7 +26,7 @@ describe('BreadcrumbMetadata', () => {
 
     generateMetadata({
       params: new Promise((resolve) =>
-        resolve({ slug: ['some', 'url', 'path'] }),
+        resolve({ slug: ['nl', 'some', 'url', 'path'] }),
       ),
     })
 
@@ -45,7 +45,9 @@ describe('Breadcrumb', () => {
   it('Renders normally', async () => {
     render(
       await BreadCrumb({
-        params: new Promise((resolve) => resolve({ slug: ['projects', 'cv'] })),
+        params: new Promise((resolve) =>
+          resolve({ slug: ['en', 'projects', 'cv'] }),
+        ),
       }),
     )
 
@@ -57,7 +59,9 @@ describe('Breadcrumb', () => {
 
     render(
       await BreadCrumb({
-        params: new Promise((resolve) => resolve({ slug: ['projects', 'cv'] })),
+        params: new Promise((resolve) =>
+          resolve({ slug: ['nl', 'projects', 'cv'] }),
+        ),
       }),
     )
 
