@@ -5,7 +5,7 @@ type Props = Readonly<{
 export default function ContentContainer({ children }: Props) {
   return (
     <div className="relative px-4">
-      <div className="mx-auto max-w-5xl rounded-2xl bg-white/80 p-12 shadow-md backdrop-blur-lg contrast-more:bg-white dark:bg-zinc-800/90 contrast-more:dark:bg-zinc-900 print:bg-white">
+      <div className="mx-auto max-w-5xl rounded-2xl bg-white p-12 shadow-md dark:bg-zinc-800">
         {children}
       </div>
     </div>

@@ -22,7 +22,7 @@ export default function Header({ appName, locale }: Props) {
             >
               <Image
                 alt="Logo"
-                className="mr-2 w-16 drop-shadow-md transition-all max-sm:mr-1 max-sm:-ml-1 max-sm:w-10 max-sm:p-0"
+                className="me-2 w-16 drop-shadow-md transition-all max-sm:-ms-1 max-sm:me-1 max-sm:w-10 max-sm:p-0"
                 height={56}
                 loading="eager"
                 priority
