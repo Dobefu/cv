@@ -73,7 +73,7 @@ export default async function Breadcrumb({ params }: Props) {
             if (idx === slug.length - 1) {
               return (
                 <div
-                  className="text-gray-700 dark:text-gray-300"
+                  className="text-zinc-700 dark:text-zinc-300"
                   key={slugPart}
                 >
                   {title}

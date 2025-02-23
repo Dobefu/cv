@@ -15,21 +15,18 @@ export default function Projects() {
     <ContentContainer>
       <h1>Projecten waaraan ik gewerkt heb</h1>
 
-      <div className="text-gray-700 dark:text-gray-200">
-        <p className="pb-4">
-          Als een gepassioneerde full-stack web engineer heb ik mijn
-          vaardigheden verbeterd over een breed spectrum aan programmeertalen en
-          frameworks. Over de jaren heen heb ik gewerkt aan diverse
-          professionele en persoonlijke projecten die mijn vermogen
-          weerspiegelen om complexe problemen op te lossen en oplossingen van
-          hoge kwaliteit te leveren.
-        </p>
+      <p className="pb-4">
+        Als een gepassioneerde full-stack web engineer heb ik mijn vaardigheden
+        verbeterd over een breed spectrum aan programmeertalen en frameworks.
+        Over de jaren heen heb ik gewerkt aan diverse professionele en
+        persoonlijke projecten die mijn vermogen weerspiegelen om complexe
+        problemen op te lossen en oplossingen van hoge kwaliteit te leveren.
+      </p>
 
-        <p className="pb-4">
-          Ontdek de onderstaande projecten om een beter idee te krijgen van hoe
-          ik mijn expertise inzet voor praktische uitdagingen.
-        </p>
-      </div>
+      <p className="pb-4">
+        Ontdek de onderstaande projecten om een beter idee te krijgen van hoe ik
+        mijn expertise inzet voor praktische uitdagingen.
+      </p>
 
       {projects?.map((project) => (
         <ProjectPreview

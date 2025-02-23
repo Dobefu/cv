@@ -7,7 +7,7 @@ export type Props = Readonly<{
 export default function SkipToMain({ locale }: Props) {
   return (
     <a
-      className="fixed z-50 bg-white px-4 py-2 not-focus:-translate-y-full not-focus:opacity-0 dark:bg-neutral-800"
+      className="fixed z-50 bg-white px-4 py-2 not-focus:-translate-y-full not-focus:opacity-0 dark:bg-zinc-800"
       href="#main-content"
       tabIndex={0}
     >

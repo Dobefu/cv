@@ -143,7 +143,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
       <a
         aria-expanded={isMenuOpen}
         aria-label={getTranslation(currentLocale.code, 'locale_switcher.label')}
-        className="absolute end-3 top-16 z-40 mt-8 origin-[6rem_0] scale-0 rounded-2xl bg-white/80 shadow-md backdrop-blur-lg transition-all ease-out before:absolute before:end-10 before:-top-4 before:origin-bottom before:scale-0 before:border-8 before:border-transparent before:border-b-white/80 before:backdrop-blur-lg before:transition-all aria-expanded:scale-100 aria-expanded:ease-[cubic-bezier(.2,.8,.6,1.3)] aria-expanded:before:scale-100 max-sm:end-0 max-sm:mt-2 max-sm:before:end-12 dark:bg-neutral-900/90 dark:before:border-b-neutral-900/90"
+        className="absolute end-3 top-16 z-40 mt-8 origin-[6rem_0] scale-0 rounded-2xl bg-white/80 shadow-md backdrop-blur-lg transition-all ease-out before:absolute before:end-10 before:-top-4 before:origin-bottom before:scale-0 before:border-8 before:border-transparent before:border-b-white/80 before:backdrop-blur-lg before:transition-all aria-expanded:scale-100 aria-expanded:ease-[cubic-bezier(.2,.8,.6,1.3)] aria-expanded:before:scale-100 max-sm:end-0 max-sm:mt-2 max-sm:before:end-12 dark:bg-zinc-900/90 dark:before:border-b-zinc-900/90"
         href="#"
         ref={dropdownRef}
         tabIndex={-1}
@@ -151,7 +151,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
         <div className="rounded-2xl">
           {locales.map((locale) => (
             <button
-              className="flex w-full cursor-pointer items-center gap-4 p-4 align-middle text-lg text-black transition-all hover:bg-gray-300/90 dark:text-white dark:hover:bg-neutral-900/90"
+              className="flex w-full cursor-pointer items-center gap-4 p-4 align-middle text-lg text-black transition-all hover:bg-zinc-300/90 dark:text-white dark:hover:bg-zinc-800/90"
               data-locale={locale.code}
               key={locale.code}
               onClick={onLocaleSelected}
