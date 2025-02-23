@@ -41,7 +41,6 @@ export default function ProjectLayout({ children, project }: Props) {
         height={240}
         loading="eager"
         priority
-        sizes="240px"
         src={`/img/projects/${project.image.src}`}
         style={{
           viewTransitionName: `project-image-${project.path}`,
