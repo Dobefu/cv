@@ -59,7 +59,7 @@ export default function Footer({ appName }: Props) {
 
   return (
     <footer
-      className="w-full bg-zinc-100 px-4 py-10 shadow-md dark:bg-zinc-950 print:hidden"
+      className="w-full bg-white px-4 py-10 shadow-md dark:bg-black print:hidden"
       style={{ viewTransitionName: 'footer' }}
     >
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 text-center max-md:flex-col">
@@ -94,7 +94,7 @@ export default function Footer({ appName }: Props) {
           {socialLinks.map((socialLink) => (
             <LocaleLink
               aria-label={socialLink.title}
-              className="flex size-8 items-center justify-center gap-2 rounded-full text-zinc-500 transition-colors hover:bg-zinc-50 dark:text-zinc-400 dark:hover:bg-zinc-700"
+              className="flex size-8 items-center justify-center gap-2 rounded-full text-zinc-500 transition-colors hover:bg-zinc-200 dark:text-zinc-400 dark:hover:bg-zinc-700"
               href={socialLink.to}
               key={socialLink.to}
               target="_blank"
