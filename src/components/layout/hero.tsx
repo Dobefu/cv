@@ -28,7 +28,7 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
       {!!imgBg && (
         <Image
           alt={imgBg.alt}
-          className="absolute inset-0 h-[30vh] min-h-[450px] w-screen object-cover contrast-more:brightness-75"
+          className="absolute inset-0 h-[30vh] min-h-[450px] w-screen object-cover"
           fill
           loading="eager"
           priority
