@@ -123,7 +123,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
             currentLocale.code,
             `languages.${currentLocale?.code}.alt`,
           )}
-          className="size-12 rounded-full drop-shadow-md transition-all max-sm:size-10"
+          className="size-12 rounded-full drop-shadow-md transition-all max-sm:size-8"
           height={48}
           loading="eager"
           priority
@@ -162,7 +162,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
                   currentLocale.code,
                   `languages.${locale?.code}.alt`,
                 )}
-                className="w-12 rounded-full drop-shadow-md transition-all max-sm:w-10"
+                className="w-12 rounded-full drop-shadow-md transition-all max-sm:w-8"
                 data-locale={locale.code}
                 height={48}
                 loading="eager"

@@ -84,7 +84,7 @@ export default async function Breadcrumb({ params }: Props) {
             return (
               <Fragment key={slugPart}>
                 <LocaleLink
-                  className="font-medium text-sky-700 dark:text-sky-300"
+                  className="font-medium text-sky-700 dark:text-sky-400"
                   href={path}
                 >
                   {title}

@@ -12,17 +12,17 @@ type Props = Readonly<{
 
 export default function Header({ appName, locale }: Props) {
   return (
-    <div className="sticky top-0 z-40 p-4 print:opacity-0">
+    <div className="sticky top-0 z-40 p-4 print:hidden">
       <HeaderClient>
         <div className="relative mx-auto flex max-w-5xl items-center gap-4 px-4 text-white">
           <div className="flex-1">
             <LocaleLink
-              className="flex items-center py-2 text-2xl text-white max-md:text-xl max-sm:text-base"
+              className="flex items-center gap-2 py-2 text-2xl text-white max-md:text-xl max-sm:text-base"
               href="/"
             >
               <Image
                 alt="Logo"
-                className="me-2 w-16 drop-shadow-md transition-all max-sm:-ms-1 max-sm:me-1 max-sm:w-10 max-sm:p-0"
+                className="w-16 drop-shadow-md max-sm:w-8"
                 height={56}
                 loading="eager"
                 priority
@@ -31,7 +31,7 @@ export default function Header({ appName, locale }: Props) {
                 width={56}
               />
 
-              <span className="drop-shadow-md">{appName}</span>
+              <p className="drop-shadow-md">{appName}</p>
             </LocaleLink>
           </div>
 

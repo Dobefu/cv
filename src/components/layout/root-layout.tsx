@@ -52,7 +52,7 @@ export async function RootLayout({
 
       <ViewTransitions>
         <html className="h-full" lang={locale.code}>
-          <body className="flex min-h-full flex-col bg-zinc-200 font-sans text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white print:bg-transparent">
+          <body className="flex min-h-full flex-col bg-zinc-200 text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white print:bg-white">
             <Providers locale={locale} translations={translations}>
               <SkipToMain locale={locale.code} />
 
@@ -62,7 +62,7 @@ export async function RootLayout({
                 {breadcrumb}
 
                 <main
-                  className="relative mx-auto mb-4 w-full flex-1"
+                  className="relative mx-auto w-full flex-1 pb-4"
                   id="main-content"
                 >
                   {children}

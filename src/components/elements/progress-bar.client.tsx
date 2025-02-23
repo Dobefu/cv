@@ -30,7 +30,7 @@ export default function ProgressBarClient({ percentage }: Props) {
 
   return (
     <div
-      className="h-full rounded-full bg-orange-500 shadow-md transition-[cubic-bezier(.5,0,.5,1.75)] duration-300 dark:bg-orange-500/75"
+      className="h-full rounded-full bg-[#ec6609] transition-[cubic-bezier(.5,0,.5,1.75)] duration-300"
       ref={target}
       style={{ width: `${percentage}%` }}
     />
