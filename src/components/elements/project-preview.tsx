@@ -52,7 +52,13 @@ export default function ProjectPreview({
           {label}
         </h2>
 
-        <p>{subtext}</p>
+        <p
+          style={{
+            viewTransitionName: `project-subtext-${path}`,
+          }}
+        >
+          {subtext}
+        </p>
 
         <div
           className="flex flex-wrap gap-2 max-md:justify-center"

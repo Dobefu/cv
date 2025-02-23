@@ -37,7 +37,14 @@ export default function ProjectLayout({ children, project }: Props) {
         width={384}
       />
 
-      <p className="pb-4">{project.subtext}</p>
+      <p
+        className="pb-4"
+        style={{
+          viewTransitionName: `project-subtext-${project.path}`,
+        }}
+      >
+        {project.subtext}
+      </p>
 
       {children}
 
