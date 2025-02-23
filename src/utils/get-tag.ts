@@ -3,6 +3,7 @@ import { Tag } from '@/types/tag'
 import iconGo from '@iconify/icons-devicon/go'
 import iconNextjs from '@iconify/icons-devicon/nextjs'
 import iconNuxtjs from '@iconify/icons-devicon/nuxtjs'
+import iconPhp from '@iconify/icons-devicon/php'
 import iconTailwindcss from '@iconify/icons-devicon/tailwindcss'
 import iconTypescript from '@iconify/icons-devicon/typescript'
 import iconVuejs from '@iconify/icons-devicon/vuejs'
@@ -49,6 +50,11 @@ export default function getTag(tag: string): Tag {
     cpp: {
       title: 'C++',
       icon: iconCpp,
+      classes: '',
+    },
+    php: {
+      title: 'PHP',
+      icon: iconPhp,
       classes: '',
     },
   }
