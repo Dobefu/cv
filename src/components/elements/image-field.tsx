@@ -34,7 +34,7 @@ export default function ImageField({ label, text, subtext, link, img }: Props) {
       )}
 
       <div className="flex flex-col justify-center gap-1">
-        <p className="text-lg font-medium text-sky-700 dark:text-sky-500">
+        <p className="text-lg font-medium text-sky-700 dark:text-sky-400">
           {label}
         </p>
 

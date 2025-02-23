@@ -12,14 +12,14 @@
   }
 
   h1 {
-    @apply pb-8 text-4xl font-medium text-sky-700 dark:text-sky-500;
+    @apply pb-8 text-4xl font-medium text-sky-700 dark:text-sky-400;
   }
 
   h2 {
-    @apply pb-8 text-3xl font-medium text-sky-700 dark:text-sky-500;
+    @apply pb-8 text-3xl font-medium text-sky-700 dark:text-sky-400;
   }
 
   h3 {
-    @apply pb-8 text-2xl font-medium text-sky-700 dark:text-sky-500;
+    @apply pb-8 text-2xl font-medium text-sky-700 dark:text-sky-400;
   }
 }
