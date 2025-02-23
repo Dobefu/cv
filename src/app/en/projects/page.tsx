@@ -36,6 +36,7 @@ export default function Projects() {
           key={project.title}
           label={project.title}
           link={`/projects/${project.path}`}
+          path={project.path}
           subtext={project.subtext}
           tags={project.tags}
         />

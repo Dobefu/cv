@@ -5,6 +5,7 @@ import IconTag from './tag'
 type Props = Readonly<{
   label: string
   subtext: string
+  path: string
   link: string
   img: {
     src: string
@@ -16,6 +17,7 @@ type Props = Readonly<{
 export default function ProjectPreview({
   label,
   subtext,
+  path,
   link,
   img,
   tags,
@@ -33,7 +35,7 @@ export default function ProjectPreview({
           sizes="240px"
           src={img.src}
           style={{
-            viewTransitionName: `project-image-${label.toLowerCase().replaceAll(' ', '_')}`,
+            viewTransitionName: `project-image-${path}`,
           }}
           title={label}
           width={256}
@@ -44,7 +46,7 @@ export default function ProjectPreview({
         <h2
           className="pb-0"
           style={{
-            viewTransitionName: `project-title-${label.toLowerCase().replaceAll(' ', '_')}`,
+            viewTransitionName: `project-title-${path}`,
           }}
         >
           {label}
@@ -55,7 +57,7 @@ export default function ProjectPreview({
         <div
           className="flex flex-wrap gap-2 max-md:justify-center"
           style={{
-            viewTransitionName: `project-tags-${label.toLowerCase().replaceAll(' ', '_')}`,
+            viewTransitionName: `project-tags-${path}`,
           }}
         >
           {tags.map((tagId) => (

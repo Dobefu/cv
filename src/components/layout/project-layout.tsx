@@ -16,7 +16,7 @@ export default function ProjectLayout({ children, project }: Props) {
     <ContentContainer>
       <h1
         style={{
-          viewTransitionName: `project-title-${project.title.toLowerCase().replaceAll(' ', '_')}`,
+          viewTransitionName: `project-title-${project.path}`,
         }}
       >
         {project.title}
@@ -31,11 +31,13 @@ export default function ProjectLayout({ children, project }: Props) {
         sizes="240px"
         src={`/img/projects/${project.image.src}`}
         style={{
-          viewTransitionName: `project-image-${project.title.toLowerCase().replaceAll(' ', '_')}`,
+          viewTransitionName: `project-image-${project.path}`,
         }}
         title={project.title}
         width={384}
       />
+
+      <p className="pb-4">{project.subtext}</p>
 
       {children}
 
@@ -43,7 +45,7 @@ export default function ProjectLayout({ children, project }: Props) {
         <div
           className="flex flex-wrap gap-2"
           style={{
-            viewTransitionName: `project-tags-${project.title.toLowerCase().replaceAll(' ', '_')}`,
+            viewTransitionName: `project-tags-${project.path}`,
           }}
         >
           {project.tags.map((tagId) => (
