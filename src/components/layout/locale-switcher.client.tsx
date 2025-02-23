@@ -3,17 +3,10 @@
 import { Locale } from '@/types/locale'
 import getLocales from '@/utils/get-locales'
 import getTranslation from '@/utils/get-translation'
-import { logError } from '@/utils/logger'
 import Image from 'next/image'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import {
-  SyntheticEvent,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
+import Link from 'next/link'
+import { usePathname, useSearchParams } from 'next/navigation'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 type LocaleWithUrl = {
   code: string
@@ -28,12 +21,11 @@ export type Props = Readonly<{
 export default function LocaleSwitcher({ locale: currentLocale }: Props) {
   const { locales } = getLocales()
 
-  const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
   const buttonRef = useRef<HTMLButtonElement>(null)
-  const dropdownRef = useRef<HTMLAnchorElement>(null)
+  const dropdownRef = useRef<HTMLButtonElement>(null)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const usableLocales = useMemo<LocaleWithUrl[]>(() => {
@@ -81,34 +73,19 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
     }
   }, [dropdownRef, isMenuOpen])
 
-  const onLocaleSelected = useCallback(
-    (e: SyntheticEvent<HTMLButtonElement>) => {
-      e.preventDefault()
+  const getLocaleHref = (locale: string) => {
+    const localeObject = usableLocales.find(
+      (usableLocale) => usableLocale.code === locale,
+    )
 
-      const newLocale = (e.target as HTMLDivElement).dataset.locale
-      const newLocaleObject = usableLocales.find(
-        (usableLocale) => usableLocale.code === newLocale,
-      )
+    let path = localeObject!.url
 
-      /* v8 ignore start */
-      if (!newLocaleObject) {
-        // This should never actually happen.
-        logError('Failed to switch the locale')
-        return
-      }
-      /* v8 ignore stop */
+    if (searchParams.size) {
+      path = `${path}?${searchParams}`
+    }
 
-      let path = newLocaleObject.url
-
-      if (searchParams.size) {
-        path = `${path}?${searchParams}`
-      }
-
-      router.push(`/${newLocale}${path}`)
-      setIsMenuOpen(false)
-    },
-    [usableLocales, router, searchParams],
-  )
+    return `/${locale}${path}`
+  }
 
   return (
     <>
@@ -140,21 +117,20 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
         &#9660;
       </button>
 
-      <a
+      <button
         aria-expanded={isMenuOpen}
         aria-label={getTranslation(currentLocale.code, 'locale_switcher.label')}
         className="absolute end-3 top-16 z-40 mt-8 origin-[6rem_0] scale-0 rounded-2xl bg-white shadow-md transition-all ease-out before:absolute before:end-10 before:-top-4 before:origin-bottom before:scale-0 before:border-8 before:border-transparent before:border-b-white before:transition-all aria-expanded:scale-100 aria-expanded:before:scale-100 max-sm:end-0 max-sm:mt-2 max-sm:before:end-12 dark:bg-zinc-900 dark:before:border-b-zinc-900"
-        href="#"
         ref={dropdownRef}
         tabIndex={-1}
       >
         <div className="overflow-hidden rounded-2xl">
           {locales.map((locale) => (
-            <button
+            <Link
               className="flex w-full cursor-pointer items-center gap-4 p-4 align-middle text-lg text-black transition-all hover:bg-zinc-200 dark:text-white dark:hover:bg-zinc-700"
-              data-locale={locale.code}
+              href={getLocaleHref(locale.code)}
               key={locale.code}
-              onClick={onLocaleSelected}
+              scroll
               tabIndex={isMenuOpen ? 0 : -1}
             >
               <Image
@@ -163,7 +139,6 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
                   `languages.${locale?.code}.alt`,
                 )}
                 className="w-12 rounded-full drop-shadow-md transition-all max-sm:w-8"
-                data-locale={locale.code}
                 height={48}
                 loading="eager"
                 priority
@@ -177,10 +152,10 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
                 width={48}
               />
               {getTranslation(currentLocale.code, `languages.${locale?.code}`)}
-            </button>
+            </Link>
           ))}
         </div>
-      </a>
+      </button>
     </>
   )
 }

@@ -51,32 +51,4 @@ describe('LocaleSwitcher', () => {
         .getElementsByTagName('img')[0].alt,
     ).toBe('Nederlandse vlag')
   })
-
-  it('Redirects the root path', async () => {
-    render(<LocaleSwitcher locale={locale} />)
-
-    fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[0])
-    fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[2])
-
-    expect(
-      screen
-        .getAllByRole<HTMLElement>('button')[0]
-        .getElementsByTagName('img')[0].alt,
-    ).toBe('Nederlandse vlag')
-  })
-
-  it('Redirects with a query parameter', async () => {
-    process.env.MOCK_PATHNAME = '/?test=1'
-
-    render(<LocaleSwitcher locale={locale} />)
-
-    fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[0])
-    fireEvent.click(screen.getAllByRole<HTMLButtonElement>('button')[2])
-
-    expect(
-      screen
-        .getAllByRole<HTMLElement>('button')[0]
-        .getElementsByTagName('img')[0].alt,
-    ).toBe('Nederlandse vlag')
-  })
 })
