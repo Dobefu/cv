@@ -20,7 +20,7 @@ export default function Field({ label, value, icon }: Props) {
 
       <div>
         <Label>{label}</Label>
-        {value}
+        <p>{value}</p>
       </div>
     </div>
   )
