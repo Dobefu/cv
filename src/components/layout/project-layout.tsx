@@ -24,7 +24,7 @@ export default function ProjectLayout({ children, project }: Props) {
 
       <Image
         alt={project.image.alt}
-        className="mb-8 rounded-md"
+        className="mb-8 rounded-lg"
         height={240}
         loading="eager"
         priority
