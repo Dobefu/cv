@@ -2,8 +2,10 @@ import IconTag from '@/components/elements/tag'
 import ContentContainer from '@/components/layout/content-container'
 import { Project } from '@/types/project'
 import iconGithub from '@iconify/icons-mdi/github'
+import iconGitlab from '@iconify/icons-mdi/gitlab'
 import { Icon } from '@iconify/react'
 import Image from 'next/image'
+import { useMemo } from 'react'
 import LocaleLink from '../utils/locale-link.client'
 
 export type Props = Readonly<{
@@ -12,6 +14,17 @@ export type Props = Readonly<{
 }>
 
 export default function ProjectLayout({ children, project }: Props) {
+  const repoIcon = useMemo(() => {
+    if (
+      project.repo.includes('git.drupalcode') ||
+      project.repo.includes('gitlab.com')
+    ) {
+      return iconGitlab
+    }
+
+    return iconGithub
+  }, [project.repo])
+
   return (
     <ContentContainer>
       <h1
@@ -65,7 +78,8 @@ export default function ProjectLayout({ children, project }: Props) {
           href={project.repo}
           target="_blank"
         >
-          <Icon className="size-5 shrink-0" icon={iconGithub} ssr />
+          <Icon className="size-5 shrink-0" icon={repoIcon} ssr />
+
           {project.repo}
         </LocaleLink>
       </div>

@@ -9,17 +9,20 @@ describe('ProjectLayout', () => {
 
   it('Renders normally', () => {
     render(
-      ProjectLayout({
-        children: <>children</>,
-        project: {
+      <ProjectLayout
+        project={{
           title: 'Test Project',
           subtext: 'Test subtext',
           image: { src: 'test-image.png', alt: '' },
           tags: ['tag1', 'tag2'],
           repo: 'http://localhost',
           path: '/test-path',
-        },
-      }),
+          created: '',
+          updated: '',
+        }}
+      >
+        children
+      </ProjectLayout>,
     )
 
     expect(screen).toBeDefined()
