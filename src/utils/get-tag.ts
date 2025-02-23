@@ -1,5 +1,6 @@
 import iconContentstack from '@/icons/contentstack'
 import { Tag } from '@/types/tag'
+import iconDrupal from '@iconify/icons-devicon/drupal'
 import iconGo from '@iconify/icons-devicon/go'
 import iconNextjs from '@iconify/icons-devicon/nextjs'
 import iconNuxtjs from '@iconify/icons-devicon/nuxtjs'
@@ -50,6 +51,11 @@ export default function getTag(tag: string): Tag {
     cpp: {
       title: 'C++',
       icon: iconCpp,
+      classes: '',
+    },
+    drupal: {
+      title: 'Drupal',
+      icon: iconDrupal,
       classes: '',
     },
     php: {
