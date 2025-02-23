@@ -80,7 +80,7 @@ export default function Footer({ appName }: Props) {
             return (
               <LinkTag
                 aria-label={footerLink.title}
-                className="gap-2 text-sm text-zinc-600 transition-colors hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200"
+                className="gap-2 text-sm text-zinc-600 transition-colors hover:text-zinc-800 dark:text-zinc-300 dark:hover:text-zinc-200"
                 href={footerLink.to}
                 key={footerLink.to}
               >
