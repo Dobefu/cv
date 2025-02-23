@@ -8,12 +8,12 @@ type Props = Readonly<{
 
 export default function ProgressBar({ label, percentage }: Props) {
   return (
-    <div>
+    <>
       <Label>{label}</Label>
 
       <div className="h-12 pt-2 pb-4">
         <ProgressBarClient percentage={percentage} />
       </div>
-    </div>
+    </>
   )
 }

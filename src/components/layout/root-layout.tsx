@@ -52,7 +52,7 @@ export async function RootLayout({
 
       <ViewTransitions>
         <html className="h-full" lang={locale.code}>
-          <body className="flex min-h-full flex-col bg-zinc-200 font-sans text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white contrast-more:dark:bg-black print:bg-transparent">
+          <body className="flex min-h-full flex-col bg-zinc-200 font-sans text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white print:bg-transparent">
             <Providers locale={locale} translations={translations}>
               <SkipToMain locale={locale.code} />
 
