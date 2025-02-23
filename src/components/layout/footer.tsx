@@ -47,7 +47,7 @@ export default function Footer({ appName }: Props) {
     },
     {
       title: 'Drupal',
-      to: 'https://drupal.org/u/Dobefu',
+      to: 'https://www.drupal.org/u/Dobefu',
       icon: iconDrupal,
     },
     {
