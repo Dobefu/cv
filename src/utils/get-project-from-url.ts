@@ -7,6 +7,13 @@ export default function getProjectFromUrl(
 ): { project?: Project; linkedData?: object } {
   const page = url?.split('/').reverse()[0]
   const projects = getProjects(locale)
+
+  /* v8 ignore start */
+  if (!projects) {
+    return {}
+  }
+  /* v8 ignore stop */
+
   const project = projects.find((p) => p.path === page)
   const appUrl = process.env.NEXT_PUBLIC_APP_URL
 
