@@ -25,7 +25,7 @@ export default function HeaderClient({ children }: Props) {
 
   return (
     <header
-      className="w-full rounded-2xl bg-[#0d6488cc] shadow-md backdrop-blur-lg transition-all duration-300 data-full:-m-4 data-full:w-[calc(100%+2rem)] data-full:rounded-none data-full:py-4 data-full:shadow-xl contrast-more:bg-sky-700 contrast-more:dark:bg-sky-800"
+      className="w-full rounded-2xl bg-[#0d6488cc] shadow-md backdrop-blur-lg transition-all duration-300 data-full:-m-4 data-full:w-[calc(100%+2rem)] data-full:rounded-none data-full:py-4 contrast-more:bg-sky-700 contrast-more:dark:bg-sky-800"
       data-full={scrollY >= 112 ? '' : undefined}
       style={{ viewTransitionName: 'header' }}
     >
