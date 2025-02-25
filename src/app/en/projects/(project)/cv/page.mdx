@@ -3,3 +3,42 @@ export const metadata = {
   description:
     'This very CV website. The goal of this website is to provide an interactive overview of the skills and accomplishments that I have made.',
 }
+
+A CV is a living document, meaning that it's never really finished.
+It is constantly evolving as one goes through life and gains experience.
+For this reason, I needed to have a CV that could be updated quickly and easily.
+The answer? Have my CV be a website. This provides me with several benefits:
+
+- The CV can easily be updated as I create new projects
+- It is publically accessible on the web
+- It provides a practical way for me to show off my web development skills
+
+For the tech stack, I have chosen the following technologies:
+
+- [MDX](https://mdxjs.com/), to have the "database" directly in version control
+- [NextJS](https://nextjs.org/), for automatic hot reloading
+- [TailwindCSS](https://tailwindcss.com/), for quick styling of components
+
+<div className="py-4" />
+
+## The Tech Stack
+
+MDX is at the core of the website. I knew I wanted to use Markdown to store my content.
+This allows me to keep all my content in version control.
+No need for any involved backups of the data or maintenance of a database.
+Of course, this is not a viable method for many websites with content editors, but for my purposes it's perfect.
+
+Now that I knew I wanted Markdown, I had to choose a tech stack that accomodates it.
+At first, I was considering using [Hugo](https://gohugo.io/) since it's an incredibly fast static site generator.
+It's also quite easy to add live reloading to it, which really helps me preview the content I write as I write it.
+I could even add inline HTML templates, using [shortcodes](https://gohugo.io/content-management/shortcodes/).
+The other option was to use MDX.
+Its biggest draw for me was that it supports full JSX components.
+This is really similar to shortcodes in Hugo, but in my opinion, it's just a little bit nicer to use.
+Since MDX uses JSX components by default, I wanted a JSX-based framework with good MDX integration out of the box.
+NextJS looked like it had the [most mature](https://nextjs.org/docs/app/building-your-application/configuring/mdx) MDX support at the time.
+I'm also quite fond of server components, since it reduces the final bundle size of any loaded page.
+
+Finally, there's TailwindCSS. There's differing opinions on it out there, but I really like it.
+Its main appeal for me is that I never have to switch files when styling a component.
+It also provides a nice set of colours out of the box, so I don't have to think about it as much.
