@@ -16,5 +16,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     hr: () => (
       <hr className="my-8 h-px border-none bg-zinc-300 dark:bg-zinc-600" />
     ),
+    ul: ({ children }) => (
+      <ul className="list-inside list-disc pb-4">{children}</ul>
+    ),
   }
 }
