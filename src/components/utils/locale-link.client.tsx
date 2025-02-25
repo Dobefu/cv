@@ -26,7 +26,11 @@ const LocaleLink: React.FC<
 
   delete newProps.localeOverride
 
-  return <NextLink {...newProps}>{newProps.children}</NextLink>
+  return (
+    <NextLink {...newProps} target={isExternal ? '_blank' : newProps.target}>
+      {newProps.children}
+    </NextLink>
+  )
 }
 
 export default LocaleLink

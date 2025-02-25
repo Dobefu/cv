@@ -95,7 +95,6 @@ export default function Footer({ appName }: Props) {
               className="flex size-8 items-center justify-center rounded-full text-zinc-500 transition-colors hover:bg-zinc-200 dark:text-zinc-400 dark:hover:bg-zinc-700"
               href={socialLink.to}
               key={socialLink.to}
-              target="_blank"
               title={socialLink.title}
             >
               <Icon className="size-5" icon={socialLink.icon} />
