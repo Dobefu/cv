@@ -1,4 +1,4 @@
-import IconTag from '@/components/elements/tag'
+import IconTag from '@/components/elements/tag.client'
 import ContentContainer from '@/components/layout/content-container'
 import { Project } from '@/types/project'
 import iconGithub from '@iconify/icons-mdi/github'

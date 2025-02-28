@@ -1,3 +1,5 @@
+'use client'
+
 import getTag from '@/utils/get-tag'
 import { Icon } from '@iconify/react'
 

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import LocaleLink from '../utils/locale-link.client'
-import IconTag from './tag'
+import IconTag from './tag.client'
 
 type Props = Readonly<{
   label: string
