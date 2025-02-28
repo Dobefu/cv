@@ -38,7 +38,7 @@ export default function ProjectLayout({ children, project }: Props) {
       <Image
         alt={project.image.alt}
         className="mb-8 rounded-lg"
-        height={240}
+        height={216}
         loading="eager"
         priority
         src={`/img/projects/${project.image.src}`}
