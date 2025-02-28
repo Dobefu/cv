@@ -61,10 +61,7 @@ export async function RootLayout({
 
                 {breadcrumb}
 
-                <main
-                  className="relative mx-auto w-full flex-1 pb-4"
-                  id="main-content"
-                >
+                <main className="w-full flex-1 pb-4" id="main-content">
                   {children}
                 </main>
 
