@@ -2,7 +2,7 @@
   "en": [
     {
       "title": "My personal CV website",
-      "subtext": "My personal CV and the website that is currently being viewed. It has been built with the goal of showing off my development skills in a practical manner.",
+      "subtext": "My personal CV and the website that is currently being viewed. It has been built with the goal of showing off my development skills in a practical and accessible manner.",
       "image": {
         "src": "cv.png",
         "alt": "Screenshot of the CV website"
@@ -28,7 +28,7 @@
     },
     {
       "title": "Scrum Poker application",
-      "subtext": "A small web application that allows users to quickly and easily start estimating user stories. It has been built to learn about websockets and realtime interactive experiences on the web.",
+      "subtext": "A small web application that allows users to quickly and easily start estimating user stories in dedicated rooms. It has been built to learn about websockets and realtime interactive experiences on the web.",
       "image": {
         "src": "scrum-poker.png",
         "alt": "Screenshot of the Scrum Poker application"
@@ -54,7 +54,7 @@
     },
     {
       "title": "Iconify Field Drupal module",
-      "subtext": "A Drupal module that provides, among other things, a field where an icon can be picked. It has a submodule with CKEditor 5 integration, allowing content editors to easily insert icons inside their WYSIWYG editor.",
+      "subtext": "A Drupal module that provides, among other things, a field where an icon can be picked. This module has a submodule with CKEditor 5 integration, allowing content editors to easily insert icons inside their WYSIWYG editor.",
       "image": {
         "src": "iconify-field.png",
         "alt": "Screenshot of the Iconify Field icon picker"
@@ -69,7 +69,7 @@
   "nl": [
     {
       "title": "Mijn persoonlijke CV website",
-      "subtext": "Mijn persoonlijke CV en de website die momenteel wordt bekeken. Het is gebouwd met het doel om mijn vaardigheden op een praktische manier te tonen.",
+      "subtext": "Mijn persoonlijke CV en de website die momenteel wordt bekeken. Het is gebouwd met het doel om mijn vaardigheden op een praktische en toegankelijke manier te tonen.",
       "image": {
         "src": "cv.png",
         "alt": "Schermafbeelding van de CV website"
@@ -82,7 +82,7 @@
     },
     {
       "title": "Contentstack Bridge",
-      "subtext": "Voegt een laag toe tussen een applicatie en Contentstack, om een aantal onmisbare gemakken te leveren. Het is gebouwd in reactie op uitdagingen die ik had tijdens het werken met de Contentstack API.",
+      "subtext": "Voegt een laag toe tussen je eigen applicatie en Contentstack, om een aantal onmisbare gemakken te leveren. Het is gebouwd in reactie op uitdagingen die ik had tijdens het werken met de Contentstack API.",
       "image": {
         "src": "csb.png",
         "alt": "Logo van het Contentstack Bridge project"
@@ -95,7 +95,7 @@
     },
     {
       "title": "Scrum Poker applicatie",
-      "subtext": "Een kleine web applicatie waar gebruikers snel en eenvoudig kunnen beginnen met het inschatten van user stories. Het is gebouwd om te leren over websockets en het maken van realtime interactieve ervaringen op het web.",
+      "subtext": "Een kleine web applicatie waar gebruikers op een snelle en eenvoudige manier kunnen beginnen met het inschatten van user stories in afgezonderde ruimtes. Het is gebouwd om te leren over websockets en het maken van realtime interactieve ervaringen op het web.",
       "image": {
         "src": "scrum-poker.png",
         "alt": "Schermafbeelding van de Scrum Poker applicatie"
@@ -121,7 +121,7 @@
     },
     {
       "title": "Iconify Field Drupal module",
-      "subtext": "Een Drupal module die onder andere een veld levert waarmee een icoon geselecteerd kan worden. Het heeft een submodule met CKEditor 5 integratie, waarmee content editors direct iconen in hun WYSIWYG editor kunnen invoegen.",
+      "subtext": "Een Drupal module die onder andere een veld levert waarmee een icoon geselecteerd kan worden. Deze module heeft een submodule met CKEditor 5 integratie, waarmee content editors direct iconen in hun WYSIWYG editor kunnen invoegen.",
       "image": {
         "src": "iconify-field.png",
         "alt": "Schermafbeelding van de Iconify Field icon picker"
