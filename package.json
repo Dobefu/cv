@@ -18,33 +18,33 @@
     "@iconify/icons-mdi": "^1.2.48",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
-    "@next/mdx": "^15.1.7",
+    "@next/mdx": "15.2.0",
     "@types/mdx": "^2.0.13",
     "@vercel/analytics": "^1.5.0",
     "negotiator": "^1.0.0",
-    "next": "15.1.3",
+    "next": "15.2.0",
     "next-view-transitions": "^0.3.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",
     "@iconify/react": "^5.2.0",
-    "@next/bundle-analyzer": "^15.1.7",
+    "@next/bundle-analyzer": "15.2.0",
     "@tailwindcss/postcss": "^4.0.8",
     "@testing-library/react": "^16.2.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^22.13.5",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
     "@vitest/coverage-v8": "^2.1.9",
     "@vitest/ui": "^2.1.9",
     "cssnano": "^7.0.6",
     "cssnano-preset-advanced": "^7.0.6",
     "eslint": "^9.21.0",
-    "eslint-config-next": "15.1.7",
+    "eslint-config-next": "15.2.0",
     "eslint-config-prettier": "^10.0.1",
     "jsdom": "^26.0.0",
     "postcss": "^8.5.3",
@@ -55,5 +55,11 @@
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^2.1.9"
   },
-  "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b"
+  "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b",
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.0.10",
+      "@types/react-dom": "19.0.4"
+    }
+  }
 }
