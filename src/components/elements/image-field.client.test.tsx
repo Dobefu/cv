@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import ImageField from './image-field'
+import ImageField from './image-field.client'
 
 describe('ImageField', () => {
   afterEach(() => {
