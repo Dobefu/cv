@@ -44,7 +44,7 @@ let nextConfig: NextConfig = {
       {
         source: '/home',
         destination: '/',
-        statusCode: 303,
+        statusCode: 301,
       },
     ]
   },
