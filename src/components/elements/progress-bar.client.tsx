@@ -1,12 +1,14 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Label from './label'
 
 type Props = Readonly<{
+  label: string
   percentage: number
 }>
 
-export default function ProgressBarClient({ percentage }: Props) {
+export default function ProgressBarClient({ label, percentage }: Props) {
   const target = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -29,10 +31,16 @@ export default function ProgressBarClient({ percentage }: Props) {
   }, [target, percentage])
 
   return (
-    <div
-      className="h-full rounded-full bg-[#ec6609] transition-[cubic-bezier(.5,0,.5,1.75)] duration-300"
-      ref={target}
-      style={{ width: `${percentage}%` }}
-    />
+    <>
+      <Label>{label}</Label>
+
+      <div className="h-12 pt-2 pb-4">
+        <div
+          className="h-full rounded-full bg-[#ec6609] transition-[cubic-bezier(.5,0,.5,1.75)] duration-300"
+          ref={target}
+          style={{ width: `${percentage}%` }}
+        />
+      </div>
+    </>
   )
 }

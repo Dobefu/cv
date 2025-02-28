@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
-import ProgressBar from './progress-bar'
+import ProgressBar from './progress-bar.client'
 
 describe('ProgressBar', () => {
   afterEach(() => {
