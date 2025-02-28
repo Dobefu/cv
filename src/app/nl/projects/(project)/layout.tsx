@@ -1,5 +1,3 @@
-'use client'
-
 import ProjectLayout from '@/components/layout/project-layout'
 import getProjectFromUrl from '@/utils/get-project-from-url'
 import { notFound, usePathname } from 'next/navigation'
