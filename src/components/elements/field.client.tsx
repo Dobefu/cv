@@ -1,3 +1,5 @@
+'use client'
+
 import { Icon, type IconifyIcon } from '@iconify/react'
 import Label from './label'
 
