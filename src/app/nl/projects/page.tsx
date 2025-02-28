@@ -24,8 +24,12 @@ export default function Projects() {
       </p>
 
       <p className="pb-4">
-        Ontdek de onderstaande projecten om een beter idee te krijgen van hoe ik
-        mijn expertise inzet voor praktische uitdagingen.
+        Op deze pagina heb ik een kleine verzameling van mijn favoriete
+        persoonlijke projecten verzameld die ik in de afgelopen jaren heb
+        gemaakt. Deze projecten vertegenwoordigen naar mijn mening zowel mijn
+        vaardigheden als mijn passie voor het bouwen van software het beste. De
+        projecten zijn voornamelijk webapplicaties, maar ook enkele compleet
+        andere soorten projecten die me uit mijn comfort zone haalden.
       </p>
 
       {projects?.map((project) => (

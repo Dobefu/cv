@@ -23,8 +23,12 @@ export default function Projects() {
       </p>
 
       <p className="pb-4">
-        Explore the projects below to get a better sense of how I apply my
-        expertise to real-world challenges.
+        On this page, I have gathered a small collection of my favourite
+        personal projects that I have made over the years. I think that these
+        project best represent both my skills and my passion for building
+        software. They include mostly web applications, but also some completely
+        different types of development projects that pushed me outside of my
+        comfort zone.
       </p>
 
       {projects?.map((project) => (
