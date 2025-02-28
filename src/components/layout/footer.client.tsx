@@ -1,3 +1,5 @@
+'use client'
+
 import iconBluesky from '@/icons/bluesky'
 import iconDrupal from '@iconify/icons-devicon/drupal'
 import iconGitlab from '@iconify/icons-devicon/gitlab'
