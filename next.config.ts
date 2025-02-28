@@ -46,6 +46,16 @@ let nextConfig: NextConfig = {
         destination: '/',
         statusCode: 301,
       },
+      {
+        source: '/en/home',
+        destination: '/en',
+        statusCode: 301,
+      },
+      {
+        source: '/nl/home',
+        destination: '/nl',
+        statusCode: 301,
+      },
     ]
   },
 }
