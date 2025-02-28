@@ -15,7 +15,7 @@
     },
     {
       "title": "Contentstack Bridge",
-      "subtext": "Adds a layer between your application and Contentstack, to provide some much-needed conveniences. Built in response to challenged I had whilst working with the Contentstack API.",
+      "subtext": "Adds a layer between your application and Contentstack, to provide some much-needed conveniences. It has been built in response to challenged I had whilst working with the Contentstack API.",
       "image": {
         "src": "csb.png",
         "alt": "Logo of the Contentstack Bridge project"
@@ -28,7 +28,7 @@
     },
     {
       "title": "Scrum Poker application",
-      "subtext": "A web application to quickly and easily start estimating user stories. Built to learn about websockets and realtime interactive experiences on the web.",
+      "subtext": "A small web application that allows users to quickly and easily start estimating user stories. It has been built to learn about websockets and realtime interactive experiences on the web.",
       "image": {
         "src": "scrum-poker.png",
         "alt": "Screenshot of the Scrum Poker application"
@@ -41,7 +41,7 @@
     },
     {
       "title": "Tetris for the Picosystem",
-      "subtext": "A small Tetris clone made for the Picosystem. Built to learn about optimisation and working in very constrained environments, both in computing power and memory.",
+      "subtext": "A small Tetris clone made for the Picosystem. It has been built to learn about optimisation and working in very constrained environments, both in computing power and memory.",
       "image": {
         "src": "picosystem-tetris.png",
         "alt": "Screenshot of the Tetris application for the Picosystem"
@@ -82,7 +82,7 @@
     },
     {
       "title": "Contentstack Bridge",
-      "subtext": "Voegt een laag toe tussen een applicatie en Contentstack, om een aantal onmisbare gemakken te leveren. Gebouwd in reactie op uitdagingen die ik had tijdens het werken met de Contentstack API.",
+      "subtext": "Voegt een laag toe tussen een applicatie en Contentstack, om een aantal onmisbare gemakken te leveren. Het is gebouwd in reactie op uitdagingen die ik had tijdens het werken met de Contentstack API.",
       "image": {
         "src": "csb.png",
         "alt": "Logo van het Contentstack Bridge project"
@@ -95,7 +95,7 @@
     },
     {
       "title": "Scrum Poker applicatie",
-      "subtext": "Een web applicatie om snel en eenvoudig te beginnen met het inschatten van user stories. Gebouwd om te leren over websockets en het maken van realtime interactieve ervaringen op het web.",
+      "subtext": "Een kleine web applicatie waar gebruikers snel en eenvoudig kunnen beginnen met het inschatten van user stories. Het is gebouwd om te leren over websockets en het maken van realtime interactieve ervaringen op het web.",
       "image": {
         "src": "scrum-poker.png",
         "alt": "Schermafbeelding van de Scrum Poker applicatie"
@@ -108,7 +108,7 @@
     },
     {
       "title": "Tetris voor de Picosystem",
-      "subtext": "Een kleine Tetris clone, gemaakt voor de Picosystem. Gebouwd om te leren over optimalisatie en werken in zeer beperkte omgevingen, zowel in rekenkracht als in geheugen.",
+      "subtext": "Een kleine Tetris clone, gemaakt voor de Picosystem. Het is gebouwd om te leren over optimalisatie en werken in zeer beperkte omgevingen, zowel in rekenkracht als in geheugen.",
       "image": {
         "src": "picosystem-tetris.png",
         "alt": "Schermafbeelding van de Tetris applicatie voor de Picosystem"
