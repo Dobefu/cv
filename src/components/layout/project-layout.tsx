@@ -50,7 +50,7 @@ export default function ProjectLayout({ children, project }: Props) {
       />
 
       <p
-        className="pb-4"
+        className="pb-4 font-medium"
         style={{
           viewTransitionName: `project-subtext-${project.path}`,
         }}
