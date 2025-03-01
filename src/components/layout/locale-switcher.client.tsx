@@ -105,7 +105,6 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
           loading="eager"
           priority
           quality="90"
-          sizes="sm:40px md:56px"
           src={`/flags/${currentLocale?.code}.svg`}
           title={getTranslation(
             currentLocale.code,

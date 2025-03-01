@@ -32,7 +32,7 @@ export default function ProjectPreview({
       <div className="shrink-0 overflow-hidden rounded-lg">
         <Image
           alt={img.alt}
-          className="transition-transform duration-300 group-hover:scale-105"
+          className="transition-all duration-300 group-hover:scale-105"
           height={144}
           src={img.src}
           style={{

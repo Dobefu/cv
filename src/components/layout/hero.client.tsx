@@ -26,7 +26,7 @@ type Props = Readonly<{
 
 export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
   return (
-    <section className="relative -mt-28 -mb-8 h-[30vh] min-h-[450px]">
+    <div className="relative -mt-28 -mb-8 h-[30vh] min-h-[450px]">
       {!!imgBg && (
         <Image
           alt={imgBg.alt}
@@ -40,7 +40,7 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
         />
       )}
 
-      <div className="absolute h-full w-full bg-black/20 p-4 max-sm:p-2">
+      <div className="absolute h-full w-full bg-black/20 sm:p-4">
         <div className="mx-auto flex h-full max-w-5xl p-8">
           <div className="mt-8 flex h-full flex-col justify-center gap-2">
             <h1 className="text-5xl text-white max-sm:text-3xl">{title}</h1>
@@ -64,12 +64,11 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
           {!!img && (
             <Image
               alt={img.alt}
-              className="relative mx-auto mt-auto -mb-4 w-64 flex-none origin-bottom transition-transform active:scale-95 max-sm:-ms-8 max-sm:-mb-2 max-sm:w-32"
+              className="mx-auto mt-auto -mb-4 flex-none origin-bottom transition-all active:scale-95 max-sm:-ms-8 max-sm:-mb-2 max-sm:w-32"
               height={256}
               loading="eager"
               priority
               quality={70}
-              sizes="(max-width: 640px) 128px, (max-width: 768px) 256px, (max-width: 1024px) 512px"
               src={img.src}
               title={`${title} - ${subtitle}`}
               width={256}
@@ -77,6 +76,6 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
           )}
         </div>
       </div>
-    </section>
+    </div>
   )
 }
