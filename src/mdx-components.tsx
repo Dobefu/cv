@@ -13,9 +13,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </LocaleLink>
     ),
     p: ({ children }) => <p className="pb-4">{children}</p>,
-    hr: () => (
-      <hr className="my-8 h-px border-none bg-zinc-300 dark:bg-zinc-600" />
-    ),
+    hr: () => <hr />,
     ul: ({ children }) => <ul>{children}</ul>,
   }
 }
