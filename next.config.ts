@@ -5,7 +5,7 @@ import type { NextConfig } from 'next'
 let nextConfig: NextConfig = {
   output: 'standalone',
   reactStrictMode: true,
-  pageExtensions: ['md', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ['mdx', 'ts', 'tsx'],
   poweredByHeader: false,
   compiler: {
     reactRemoveProperties: true,
