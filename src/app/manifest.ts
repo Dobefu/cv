@@ -1,9 +1,7 @@
 import type { MetadataRoute } from 'next'
-import getConfig from 'next/config'
 
 export default function manifest(): MetadataRoute.Manifest {
-  const { publicRuntimeConfig } = getConfig()
-  const appName = publicRuntimeConfig.appName
+  const appName = process.env.NEXT_PUBLIC_APP_NAME
 
   const purpose = 'maskable'
 

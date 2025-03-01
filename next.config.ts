@@ -7,9 +7,6 @@ let nextConfig: NextConfig = {
   reactStrictMode: true,
   pageExtensions: ['md', 'mdx', 'ts', 'tsx'],
   poweredByHeader: false,
-  publicRuntimeConfig: {
-    appName: process.env.NEXT_PUBLIC_APP_NAME ?? '',
-  },
   compiler: {
     reactRemoveProperties: true,
     removeConsole:
