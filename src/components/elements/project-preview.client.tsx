@@ -45,7 +45,7 @@ export default function ProjectPreview({
 
       <div className="flex flex-col gap-4">
         <h2
-          className="pb-0"
+          className="mb-0"
           style={{
             viewTransitionName: `proj-h1-${path}`,
           }}
