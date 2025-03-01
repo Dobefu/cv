@@ -1,3 +1,5 @@
+'use client'
+
 import ContentContainer from '@/components/layout/content-container'
 
 export default function NotFound() {
