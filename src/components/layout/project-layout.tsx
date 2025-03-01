@@ -29,7 +29,7 @@ export default function ProjectLayout({ children, project }: Props) {
     <ContentContainer>
       <h1
         style={{
-          viewTransitionName: `project-title-${project.path}`,
+          viewTransitionName: `proj-h1-${project.path}`,
         }}
       >
         {project.title}
@@ -43,7 +43,7 @@ export default function ProjectLayout({ children, project }: Props) {
         priority
         src={`/img/projects/${project.image.src}`}
         style={{
-          viewTransitionName: `project-image-${project.path}`,
+          viewTransitionName: `proj-img-${project.path}`,
         }}
         title={project.title}
         width={384}
@@ -52,7 +52,7 @@ export default function ProjectLayout({ children, project }: Props) {
       <p
         className="pb-4 font-medium"
         style={{
-          viewTransitionName: `project-subtext-${project.path}`,
+          viewTransitionName: `proj-sub-${project.path}`,
         }}
       >
         {project.subtext}
@@ -64,7 +64,7 @@ export default function ProjectLayout({ children, project }: Props) {
         <div
           className="flex flex-wrap gap-2"
           style={{
-            viewTransitionName: `project-tags-${project.path}`,
+            viewTransitionName: `proj-tags-${project.path}`,
           }}
         >
           {project.tags.map((tagId) => (

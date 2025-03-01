@@ -93,7 +93,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
         className="flex cursor-pointer items-center gap-2"
         onClick={toggleMenuIsOpen}
         ref={buttonRef}
-        style={{ viewTransitionName: 'locale-switcher' }}
+        style={{ viewTransitionName: 'ls' }}
       >
         <Image
           alt={getTranslation(

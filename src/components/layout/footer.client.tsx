@@ -62,7 +62,7 @@ export default function Footer({ appName }: Props) {
   return (
     <footer
       className="bg-white px-4 py-10 shadow-md dark:bg-black print:hidden"
-      style={{ viewTransitionName: 'footer' }}
+      style={{ viewTransitionName: 'f' }}
     >
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 max-md:flex-col">
         <LocaleLink

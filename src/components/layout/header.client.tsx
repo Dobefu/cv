@@ -33,7 +33,7 @@ export default function HeaderClient({ appName, locale }: Props) {
       <header
         className="w-full rounded-2xl bg-[#0d6488cc] shadow-md backdrop-blur-lg transition-all duration-300 data-full:-m-4 data-full:w-[calc(100%+2rem)] data-full:rounded-none data-full:py-4"
         data-full={scrollY >= 112 ? '' : undefined}
-        style={{ viewTransitionName: 'header' }}
+        style={{ viewTransitionName: 'h' }}
       >
         <div className="relative mx-auto flex max-w-5xl items-center gap-4 px-4 text-white">
           <div className="flex-1">

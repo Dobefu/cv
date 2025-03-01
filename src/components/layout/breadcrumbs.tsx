@@ -58,7 +58,7 @@ export default async function Breadcrumb({ params }: Props) {
       <meta content="article" name="og:type" />
       <meta content={`${url}/${slug.join('/')}`} name="og:url" />
 
-      <div className="px-4" style={{ viewTransitionName: 'breadcrumbs' }}>
+      <div className="px-4" style={{ viewTransitionName: 'bc' }}>
         <div className="mx-auto flex w-full max-w-5xl flex-wrap gap-4 pt-4 pb-8">
           {slug.map((slugPart, idx) => {
             if (slugPart !== 'home') path += `/${slugPart}`

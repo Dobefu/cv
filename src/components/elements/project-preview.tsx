@@ -34,7 +34,7 @@ export default function ProjectPreview({
           height={144}
           src={img.src}
           style={{
-            viewTransitionName: `project-image-${path}`,
+            viewTransitionName: `proj-img-${path}`,
           }}
           title={label}
           width={256}
@@ -45,7 +45,7 @@ export default function ProjectPreview({
         <h2
           className="pb-0"
           style={{
-            viewTransitionName: `project-title-${path}`,
+            viewTransitionName: `proj-h1-${path}`,
           }}
         >
           {label}
@@ -53,7 +53,7 @@ export default function ProjectPreview({
 
         <p
           style={{
-            viewTransitionName: `project-subtext-${path}`,
+            viewTransitionName: `proj-sub-${path}`,
           }}
         >
           {subtext}
@@ -62,7 +62,7 @@ export default function ProjectPreview({
         <div
           className="flex flex-wrap gap-2 max-md:justify-center"
           style={{
-            viewTransitionName: `project-tags-${path}`,
+            viewTransitionName: `proj-tags-${path}`,
           }}
         >
           {tags.map((tagId) => (
