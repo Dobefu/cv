@@ -53,6 +53,10 @@
     @apply w-full flex-1 pb-4;
   }
 
+  .skip-to-main {
+    @apply fixed z-50 bg-white px-4 py-2 not-focus:-translate-y-full not-focus:opacity-0 dark:bg-zinc-800;
+  }
+
   .content-container {
     @apply mx-auto max-w-5xl rounded-2xl bg-white p-8 shadow-md dark:bg-zinc-800;
     view-transition-name: content-container;
