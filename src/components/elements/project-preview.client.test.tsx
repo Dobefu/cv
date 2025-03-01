@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import ProjectPreview from './project-preview'
+import ProjectPreview from './project-preview.client'
 
 describe('ProjectPreview', () => {
   afterEach(() => {

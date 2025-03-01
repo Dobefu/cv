@@ -1,4 +1,4 @@
-import ProjectPreview from '@/components/elements/project-preview'
+import ProjectPreview from '@/components/elements/project-preview.client'
 import ContentContainer from '@/components/layout/content-container.client'
 import getProjects from '@/utils/get-projects'
 
