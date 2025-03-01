@@ -33,7 +33,7 @@
     li ol,
     li ul,
     li menu {
-      @apply ps-6;
+      @apply ps-6 pb-0;
     }
   }
 }
