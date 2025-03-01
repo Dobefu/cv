@@ -1,12 +1,16 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
+import React, { Suspense, useEffect, useState } from 'react'
+import LocaleLink from '../utils/locale-link.client'
+import LocaleSwitcher from './locale-switcher.client'
 
 type Props = Readonly<{
-  children: React.ReactNode
+  appName: string
+  locale: Locale
 }>
 
-export default function HeaderClient({ children }: Props) {
+export default function HeaderClient({ appName, locale }: Props) {
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -24,12 +28,38 @@ export default function HeaderClient({ children }: Props) {
   }, [])
 
   return (
-    <header
-      className="w-full rounded-2xl bg-[#0d6488cc] shadow-md backdrop-blur-lg transition-all duration-300 data-full:-m-4 data-full:w-[calc(100%+2rem)] data-full:rounded-none data-full:py-4"
-      data-full={scrollY >= 112 ? '' : undefined}
-      style={{ viewTransitionName: 'header' }}
-    >
-      {children}
-    </header>
+    <div className="sticky top-0 z-40 p-4 print:hidden">
+      <header
+        className="w-full rounded-2xl bg-[#0d6488cc] shadow-md backdrop-blur-lg transition-all duration-300 data-full:-m-4 data-full:w-[calc(100%+2rem)] data-full:rounded-none data-full:py-4"
+        data-full={scrollY >= 112 ? '' : undefined}
+        style={{ viewTransitionName: 'header' }}
+      >
+        <div className="relative mx-auto flex max-w-5xl items-center gap-4 px-4 text-white">
+          <div className="flex-1">
+            <LocaleLink
+              className="flex items-center gap-2 py-2 text-2xl text-white max-md:text-xl max-sm:text-base"
+              href="/"
+            >
+              <Image
+                alt="Logo"
+                className="w-16 drop-shadow-md max-sm:w-8"
+                height={56}
+                loading="eager"
+                priority
+                src="/logo-white.svg"
+                title={appName}
+                width={56}
+              />
+
+              <p className="drop-shadow-md">{appName}</p>
+            </LocaleLink>
+          </div>
+
+          <Suspense fallback={<div className="h-10 w-15" />}>
+            <LocaleSwitcher locale={locale} />
+          </Suspense>
+        </div>
+      </header>
+    </div>
   )
 }

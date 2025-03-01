@@ -10,7 +10,7 @@ import getConfig from 'next/config'
 import SkipToMain from '../utils/skip-to-main'
 import Footer from './footer.client'
 import './globals.css'
-import Header from './header'
+import Header from './header.client'
 import Providers from './providers.client'
 
 export type Props = Readonly<{
