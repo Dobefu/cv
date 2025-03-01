@@ -5,10 +5,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
     a: ({ children, href }) => (
-      <LocaleLink
-        className="font-medium text-sky-700 hover:underline dark:text-sky-400"
-        href={href}
-      >
+      <LocaleLink className="link" href={href}>
         {children}
       </LocaleLink>
     ),

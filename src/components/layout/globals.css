@@ -31,6 +31,10 @@
     @apply font-medium text-sky-800 dark:text-sky-400;
   }
 
+  .link {
+    @apply font-medium text-sky-700 hover:underline dark:text-sky-400;
+  }
+
   ol,
   ul,
   menu {
