@@ -22,4 +22,18 @@
   h3 {
     @apply pb-8 text-2xl font-medium text-sky-700 dark:text-sky-400;
   }
+
+  ol,
+  ul,
+  menu {
+    list-style: revert;
+    list-style-position: inside;
+    padding-inline-start: 0.75rem;
+
+    li ol,
+    li ul,
+    li menu {
+      padding-inline-start: 1.5rem;
+    }
+  }
 }
