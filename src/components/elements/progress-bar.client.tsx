@@ -33,13 +33,11 @@ export default function ProgressBarClient({ label, percentage }: Props) {
     <>
       <label>{label}</label>
 
-      <div className="h-12 pt-2 pb-4">
-        <div
-          className="h-full rounded-full bg-[#ec6609] transition-[cubic-bezier(.5,0,.5,1.75)] duration-300"
-          ref={target}
-          style={{ width: `${percentage}%` }}
-        />
-      </div>
+      <div
+        className="mt-2 mb-4 h-6 rounded-full bg-[#ec6609] duration-300"
+        ref={target}
+        style={{ width: `${percentage}%` }}
+      />
     </>
   )
 }
