@@ -43,7 +43,7 @@ export default function HeaderClient({ appName, locale }: Props) {
             >
               <Image
                 alt="Logo"
-                className="w-16 drop-shadow-md max-sm:w-8"
+                className="w-16 max-sm:w-8"
                 height={56}
                 loading="eager"
                 priority
@@ -52,7 +52,7 @@ export default function HeaderClient({ appName, locale }: Props) {
                 width={56}
               />
 
-              <p className="drop-shadow-md">{appName}</p>
+              {appName}
             </LocaleLink>
           </div>
 

@@ -27,7 +27,7 @@ export default function ProjectPreview({
       className="group center mt-4 flex w-full gap-4 border-t border-zinc-300 pt-8 pb-4 max-md:min-w-full max-md:flex-col max-md:text-center md:gap-8 dark:border-zinc-600"
       href={link}
     >
-      <div className="shrink-0 overflow-hidden rounded-lg drop-shadow-md">
+      <div className="shrink-0 overflow-hidden rounded-lg">
         <Image
           alt={img.alt}
           className="transition-transform duration-300 group-hover:scale-105"

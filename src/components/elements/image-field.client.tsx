@@ -26,7 +26,7 @@ export default function ImageField({ label, text, subtext, link, img }: Props) {
       {!!img && (
         <Image
           alt={img.alt}
-          className="mb-auto shrink-0 drop-shadow-md"
+          className="mb-auto shrink-0"
           height={100}
           sizes="100px"
           src={img.src}

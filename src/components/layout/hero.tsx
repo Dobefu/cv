@@ -41,11 +41,9 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
       <div className="absolute h-full w-full bg-black/20 p-4 max-sm:p-2">
         <div className="mx-auto flex h-full max-w-5xl p-8">
           <div className="mt-8 flex h-full flex-col justify-center gap-2">
-            <h1 className="text-5xl text-white drop-shadow-md max-sm:text-3xl">
-              {title}
-            </h1>
+            <h1 className="text-5xl text-white max-sm:text-3xl">{title}</h1>
 
-            <h2 className="mt-0 text-4xl text-white drop-shadow-md max-sm:text-xl">
+            <h2 className="mt-0 text-4xl text-white max-sm:text-xl">
               {subtitle}
             </h2>
 
@@ -64,7 +62,7 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
           {!!img && (
             <Image
               alt={img.alt}
-              className="relative mx-auto mt-auto -mb-4 w-64 flex-none origin-bottom drop-shadow-md transition-transform active:scale-95 max-sm:-ms-8 max-sm:-mb-2 max-sm:w-32"
+              className="relative mx-auto mt-auto -mb-4 w-64 flex-none origin-bottom transition-transform active:scale-95 max-sm:-ms-8 max-sm:-mb-2 max-sm:w-32"
               height={256}
               loading="eager"
               priority
