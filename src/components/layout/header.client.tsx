@@ -35,26 +35,24 @@ export default function HeaderClient({ locale }: Props) {
         data-full={scrollY >= 112 ? '' : undefined}
         style={{ viewTransitionName: 'h' }}
       >
-        <div className="center relative mx-auto flex max-w-5xl gap-4 px-4 text-white">
-          <div className="flex-1">
-            <LocaleLink
-              className="flex items-center gap-2 py-2 text-2xl text-white max-md:text-xl max-sm:text-base"
-              href="/"
-            >
-              <Image
-                alt="Logo"
-                className="w-16 max-sm:w-8"
-                height={56}
-                loading="eager"
-                priority
-                src="/logo-white.svg"
-                title={appName}
-                width={56}
-              />
+        <div className="relative mx-auto flex max-w-5xl justify-between gap-4 px-4 text-white">
+          <LocaleLink
+            className="flex items-center gap-2 py-2 text-2xl text-white max-sm:text-base"
+            href="/"
+          >
+            <Image
+              alt="Logo"
+              className="w-16 max-sm:w-8"
+              height={56}
+              loading="eager"
+              priority
+              src="/logo-white.svg"
+              title={appName}
+              width={56}
+            />
 
-              {appName}
-            </LocaleLink>
-          </div>
+            {appName}
+          </LocaleLink>
 
           <Suspense fallback={<div className="h-10 w-15" />}>
             <LocaleSwitcher locale={locale} />
