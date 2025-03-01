@@ -36,8 +36,8 @@ export function RootLayoutClient({
       />
 
       <ViewTransitions>
-        <html className="h-full" lang={locale.code}>
-          <body className="flex min-h-full flex-col bg-zinc-200 text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white print:bg-white">
+        <html lang={locale.code}>
+          <body>
             <Providers locale={locale} translations={translations}>
               <SkipToMain locale={locale.code} />
 
@@ -46,9 +46,7 @@ export function RootLayoutClient({
 
                 {breadcrumb}
 
-                <main className="w-full flex-1 pb-4" id="main">
-                  {children}
-                </main>
+                <main id="main">{children}</main>
 
                 <Footer />
               </div>

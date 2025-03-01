@@ -30,11 +30,7 @@ export default function HeaderClient({ locale }: Props) {
 
   return (
     <div className="sticky top-0 z-40 p-4 print:hidden">
-      <header
-        className="w-full rounded-2xl bg-[#0d6488cc] shadow-md backdrop-blur-lg transition-all duration-300 data-full:-m-4 data-full:w-[calc(100%+2rem)] data-full:rounded-none data-full:py-4"
-        data-full={scrollY >= 112 ? '' : undefined}
-        style={{ viewTransitionName: 'h' }}
-      >
+      <header data-full={scrollY >= 112 ? '' : undefined}>
         <div className="relative mx-auto flex max-w-5xl justify-between gap-4 px-4 text-white">
           <LocaleLink
             className="flex items-center gap-2 py-2 text-2xl text-white max-sm:text-base"

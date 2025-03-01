@@ -58,10 +58,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer
-      className="bg-white px-4 py-10 dark:bg-black print:hidden"
-      style={{ viewTransitionName: 'f' }}
-    >
+    <footer>
       <div className="center mx-auto flex max-w-5xl justify-between gap-4 max-md:flex-col">
         <LocaleLink aria-label={appName} className="text-xl" href="/">
           {appName}
