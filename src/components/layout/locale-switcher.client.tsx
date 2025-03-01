@@ -90,7 +90,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
   return (
     <>
       <button
-        className="flex cursor-pointer items-center gap-2 py-4"
+        className="center flex cursor-pointer gap-2 py-4"
         onClick={toggleMenuIsOpen}
         ref={buttonRef}
         style={{ viewTransitionName: 'ls' }}

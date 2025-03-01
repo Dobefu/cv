@@ -35,6 +35,10 @@
     @apply font-medium text-sky-700 hover:underline dark:text-sky-400;
   }
 
+  .center {
+    @apply items-center justify-center;
+  }
+
   ol,
   ul,
   menu {

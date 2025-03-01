@@ -61,15 +61,11 @@ export default function Footer({ appName }: Props) {
 
   return (
     <footer
-      className="bg-white px-4 py-10 shadow-md dark:bg-black print:hidden"
+      className="bg-white px-4 py-10 dark:bg-black print:hidden"
       style={{ viewTransitionName: 'f' }}
     >
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 max-md:flex-col">
-        <LocaleLink
-          aria-label={appName}
-          className="text-xl font-medium text-zinc-800 dark:text-white"
-          href="/"
-        >
+      <div className="center mx-auto flex max-w-5xl justify-between gap-4 max-md:flex-col">
+        <LocaleLink aria-label={appName} className="text-xl" href="/">
           {appName}
         </LocaleLink>
 
@@ -94,7 +90,7 @@ export default function Footer({ appName }: Props) {
           {socialLinks.map((socialLink) => (
             <LocaleLink
               aria-label={socialLink.title}
-              className="flex size-8 items-center justify-center rounded-full text-zinc-500 transition-colors hover:bg-zinc-200 dark:text-zinc-400 dark:hover:bg-zinc-700"
+              className="center flex size-8 rounded-full text-zinc-500 transition-colors hover:bg-zinc-200 dark:text-zinc-400 dark:hover:bg-zinc-700"
               href={socialLink.to}
               key={socialLink.to}
               title={socialLink.title}

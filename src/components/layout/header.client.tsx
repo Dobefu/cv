@@ -35,7 +35,7 @@ export default function HeaderClient({ appName, locale }: Props) {
         data-full={scrollY >= 112 ? '' : undefined}
         style={{ viewTransitionName: 'h' }}
       >
-        <div className="relative mx-auto flex max-w-5xl items-center gap-4 px-4 text-white">
+        <div className="center relative mx-auto flex max-w-5xl gap-4 px-4 text-white">
           <div className="flex-1">
             <LocaleLink
               className="flex items-center gap-2 py-2 text-2xl text-white max-md:text-xl max-sm:text-base"
