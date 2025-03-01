@@ -22,11 +22,15 @@ For this, I have chosen the following technologies:
 
 ## The Tech Stack
 
+### MDX
+
 MDX is at the core of the website. I knew I wanted to use Markdown to store my content.
 This allows me to keep all my content in version control.
 No need for any involved backups of the data or maintenance of a database.
 Of course, this is not a viable method for many websites with content editors, but for my purposes it's perfect.
 When I want to change anything, I don't have to login to a CMS. I can just open a file and start editing.
+
+### NextJS
 
 Now that I knew I wanted Markdown, I had to choose a tech stack that accomodates it.
 At first, I was considering using [Hugo](https://gohugo.io/) since it's an incredibly fast static site generator.
@@ -39,7 +43,10 @@ Since MDX uses JSX components by default, I wanted a JSX-based framework with go
 NextJS looked like it had the [most mature](https://nextjs.org/docs/app/building-your-application/configuring/mdx) MDX support at the time.
 I'm also quite fond of server components, since it reduces the final JavaScript bundle size of any loaded page.
 
-Finally, there's TailwindCSS. There's differing opinions on it out there, but I really like it.
+### TailwindCSS
+
+Finally, there's TailwindCSS for the styling.
+There's differing opinions on it out there, but I really like it.
 Its main appeal for me is that I never have to switch files when styling a component.
 It's also a great way to keep the final CSS size relatively small,
 since only the used HTML classes will get included in the stylesheet.

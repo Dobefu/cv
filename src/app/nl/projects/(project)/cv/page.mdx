@@ -22,11 +22,15 @@ Hiervoor heb ik de volgende technologieën gekozen:
 
 ## De Tech Stack
 
+### MDX
+
 MDX is de kern van de website. Ik wist dat ik Markdown wilde gebruiken om mijn content op te slaan.
 Dit stelt me in staat om al mijn content in versiebeheer te houden.
 Hiermee is het niet nodig om reguliere back-ups van of onderhoud aan een database uit te voeren.
 Natuurlijk is dit geen ideale oplossing voor veel websites met content editors, maar voor mijn doeleinden is het perfect.
 Wanneer ik iets wil veranderen, hoef ik niet in een CMS in te loggen. Ik kan gewoon een bestand openen en het direct bewerken.
+
+### NextJS
 
 Nu ik wist dat ik Markdown wilde gebruiken, moest ik een tech stack kiezen die hier goed op aansluit.
 Oorspronkelijk overwoog ik om [Hugo](https://gohugo.io/) te gebruiken, omdat het een zeer snelle static site generator is.
@@ -39,7 +43,10 @@ Aangezien MDX standaard JSX componenten gebruikt, wilde ik een JSX-gebaseerd fra
 NextJS leek op dat moment de [meest volwassen](https://nextjs.org/docs/app/building-your-application/configuring/mdx) MDX ondersteuning te hebben.
 Ik ben ook een groot fan van server components, omdat het de uiteindelijke JavaScript bundle size van elke geladen pagina verkleint.
 
-Als laatste is er TailwindCSS. Er zijn verschillende meningen over, maar ik vind het erg fijn om te gebruiken.
+### TailwindCSS
+
+Als laatste is er TailwindCSS voor de styling.
+Er zijn verschillende meningen over, maar ik vind het erg fijn om te gebruiken.
 Het grootste voordeel voor mij is dat ik nooit van bestand hoef te wisselen om een component te stylen.
 Het is ook een zeer goede manier om de uiteindelijke CSS bestandsgrootte relatief
 klein te houden, omdat alleen de gebruikte HTML classes in de stylesheet voorkomen.
