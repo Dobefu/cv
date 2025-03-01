@@ -25,6 +25,7 @@ Hiervoor heb ik de volgende technologieën gekozen:
 - [MDX](https://mdxjs.com/), om de "database" direct in versiebeheer te hebben, en direct componenten te kunnen gebruiken
 - [NextJS](https://nextjs.org/), voor automatische hot reloading
 - [TailwindCSS](https://tailwindcss.com/), voor snelle styling van componenten zonder te hoeven schakelen tussen meerdere bestanden
+- [Vitest](https://vitest.dev/), om de code te unit testen
 
 ### MDX
 
@@ -54,3 +55,12 @@ Er zijn verschillende meningen over, maar ik vind het erg fijn om te gebruiken.
 Het grootste voordeel voor mij is dat ik nooit van bestand hoef te wisselen om een component te stylen.
 Het is ook een zeer goede manier om de uiteindelijke CSS bestandsgrootte relatief
 klein te houden, omdat alleen de gebruikte HTML classes in de stylesheet voorkomen.
+
+### Vitest
+
+Om zeker te zijn dat mijn logica en componenten allemaal goed werken, gebruik ik Vitest om deze te unit testen.
+Voor logica zoals in de [middleware](https://github.com/Dobefu/cv/blob/main/src/middleware.ts) is dit erg behulpzaam wanneer ik iets wil wijzigen.
+Uiteraard is de logica in dit bestand niet ingewikkeld.
+Maar het zorgt ervoor dat ik niet handmatig alle logica en code paths opnieuw
+hoef te testen nadat ik een wijziging maak, en het brengt me zekerheid
+dat ik tijdens het testen niet per ongeluk wat oversla.

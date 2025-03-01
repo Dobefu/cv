@@ -25,6 +25,7 @@ For this, I have chosen the following technologies:
 - [MDX](https://mdxjs.com/), to have the "database" directly in version control, and be able to use components
 - [NextJS](https://nextjs.org/), for automatic hot reloading
 - [TailwindCSS](https://tailwindcss.com/), for quick styling of components without having to switch to different files
+- [Vitest](https://vitest.dev/), to unit test the code
 
 ### MDX
 
@@ -54,3 +55,11 @@ There's differing opinions on it out there, but I really like it.
 Its main appeal for me is that I never have to switch files when styling a component.
 It's also a great way to keep the final CSS size relatively small,
 since only the used HTML classes will get included in the stylesheet.
+
+### Vitest
+
+To ensure that my logic and components work correctly, I use Vitest to unit test them.
+For logic such as the [middleware](https://github.com/Dobefu/cv/blob/main/src/middleware.ts), this is really helpful when I want to change anything.
+Of course, the logic in this file is nothing complicated.
+But it does save me from having to manually test all of the logic and code paths
+after I make a change, and ensures that I don't miss anything during testing.
