@@ -76,7 +76,7 @@ export default function ProjectLayout({ children, project }: Props) {
           className="flex items-center gap-2 break-all text-sky-800 hover:underline dark:text-sky-400"
           href={project.repo}
         >
-          <Icon className="size-5 shrink-0" icon={repoIcon} ssr />
+          <Icon className="size-5 shrink-0" icon={repoIcon} />
 
           {project.repo}
         </LocaleLink>
