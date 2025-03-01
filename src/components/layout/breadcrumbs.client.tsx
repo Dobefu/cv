@@ -24,43 +24,41 @@ export default function BreadcrumbClient({ slug: fullSlug }: Props) {
       <meta content="article" name="og:type" />
       <meta content={`${url}/${slug.join('/')}`} name="og:url" />
 
-      <div className="px-4" style={{ viewTransitionName: 'bc' }}>
-        <div className="mx-auto flex w-full max-w-5xl flex-wrap gap-4 pt-4 pb-8">
-          {slug.map((slugPart, idx) => {
-            if (slugPart !== 'home') path += `/${slugPart}`
+      <div
+        className="mx-auto flex w-full max-w-5xl flex-wrap gap-4 p-4 pb-8"
+        style={{ viewTransitionName: 'b' }}
+      >
+        {slug.map((slugPart, idx) => {
+          if (slugPart !== 'home') path += `/${slugPart}`
 
-            let title = slugPart.charAt(0).toUpperCase() + slugPart.slice(1)
-            const { project } = getProjectFromUrl(path, locale)
+          let title = slugPart.charAt(0).toUpperCase() + slugPart.slice(1)
+          const { project } = getProjectFromUrl(path, locale)
 
-            if (project) {
-              title = project.title
-            }
+          if (project) {
+            title = project.title
+          }
 
-            if (idx === slug.length - 1) {
-              return (
-                <div
-                  className="text-zinc-700 dark:text-zinc-300"
-                  key={slugPart}
-                >
-                  {title}
-                </div>
-              )
-            }
-
+          if (idx === slug.length - 1) {
             return (
-              <Fragment key={slugPart}>
-                <LocaleLink
-                  className="font-medium text-sky-700 dark:text-sky-400"
-                  href={path}
-                >
-                  {title}
-                </LocaleLink>
-
-                {'/'}
-              </Fragment>
+              <div className="text-zinc-700 dark:text-zinc-300" key={slugPart}>
+                {title}
+              </div>
             )
-          })}
-        </div>
+          }
+
+          return (
+            <Fragment key={slugPart}>
+              <LocaleLink
+                className="font-medium text-sky-700 dark:text-sky-400"
+                href={path}
+              >
+                {title}
+              </LocaleLink>
+
+              {'/'}
+            </Fragment>
+          )
+        })}
       </div>
     </>
   )
