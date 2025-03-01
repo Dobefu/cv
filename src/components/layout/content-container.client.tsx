@@ -1,3 +1,5 @@
+'use client'
+
 type Props = Readonly<{
   children: React.ReactNode
 }>

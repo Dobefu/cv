@@ -1,5 +1,5 @@
 import IconTag from '@/components/elements/tag.client'
-import ContentContainer from '@/components/layout/content-container'
+import ContentContainer from '@/components/layout/content-container.client'
 import { Project } from '@/types/project'
 import iconGithub from '@iconify/icons-mdi/github'
 import iconGitlab from '@iconify/icons-mdi/gitlab'

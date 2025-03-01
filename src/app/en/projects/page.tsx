@@ -1,5 +1,5 @@
 import ProjectPreview from '@/components/elements/project-preview'
-import ContentContainer from '@/components/layout/content-container'
+import ContentContainer from '@/components/layout/content-container.client'
 import getProjects from '@/utils/get-projects'
 
 export const metadata = {
