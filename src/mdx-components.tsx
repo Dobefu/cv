@@ -9,7 +9,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </LocaleLink>
     ),
-    p: ({ children }) => <p className="pb-4">{children}</p>,
+    p: ({ children }) => <p className="mb-4">{children}</p>,
     hr: () => <hr />,
     ul: ({ children }) => <ul>{children}</ul>,
   }

@@ -12,15 +12,15 @@
   }
 
   h1 {
-    @apply pb-8 text-4xl font-medium text-sky-700 not-first:mt-8 dark:text-sky-400;
+    @apply mb-8 text-4xl font-medium text-sky-700 not-first:mt-8 dark:text-sky-400;
   }
 
   h2 {
-    @apply pb-8 text-3xl font-medium text-sky-700 not-first:mt-8 dark:text-sky-400;
+    @apply mb-6 text-3xl font-medium text-sky-700 not-first:mt-8 dark:text-sky-400;
   }
 
   h3 {
-    @apply pb-8 text-2xl font-medium text-sky-700 not-first:mt-8 dark:text-sky-400;
+    @apply mb-4 text-2xl font-medium text-sky-700 not-first:mt-8 dark:text-sky-400;
   }
 
   hr {
