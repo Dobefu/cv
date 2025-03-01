@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import Label from './label'
 
 type Props = Readonly<{
   label: string
@@ -32,7 +31,7 @@ export default function ProgressBarClient({ label, percentage }: Props) {
 
   return (
     <>
-      <Label>{label}</Label>
+      <label>{label}</label>
 
       <div className="h-12 pt-2 pb-4">
         <div

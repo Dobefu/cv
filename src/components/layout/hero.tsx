@@ -45,7 +45,7 @@ export default function Hero({ title, subtitle, img, imgBg, cta }: Props) {
               {title}
             </h1>
 
-            <h2 className="text-4xl text-white drop-shadow-md max-sm:text-xl">
+            <h2 className="mt-0 text-4xl text-white drop-shadow-md max-sm:text-xl">
               {subtitle}
             </h2>
 

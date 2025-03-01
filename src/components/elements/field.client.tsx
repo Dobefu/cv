@@ -1,7 +1,6 @@
 'use client'
 
 import { Icon, type IconifyIcon } from '@iconify/react'
-import Label from './label'
 
 type Props = Readonly<{
   label: string
@@ -21,7 +20,7 @@ export default function Field({ label, value, icon }: Props) {
       ) : undefined}
 
       <div>
-        <Label>{label}</Label>
+        <label>{label}</label>
         <p>{value}</p>
       </div>
     </div>

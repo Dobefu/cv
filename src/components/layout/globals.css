@@ -27,6 +27,10 @@
     @apply my-8 h-px border-none bg-zinc-300 dark:bg-zinc-600;
   }
 
+  label {
+    @apply font-medium text-sky-800 dark:text-sky-400;
+  }
+
   ol,
   ul,
   menu {
