@@ -1,5 +1,59 @@
 export const metadata = {
-  title: 'Contentstack Bridge',
-  description:
-    'Voegt een laag toe tussen je eigen applicatie en Contentstack, om een aantal onmisbare gemakken te leveren. Het is gebouwd in reactie op uitdagingen die ik had tijdens het werken met de Contentstack API.',
+	title: 'Contentstack Bridge',
+	description:
+		'Voegt een laag toe tussen je eigen applicatie en Contentstack, om een aantal onmisbare gemakken te leveren. Het is gebouwd in reactie op uitdagingen die ik had tijdens het werken met de Contentstack API.',
 }
+
+<div className="py-4" />
+
+## What is Contentstack?
+
+[Contentstack](https://www.contentstack.com/platforms/headless-cms) is een API-first headless SaaS content management system (CMS).
+Voor content editors biedt dit een interface waar content kan worden
+gemodelleerd en beheerd, los van de presentatie laag, of frontend.
+Ontwikkelaars kunnen een REST of GraphQL API gebruiken om deze inhoud op te halen.
+
+<div className="py-4" />
+
+## Beperkingen van Contentstack
+
+De Contentstack API's (zowel REST als GraphQL) hebben een aantal
+serieuze beperkingen in de wat ze wel en niet kunnen doen.
+
+- Bij het opvragen van een inhoudsitem moet het inhoudstype worden opgegeven
+- Het is niet mogelijk om alle gepubliceerde locales voor een inhoudsitem op te vragen
+- Hoewel er “URL”-velden zijn in Contentstack, zijn dit eigenlijk slugs, omdat pagina's geen "parent" pagina's kunnen hebben
+  - Dit maakt het onmogelijk om pagina's in Contentstack te nesten op een manier die intuïtief is voor content editors
+
+Deze beperkingen maken het erg lastig om de API te gebruiken om een efficiënte website te maken.
+Vanwege deze beperkingen is er behoefte aan een middleware
+tussen Contentstack en de website die je wil maken.
+Hier biedt de Contentstack Bridge een uitkomst.
+
+<div className="py-4" />
+
+## Contentstack Bridge
+
+De Contentstack Bridge is gemaakt om precies deze problemen op te lossen.
+Het dient als middleware tussen Contentstack en een applicatie,
+om ontwikkelaars de best mogelijke ervaring te bieden.
+Een subset van alle inhoudsitems wordt opgeslagen in een eigen database, op een
+manier dat elk inhoudsitem opgevraagd kan worden zonder dat het nodig is om het inhoudstype op te geven.
+Een developer kan ervoor kiezen om deze direct vanuit de database op te vragen,
+of via de ingebouwde [API server](https://dobefu.github.io/csb/api-server/index.html).
+De inhoudsitem in de response zal altijd alle alternatieve locales voor de invoer bevatten,
+waardoor het gemakkelijk kan worden toegevoegd aan de HTML metadata op de website.
+
+Om de database te vullen, moet er een [synchronisatie](https://www.contentstack.com/docs/developers/apis/content-delivery-api#synchronization) uitgevoerd worden.
+De eerste synchronisatie zal alle inhoudsitems ophalen en verwerken,
+en alle volgende oproepen zullen de synchronisatie-token gebruiken om verder te gaan vanaf de laatste sync.
+Deze synchronisatie actie kan uitgevoerd worden in een [webhook](https://www.contentstack.com/docs/developers/set-up-webhooks/about-webhooks) om de data up-to-date te houden.
+
+"Parent" pagina's zijn ook ondersteund in de Contentstack Bridge, door een "parent" veld toe te voegen aan een content entry.
+Dit kan handmatig worden toegevoegd, of via de [CLI](https://dobefu.github.io/csb/cli/index.html).
+Tijdens het uitvoeren van een synchronisatie, zal de Contentstack Bridge deze
+bovenliggende pagina's recursief opvragen en de volledige URL daaruit samenstellen.
+Dit maakt het mogelijk om een inhoudsitem op te vragen via de volledige URL,
+en content editors tegelijkertijd een intuïtieve manier te bieden om pagina's te nesten.
+Als extra bonus betekent dit ook dat, wanneer de slug van een bovenliggendepagina wordt gewijzigd,
+dit segment van de volledige URL voor alle onderliggende pagina's wordt bijgewerkt.
