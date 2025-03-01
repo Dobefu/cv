@@ -53,6 +53,11 @@
     @apply w-full flex-1 pb-4;
   }
 
+  .content-container {
+    @apply mx-auto max-w-5xl rounded-2xl bg-white p-8 shadow-md dark:bg-zinc-800;
+    view-transition-name: content-container;
+  }
+
   .link {
     @apply font-medium text-sky-700 hover:underline dark:text-sky-400;
   }
