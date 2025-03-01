@@ -1,3 +1,5 @@
+'use client'
+
 import iconChevronRight from '@iconify/icons-mdi/chevron-right'
 import { Icon } from '@iconify/react'
 import Image from 'next/image'
