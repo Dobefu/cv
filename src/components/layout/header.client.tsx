@@ -1,5 +1,6 @@
 'use client'
 
+import { Locale } from '@/types/locale'
 import Image from 'next/image'
 import React, { Suspense, useEffect, useState } from 'react'
 import LocaleLink from '../utils/locale-link.client'
