@@ -90,7 +90,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
   return (
     <>
       <button
-        className="flex cursor-pointer items-center gap-2"
+        className="flex cursor-pointer items-center gap-2 py-4"
         onClick={toggleMenuIsOpen}
         ref={buttonRef}
         style={{ viewTransitionName: 'ls' }}
@@ -100,7 +100,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
             currentLocale.code,
             `languages.${currentLocale?.code}.alt`,
           )}
-          className="size-12 rounded-full drop-shadow-md transition-all max-sm:size-8"
+          className="size-12 rounded-full"
           height={48}
           loading="eager"
           priority
@@ -120,14 +120,14 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
       <button
         aria-expanded={isMenuOpen}
         aria-label={getTranslation(currentLocale.code, 'locale_switcher.label')}
-        className="absolute end-3 top-16 z-40 mt-8 origin-[6rem_0] scale-0 rounded-2xl bg-white shadow-md transition-all ease-out before:absolute before:end-10 before:-top-4 before:origin-bottom before:scale-0 before:border-8 before:border-transparent before:border-b-white before:transition-all aria-expanded:scale-100 aria-expanded:before:scale-100 max-sm:end-0 max-sm:mt-2 max-sm:before:end-12 dark:bg-zinc-900 dark:before:border-b-zinc-900"
+        className="absolute end-3 top-16 mt-8 origin-[6rem_0] scale-0 rounded-2xl bg-white shadow-md transition-all before:absolute before:end-10 before:-top-4 before:origin-bottom before:scale-0 before:border-8 before:border-transparent before:border-b-white before:transition-all aria-expanded:scale-100 aria-expanded:before:scale-100 dark:bg-zinc-900 dark:before:border-b-zinc-900"
         ref={dropdownRef}
         tabIndex={-1}
       >
         <div className="overflow-hidden rounded-2xl">
           {locales.map((locale) => (
             <Link
-              className="flex w-full cursor-pointer items-center gap-4 p-4 align-middle text-lg text-black transition-all hover:bg-zinc-200 dark:text-white dark:hover:bg-zinc-700"
+              className="flex w-full items-center gap-4 p-4 text-lg text-black transition-all hover:bg-zinc-200 dark:text-white dark:hover:bg-zinc-700"
               href={getLocaleHref(locale.code)}
               key={locale.code}
               scroll
@@ -138,7 +138,7 @@ export default function LocaleSwitcher({ locale: currentLocale }: Props) {
                   currentLocale.code,
                   `languages.${locale?.code}.alt`,
                 )}
-                className="w-12 rounded-full drop-shadow-md transition-all max-sm:w-8"
+                className="size-12 rounded-full"
                 height={48}
                 loading="eager"
                 priority
