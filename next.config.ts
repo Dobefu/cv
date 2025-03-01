@@ -8,7 +8,7 @@ let nextConfig: NextConfig = {
   pageExtensions: ['md', 'mdx', 'ts', 'tsx'],
   poweredByHeader: false,
   publicRuntimeConfig: {
-    appName: process.env.APP_NAME ?? '',
+    appName: process.env.NEXT_PUBLIC_APP_NAME ?? '',
   },
   compiler: {
     reactRemoveProperties: true,

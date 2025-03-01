@@ -6,7 +6,7 @@ export default function getRssFeed(locale: string): Response {
   let response = '<?xml version="1.0" encoding="utf-8"?>'
   response += '<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">'
   response += '<channel>'
-  response += `<title>${process.env.APP_NAME}</title>`
+  response += `<title>${process.env.NEXT_PUBLIC_APP_NAME}</title>`
   response += `<link>${process.env.NEXT_PUBLIC_APP_URL}/${locale}</link>`
   response += `<language>${locale}</language>`
 
