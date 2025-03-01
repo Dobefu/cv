@@ -10,11 +10,9 @@ import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import LocaleLink from '../utils/locale-link.client'
 
-type Props = Readonly<{
-  appName: string
-}>
+export default function Footer() {
+  const appName = process.env.NEXT_PUBLIC_APP_NAME
 
-export default function Footer({ appName }: Props) {
   const footerLinks = [
     {
       title: 'Projects',

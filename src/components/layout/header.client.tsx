@@ -7,11 +7,11 @@ import LocaleLink from '../utils/locale-link.client'
 import LocaleSwitcher from './locale-switcher.client'
 
 type Props = Readonly<{
-  appName: string
   locale: Locale
 }>
 
-export default function HeaderClient({ appName, locale }: Props) {
+export default function HeaderClient({ locale }: Props) {
+  const appName = process.env.NEXT_PUBLIC_APP_NAME
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {

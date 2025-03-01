@@ -21,6 +21,7 @@ export default defineConfig({
         'src/mdx-components.tsx',
         '**/layout.tsx',
         '**/root-layout.tsx',
+        '**/root-layout.client.tsx',
         'src/types/**',
       ],
       thresholds: {
