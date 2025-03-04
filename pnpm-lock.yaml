@@ -119,8 +119,8 @@ importers:
         specifier: ^0.6.11
         version: 0.6.11(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.5.3))(prettier@3.5.3)
       tailwindcss:
-        specifier: ^4.0.8
-        version: 4.0.8
+        specifier: ^4.0.9
+        version: 4.0.9
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -3207,6 +3207,9 @@ packages:
 
   tailwindcss@4.0.8:
     resolution: {integrity: sha512-Me7N5CKR+D2A1xdWA5t5+kjjT7bwnxZOE6/yDI/ixJdJokszsn2n++mdU5yJwrsTpqFX2B9ZNMBJDwcqk9C9lw==}
+
+  tailwindcss@4.0.9:
+    resolution: {integrity: sha512-12laZu+fv1ONDRoNR9ipTOpUD7RN9essRVkX36sjxuRUInpN7hIiHN4lBd/SIFjbISvnXzp8h/hXzmU8SQQYhw==}
 
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
@@ -7037,6 +7040,8 @@ snapshots:
   symbol-tree@3.2.4: {}
 
   tailwindcss@4.0.8: {}
+
+  tailwindcss@4.0.9: {}
 
   tapable@2.2.1: {}
 
