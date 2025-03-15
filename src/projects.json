@@ -14,7 +14,7 @@
       "updated": "2025-02-25"
     },
     {
-      "title": "Contentstack Bridge",
+      "title": "Contentstack Bridge (CSB)",
       "subtext": "Adds a layer between your application and Contentstack, to provide some much-needed conveniences. It has been built in response to challenged I had whilst working with the Contentstack API.",
       "image": {
         "src": "csb.png",
@@ -24,7 +24,7 @@
       "repo": "https://github.com/Dobefu/csb",
       "path": "csb",
       "created": "2025-02-01",
-      "updated": "2025-03-01"
+      "updated": "2025-03-15"
     },
     {
       "title": "Scrum Poker application",
@@ -81,7 +81,7 @@
       "updated": "2025-02-25"
     },
     {
-      "title": "Contentstack Bridge",
+      "title": "Contentstack Bridge (CSB)",
       "subtext": "Voegt een laag toe tussen je eigen applicatie en Contentstack, om een aantal onmisbare gemakken te leveren. Het is gebouwd in reactie op uitdagingen die ik had tijdens het werken met de Contentstack API.",
       "image": {
         "src": "csb.png",
@@ -91,7 +91,7 @@
       "repo": "https://github.com/Dobefu/csb",
       "path": "csb",
       "created": "2025-02-01",
-      "updated": "2025-03-01"
+      "updated": "2025-03-15"
     },
     {
       "title": "Scrum Poker applicatie",
