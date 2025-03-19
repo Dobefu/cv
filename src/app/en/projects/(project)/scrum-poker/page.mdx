@@ -3,3 +3,73 @@ export const metadata = {
   description:
     'A small web application for people to quickly and easily start estimating user stories in dedicated rooms. Built to learn about websockets and concurrent connections.',
 }
+
+## Why create this?
+
+When estimating user stories at work, we often use a website to submit estimations.
+The website we often use for this is [scrumpoker-online.org](https://www.scrumpoker-online.org/en/).
+This works well, and really helps us to quickly estimate user stories.
+But it does have some limitations and annoyances.
+
+- The temporary accounts are great, but don't allow for any customization by default
+- It's full of ads, which are very distracting
+- You cannot remove your estimate once you have one selected
+  - It's only possible to remove all estimations for everyone
+- It's not possible to join as a hidden user
+  - This means that a project manager cannot join without being listed, which clutters up the overview
+
+Overall, it's a nice website with some very good ideas.
+But there are some things that I would really like to see.
+
+## Creating the Scrum Poker application
+
+### Authentication
+
+One of the best things about scrumpoker-online.org is, in my opinion, the
+authentication system.
+I really like how quickly you can create a temporary account and get started in seconds.
+That is something I really wanted to recreate.
+To do that, I created a `users` table with a token instead of a password.
+When creating a room, a user is created and the token will be stored as a cookie.
+This token is used to authenticate requests.
+When this cookie is cleared, it is no longer possible to use that user.
+This is no problem though, for multiple reasons:
+
+- No personal data is stored at all
+- Usernames do not have to be unique. Multiple users with the same username are allowed
+- When a user has been inactive for a day, the user will get deleted in a cron
+
+I think this is a great way to do authentication for this type of application.
+The goal is to get started quickly, and this makes it possible to just type a
+username and start sharing the room ID.
+
+### Rooms
+
+With the authentication system decided,
+the next step was to decide on how to do rooms.
+This was also quite easy to do.
+A room has a UUID, which is a hex-encoded set of 16 bytes from the NodeJS crypto utility.
+Since rooms are temporary, it only serves to obscure the room URL.
+This is security by obscurity, of course.
+But again, there is no sensitive data here.
+
+For cleanup, I extended the cron to check for rooms where the creator no longer exists.
+This check happens after the inactive users have gotten cleaned up.
+Doing this ensures that the database doesn't grow too large over time.
+
+### Websockets
+
+Now that the application has both users and rooms, it was time to work on the interactivity.
+For this, I created a websocket endpoint in Go.
+I chose to do this in Go, because it's absolutely crucial to handle all edge cases.
+Go really helps with this, since errors are returned as values for most functions.
+This forces you to handle any potential error that might get returned at any
+point, and eliminates the need for try/ catch blocks which might get forgotten.
+Of course, edge cases can still happen, but this helps me handle a lot of them early.
+
+## The Scrum Poker Application
+
+In the end, I'm very happy with the result. It's exactly what I was looking for.
+It's very quick and easy to get started, and there's a lot of customization options.
+
+The site is available on [scrum-poker.connor.nl](https://scrum-poker.connor.nl/).

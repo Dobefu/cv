@@ -3,3 +3,73 @@ export const metadata = {
   description:
     'Een kleine web applicatie voor mensen om snel en eenvoudig user stories in te schatten in eigen ruimtes. Gebouwd om te leren over websockets en gelijktijdige connecties.',
 }
+
+## Waarom heb ik dit gemaakt?
+
+Bij het inschatten van user stories op het werk gebruiken we hiervoor vaak een website.
+De website die we hiervoor vaak gebruiken is [scrumpoker-online.org](https://www.scrumpoker-online.org/en/).
+Dit werkt goed, en helpt ons om snel user stories in te schatten.
+Maar het heeft wel wat beperkingen en ongemakken.
+
+- De tijdelijke accounts zijn uitstekend, maar staan standaard geen aanpassingen aan een ruimte toe
+- Het staat vol met advertenties, die erg afleiden
+- Je kunt je inschatting niet verwijderen als je er eenmaal een hebt geselecteerd
+  - Het is alleen mogelijk om alle inschattingen voor iedereen te verwijderen
+- Het is niet mogelijk om deel te nemen als verborgen gebruiker
+  - Dit betekent dat een projectmanager zich niet kan aanmelden zonder in de lijst te staan, wat het overzicht vervuilt
+
+Al met al is het een handige website met veel goede ideeën.
+Maar er is een aantal dingen dat ik graag zou willen zien.
+
+## Het maken van de Scrum Poker applicatie
+
+### Authenticatie
+
+Een van de beste aspecten van scrumpoker-online.org is, naar mijn mening, het
+authenticatie systeem.
+Ik vind het erg handig hoe snel je een tijdelijk account kan aanmaken en binnen een paar seconden aan de slag kan.
+Dat is iets wat ik graag wilde namaken.
+Om dat te doen, heb ik een `users` tabel gemaakt met een token in plaats van een wachtwoord.
+Bij het aanmaken van een ruimte wordt een gebruiker aangemaakt en wordt de token opgeslagen als een cookie.
+Deze token wordt gebruikt om verzoeken te verifiëren.
+Wanneer deze cookie verwijderd wordt, is het niet langer mogelijk met deze gebruiker in te loggen.
+Dit is echter geen probleem, om een aantal redenen:
+
+- Er worden helemaal geen persoonlijke gegevens opgeslagen
+- Gebruikersnamen hoeven niet uniek te zijn. Meerdere gebruikers met dezelfde gebruikersnaam zijn toegestaan
+- Als een gebruiker een dag inactief is geweest, wordt de gebruiker verwijderd in een cron
+
+Ik denk dat dit een uitstekende manier is om authenticatie te implementeren voor dit soort applicaties.
+Het doel is om snel aan de slag te gaan, en dit maakt het mogelijk om gewoon een
+gebruikersnaam in te voeren en direct te beginnen door een kamer ID te delen.
+
+### Kamers
+
+Nu het systeem voor authenticatie is vastgesteld,
+was de volgende stap om te beslissen hoe de kamers gebouwd moesten worden.
+Dit was ook vrij eenvoudig te doen.
+Een kamer heeft een UUID, wat een hex-gecodeerde set van 16 bytes is van het NodeJS crypto hulpmiddel.
+Omdat kamers tijdelijk zijn, is dit alleen om de URL van de kamer te verbergen.
+Dit is uiteraard "security by obscurity".
+Maar wederom zijn hier geen gevoelige gegevens.
+
+Voor het opschonen heb ik de cron uitgebreid om te controleren op ruimtes waarvan de eigenaar niet meer bestaat.
+Deze controle gebeurt nadat de inactieve gebruikers zijn opgeschoond.
+Dit zorgt ervoor dat de database in de loop van de tijd niet te groot wordt.
+
+### Websockets
+
+Nu de applicatie zowel gebruikers als kamers heeft, was het tijd om aan de interactiviteit te werken.
+Hiervoor heb ik een websocket endpoint gemaakt in Go.
+Ik heb ervoor gekozen om dit in Go te doen, omdat het absoluut cruciaal is om alle edge cases af te handelen.
+Go helpt hier enorm mee, omdat errors bij de meeste functies als waarde worden teruggegeven.
+Dit forceert je om elke potentiële fout af te handelen die op elk moment kan worden teruggegeven
+en elimineert de noodzaak voor try/ catch blokken die vergeten kunnen worden.
+Natuurlijk kunnen er nog steeds edge cases optreden, maar dit helpt me om er veel vroegtijdig af te handelen.
+
+## De Scrum Poker Applicatie
+
+Uiteindelijk ben ik erg blij met het resultaat. Het is precies geworden wat ik voor ogen had.
+Het is erg snel en gemakkelijk om te beginnen en er zijn veel aanpasmogelijkheden.
+
+De site is beschikbaar op [scrum-poker.connor.nl](https://scrum-poker.connor.nl/).
