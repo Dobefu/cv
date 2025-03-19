@@ -17,7 +17,7 @@ export default function getRssFeed(locale: string): Response {
     response += `<link>${process.env.NEXT_PUBLIC_APP_URL}/${locale}/projects/${project.path}</link>`
     response += `<guid>${project.path}</guid>`
     response += `<media:content medium="image" url="${process.env.NEXT_PUBLIC_APP_URL}/img/projects/${project.image.src}" />`
-    response += `<pubDate>${project.updated}</pubDate>`
+    response += `<pubDate>${project.created}</pubDate>`
     response += '</item>'
   }
 
