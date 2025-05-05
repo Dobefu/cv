@@ -25,7 +25,7 @@ function handleLocaleDetection(request: NextRequest): URL | undefined {
 
   const { pathname } = request.nextUrl
   const pathnameHasLocale = localeCodes.some((code) => {
-    return pathname.startsWith(`/${code}/`) ?? pathname === `/${code}`
+    return pathname.startsWith(`/${code}/`) || pathname === `/${code}`
   })
 
   if (pathnameHasLocale) {
