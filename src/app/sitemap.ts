@@ -21,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Exclude catch-all routes and parallel routes.
     if (file.includes('[...') || file.startsWith('@')) return false
 
-    return file.endsWith('page.mdx') || file.endsWith('page.tsx')
+    return file.endsWith('page.mdx') ?? file.endsWith('page.tsx')
   })
 
   const appUrl = process.env.NEXT_PUBLIC_APP_URL

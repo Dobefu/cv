@@ -13,8 +13,8 @@ const LocaleLink: React.FC<
   const { locale } = useContext(LocaleContext)
 
   const isExternal =
-    props.href.startsWith('http') ||
-    props.href.startsWith('mailto') ||
+    props.href.startsWith('http') ??
+    props.href.startsWith('mailto') ??
     props.href.startsWith('tel')
 
   const newProps = {

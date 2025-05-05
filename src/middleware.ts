@@ -21,13 +21,11 @@ export function middleware(request: NextRequest) {
 function handleLocaleDetection(request: NextRequest): URL | undefined {
   const { defaultLocale, locales } = getLocales()
 
-  if (!localeCodes) {
-    localeCodes = locales.map((locale) => locale.code)
-  }
+  localeCodes ??= locales.map((locale) => locale.code)
 
   const { pathname } = request.nextUrl
   const pathnameHasLocale = localeCodes.some((code) => {
-    return pathname.startsWith(`/${code}/`) || pathname === `/${code}`
+    return pathname.startsWith(`/${code}/`) ?? pathname === `/${code}`
   })
 
   if (pathnameHasLocale) {
