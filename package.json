@@ -18,7 +18,7 @@
     "@iconify/icons-mdi": "^1.2.48",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
-    "@next/mdx": "15.3.2",
+    "@next/mdx": "15.3.3",
     "@types/mdx": "^2.0.13",
     "@vercel/analytics": "^1.5.0",
     "negotiator": "^1.0.0",
