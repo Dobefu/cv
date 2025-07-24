@@ -45,7 +45,7 @@
     "cssnano-preset-advanced": "^7.0.8",
     "eslint": "^9.31.0",
     "eslint-config-next": "15.3.5",
-    "eslint-config-prettier": "^10.1.5",
+    "eslint-config-prettier": "^10.1.8",
     "jsdom": "^26.1.0",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
