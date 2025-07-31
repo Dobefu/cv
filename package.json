@@ -24,8 +24,8 @@
     "negotiator": "^1.0.0",
     "next": "15.4.3",
     "next-view-transitions": "^0.3.4",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
@@ -41,7 +41,7 @@
     "@vitejs/plugin-react": "^4.7.0",
     "@vitest/coverage-v8": "^2.1.9",
     "@vitest/ui": "^2.1.9",
-    "cssnano": "^7.0.7",
+    "cssnano": "^7.1.0",
     "cssnano-preset-advanced": "^7.0.8",
     "eslint": "^9.32.0",
     "eslint-config-next": "15.4.5",
