@@ -24,7 +24,7 @@
     "negotiator": "^1.0.0",
     "next": "15.4.3",
     "next-view-transitions": "^0.3.4",
-    "react": "19.1.0",
+    "react": "19.1.1",
     "react-dom": "19.1.0"
   },
   "devDependencies": {
@@ -36,7 +36,7 @@
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/negotiator": "^0.6.4",
     "@types/node": "^24.1.0",
-    "@types/react": "19.1.1",
+    "@types/react": "19.1.9",
     "@types/react-dom": "19.1.2",
     "@vitejs/plugin-react": "^4.7.0",
     "@vitest/coverage-v8": "^2.1.9",
@@ -58,7 +58,7 @@
   "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b",
   "pnpm": {
     "overrides": {
-      "@types/react": "19.1.1",
+      "@types/react": "19.1.9",
       "@types/react-dom": "19.1.2"
     }
   }
