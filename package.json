@@ -16,7 +16,7 @@
     "@formatjs/intl-localematcher": "^0.6.1",
     "@iconify/icons-devicon": "^1.2.17",
     "@iconify/icons-mdi": "^1.2.48",
-    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@next/mdx": "15.5.2",
     "@types/mdx": "^2.0.13",
