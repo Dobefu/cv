@@ -25,11 +25,11 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0(acorn@8.15.0)
       '@mdx-js/react':
-        specifier: ^3.1.0
-        version: 3.1.0(@types/react@19.1.1)(react@19.1.1)
+        specifier: ^3.1.1
+        version: 3.1.1(@types/react@19.1.1)(react@19.1.1)
       '@next/mdx':
         specifier: 15.5.0
-        version: 15.5.0(@mdx-js/loader@3.1.0(acorn@8.15.0))(@mdx-js/react@3.1.0(@types/react@19.1.1)(react@19.1.1))
+        version: 15.5.0(@mdx-js/loader@3.1.0(acorn@8.15.0))(@mdx-js/react@3.1.1(@types/react@19.1.1)(react@19.1.1))
       '@types/mdx':
         specifier: ^2.0.13
         version: 2.0.13
@@ -672,8 +672,8 @@ packages:
   '@mdx-js/mdx@3.1.0':
     resolution: {integrity: sha512-/QxEhPAvGwbQmy1Px8F899L5Uc2KZ6JtXwlCgJmjSTBedwOZkByYcBG4GceIGPXRDsmfxhHazuS+hlOShRLeDw==}
 
-  '@mdx-js/react@3.1.0':
-    resolution: {integrity: sha512-QjHtSaoameoalGnKDT3FoIl4+9RwyTmo9ZJGBdLOks/YOiWHoRDI3PUwEzOE7kEmGcV3AFcp9K6dYu9rEuKLAQ==}
+  '@mdx-js/react@3.1.1':
+    resolution: {integrity: sha512-f++rKLQgUVYDAtECQ6fn/is15GkEH9+nZPM3MS0RcxVqoTfawHvDlSCH7JbMhAM6uJ32v3eXLvLmLvjGu7PTQw==}
     peerDependencies:
       '@types/react': 19.1.1
       react: '>=16'
@@ -4234,7 +4234,7 @@ snapshots:
       - acorn
       - supports-color
 
-  '@mdx-js/react@3.1.0(@types/react@19.1.1)(react@19.1.1)':
+  '@mdx-js/react@3.1.1(@types/react@19.1.1)(react@19.1.1)':
     dependencies:
       '@types/mdx': 2.0.13
       '@types/react': 19.1.1
@@ -4260,12 +4260,12 @@ snapshots:
     dependencies:
       fast-glob: 3.3.1
 
-  '@next/mdx@15.5.0(@mdx-js/loader@3.1.0(acorn@8.15.0))(@mdx-js/react@3.1.0(@types/react@19.1.1)(react@19.1.1))':
+  '@next/mdx@15.5.0(@mdx-js/loader@3.1.0(acorn@8.15.0))(@mdx-js/react@3.1.1(@types/react@19.1.1)(react@19.1.1))':
     dependencies:
       source-map: 0.7.6
     optionalDependencies:
       '@mdx-js/loader': 3.1.0(acorn@8.15.0)
-      '@mdx-js/react': 3.1.0(@types/react@19.1.1)(react@19.1.1)
+      '@mdx-js/react': 3.1.1(@types/react@19.1.1)(react@19.1.1)
 
   '@next/swc-darwin-arm64@15.5.2':
     optional: true
