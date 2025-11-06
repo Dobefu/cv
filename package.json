@@ -42,7 +42,7 @@
     "@vitest/coverage-v8": "^2.1.9",
     "@vitest/ui": "^2.1.9",
     "cssnano": "^7.1.1",
-    "cssnano-preset-advanced": "^7.0.9",
+    "cssnano-preset-advanced": "^7.0.10",
     "eslint": "^9.37.0",
     "eslint-config-next": "16.0.0",
     "eslint-config-prettier": "^10.1.8",
