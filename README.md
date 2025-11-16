@@ -1,5 +1,8 @@
 # CV - Connor van Spronssen
 
+> [!WARNING]  
+> This repository is superceded by https://github.com/Dobefu/cv_v2/tree/main. 
+
 [![CI Status](https://github.com/Dobefu/cv/actions/workflows/ci.yml/badge.svg)](https://github.com/Dobefu/cv/actions/workflows/ci.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Dobefu_cv&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Dobefu_cv)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Dobefu_cv&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Dobefu_cv)
